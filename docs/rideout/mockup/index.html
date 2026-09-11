@@ -138,6 +138,19 @@ td.place{font-family:var(--f-body);color:var(--text-2);white-space:normal}
 .lv{display:inline-block;font-family:var(--f-mono);font-size:9.5px;letter-spacing:.06em;padding:1px 7px;border:1px solid var(--line);color:var(--text-2)}
 .lv.beg{color:var(--amber);border-color:var(--amber-dim)}
 
+/* ---------- schools ---------- */
+.schools{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.school{background:var(--surface);padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+.school .next{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.08em;color:var(--amber);border:1px solid var(--amber-dim);padding:3px 9px;align-self:flex-start}
+.school h3{font-family:var(--f-disp);font-weight:700;font-size:15.5px;margin:0;line-height:1.5}
+.school .by{font-family:var(--f-mono);font-size:10.5px;color:var(--muted);margin:0}
+.school ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px;font-size:12.5px;line-height:1.65;color:var(--text-2)}
+.school ul li{position:relative;padding-left:16px}
+.school ul li::before{content:"—";position:absolute;left:0;top:0;color:var(--muted)}
+.school .badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:2px}
+.school .badges span{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.06em;padding:2px 8px;border:1px solid var(--line);color:var(--text-2)}
+.school .badges span.key{color:var(--amber);border-color:var(--amber-dim)}
+
 /* ---------- shops ---------- */
 .shops{display:grid;grid-template-columns:200px 1fr;gap:26px;align-items:start}
 .regions{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line)}
@@ -379,6 +392,48 @@ body.show-anno section{outline:1px dashed rgba(111,168,199,.28);outline-offset:1
   </div>
 </section>
 
+<!-- SCHOOLS -->
+<section>
+  <div class="anno"><b>導線 ②③</b>スクール情報。「オフロード スクール 初心者」のような検索を拾う。<b>乗り方が分からないという、コースと並ぶもう一つの参入障壁</b>に答える。車両レンタルの有無が最大の判断材料になるため、そこを明示する。</div>
+  <div class="sec-head">
+    <span class="eyebrow">SCHOOL</span>
+    <h2>オフロードを習う</h2>
+    <a class="more" href="#">スクール一覧 →</a>
+  </div>
+  <div class="schools">
+    <article class="school">
+      <span class="next">次回 2027.03.08</span>
+      <h3>HMS オフロードコース</h3>
+      <p class="by">主催：ホンダモーターサイクリスト スクール／三重・栃木</p>
+      <ul>
+        <li>未経験から参加可。基本姿勢と低速バランスから</li>
+        <li>費用 12,000 円前後（半日）</li>
+      </ul>
+      <div class="badges"><span class="key">車両レンタルあり</span><span class="key">装備レンタルあり</span><span>未経験可</span></div>
+    </article>
+    <article class="school">
+      <span class="next">次回 2027.03.21</span>
+      <h3>オフロードヴィレッジ ライディング講習</h3>
+      <p class="by">主催：コース運営／埼玉県川越市</p>
+      <ul>
+        <li>初心者クラスと中級クラスを同日開催</li>
+        <li>費用 8,000 円前後（コース走行料込）</li>
+      </ul>
+      <div class="badges"><span class="key">車両レンタルあり</span><span>未経験可</span><span>中級</span></div>
+    </article>
+    <article class="school">
+      <span class="next">次回 2027.04.04</span>
+      <h3>林道ツーリング入門講習</h3>
+      <p class="by">主催：ショップ主催／群馬県前橋市</p>
+      <ul>
+        <li>実際の林道を走りながら、路面の読み方とライン取りを学ぶ</li>
+        <li>費用 6,000 円前後（昼食別）</li>
+      </ul>
+      <div class="badges"><span>要自車両</span><span>公道走行あり</span><span>初級〜</span></div>
+    </article>
+  </div>
+</section>
+
 <!-- SHOPS -->
 <section>
   <div class="anno"><b>導線 ③</b>店舗紹介。「◯◯県 オフロードバイク 修理」のような地域 × 用途の検索を拾う、別の入口。まとめている場所が国内にない。</div>
@@ -447,6 +502,7 @@ body.show-anno section{outline:1px dashed rgba(111,168,199,.28);outline-offset:1
       <span>取材</span>
       <span>映像</span>
       <span>コースを探す</span>
+      <span>スクール</span>
       <span>店舗を探す</span>
       <span>オフロード用品</span>
     </div>
