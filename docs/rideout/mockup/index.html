@@ -1,510 +1,384 @@
 <title>オフロード映像メディア 画面案</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap">
 
 <style>
 :root{
-  --ground:#17120F;
-  --surface:#211A16;
-  --raised:#2B221C;
-  --line:#3A2E25;
-  --line-soft:#291F1A;
-  --text:#F2EDE7;
-  --text-2:#CFC3B8;
-  --muted:#98897C;
-  --amber:#E0A32B;
-  --amber-dim:#8A6518;
-  --anno:#6FA8C7;
-  --anno-bg:#12222B;
-  --f-disp:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  --ground:#0D0C0B;
+  --surface:#171513;
+  --raised:#211E1B;
+  --line:#2E2A26;
+  --line-2:#3D3833;
+  --text:#FAF8F5;
+  --text-2:#C6BEB6;
+  --muted:#8B817A;
+  --amber:#F0A81E;
+  --amber-deep:#8F6410;
+  --anno:#66A9CC;
+  --anno-bg:#0F1E26;
+  --f-lat:"Saira Condensed","Arial Narrow",sans-serif;
+  --f-jp:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
   --f-body:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
-  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{background:var(--ground);color:var(--text);font-family:var(--f-body);font-size:15px;line-height:1.8;-webkit-font-smoothing:antialiased}
-a{color:inherit}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+body{background:var(--ground);color:var(--text);font-family:var(--f-body);font-size:15px;line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--amber);outline-offset:3px}
 
-/* ---------- mockup banner ---------- */
-.mock{position:sticky;top:0;z-index:60;background:var(--amber);color:#17120F;font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.1em;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:7px 18px;flex-wrap:wrap}
-.mock span{white-space:nowrap}
-.mock button{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.08em;background:#17120F;color:var(--amber);border:1px solid #17120F;padding:4px 12px;cursor:pointer}
-.mock button[aria-pressed="true"]{background:var(--anno);color:#0B1519;border-color:var(--anno)}
+/* ===== mockup bar ===== */
+.mock{position:sticky;top:0;z-index:80;background:var(--amber);color:#0D0C0B;font-family:var(--f-lat);font-size:13px;font-weight:700;letter-spacing:.08em;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:6px 20px;flex-wrap:wrap}
+.mock button{font-family:var(--f-lat);font-size:13px;font-weight:700;letter-spacing:.06em;background:#0D0C0B;color:var(--amber);border:none;padding:4px 14px;cursor:pointer}
+.mock button[aria-pressed="true"]{background:var(--anno);color:#08151B}
 
-/* ---------- site chrome ---------- */
-.chrome{border-bottom:1px solid var(--line);background:var(--ground)}
-.chrome-in{max-width:1180px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:26px;height:58px}
-.brand{font-family:var(--f-mono);font-size:13px;font-weight:600;letter-spacing:.16em;white-space:nowrap}
-.gnav{display:flex;gap:22px;font-size:13px;color:var(--muted);overflow-x:auto;scrollbar-width:none}
-.gnav::-webkit-scrollbar{display:none}
-.gnav a{text-decoration:none;white-space:nowrap;padding:4px 0;border-bottom:2px solid transparent}
-.gnav a.on{color:var(--text);border-bottom-color:var(--amber);font-weight:700}
-.chrome-r{margin-left:auto;display:flex;gap:16px;font-size:12px;color:var(--muted);white-space:nowrap}
-@media(max-width:820px){.chrome-in{height:auto;padding:12px 20px;flex-wrap:wrap;gap:12px}.chrome-r{display:none}}
+/* ===== chrome ===== */
+.chrome{position:sticky;top:29px;z-index:70;background:rgba(13,12,11,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.chrome-in{max-width:1360px;margin:0 auto;padding:0 28px;display:flex;align-items:center;gap:30px;height:62px}
+.brand{font-family:var(--f-lat);font-size:16px;font-weight:800;letter-spacing:.14em;white-space:nowrap}
+.brand em{font-style:normal;color:var(--amber)}
+nav.gnav{display:flex;gap:26px;font-family:var(--f-jp);font-size:13.5px;font-weight:700;color:var(--text-2);overflow-x:auto;scrollbar-width:none}
+nav.gnav::-webkit-scrollbar{display:none}
+nav.gnav a{white-space:nowrap;padding:6px 0;border-bottom:2px solid transparent}
+nav.gnav a.on,nav.gnav a:hover{color:var(--text);border-bottom-color:var(--amber)}
+.chrome-r{margin-left:auto;display:flex;align-items:center;gap:18px;font-family:var(--f-lat);font-size:13px;font-weight:600;letter-spacing:.06em;color:var(--muted);white-space:nowrap}
+@media(max-width:900px){.chrome-in{height:auto;padding:12px 20px;flex-wrap:wrap;gap:12px}.chrome-r{display:none}}
 
-.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-section{padding:54px 0}
-.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:22px;flex-wrap:wrap}
-.eyebrow{font-family:var(--f-mono);font-size:10.5px;font-weight:600;letter-spacing:.18em;color:var(--amber)}
-h2{font-family:var(--f-disp);font-weight:900;font-size:clamp(20px,2.6vw,26px);letter-spacing:-.01em;margin:0;line-height:1.4}
-.more{margin-left:auto;font-family:var(--f-mono);font-size:11.5px;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
-.more:hover{color:var(--amber);border-bottom-color:var(--amber)}
+.wrap{max-width:1360px;margin:0 auto;padding:0 28px}
 
-/* ---------- media slot ---------- */
-.slot{position:relative;background:var(--surface);border:1px solid var(--line);overflow:hidden;
-  background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.022) 0 1px,transparent 1px 9px)}
-.slot::after{content:attr(data-label);position:absolute;left:12px;bottom:10px;font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;color:var(--muted);background:rgba(23,18,15,.78);padding:3px 8px}
-.slot .play{position:absolute;inset:0;margin:auto;width:46px;height:46px;border:1.5px solid rgba(242,237,231,.5);border-radius:50%;display:flex;align-items:center;justify-content:center}
-.slot .play::before{content:"";border-left:11px solid rgba(242,237,231,.7);border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px}
-.r169{aspect-ratio:16/9}
-.r916{aspect-ratio:9/16}
-.r43{aspect-ratio:4/3}
-.r11{aspect-ratio:1/1}
+/* ===== media slot ===== */
+.slot{position:relative;background:var(--surface);overflow:hidden;
+  background-image:repeating-linear-gradient(122deg,rgba(255,255,255,.02) 0 1px,transparent 1px 11px)}
+.slot::before{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px var(--line)}
+.slot::after{content:attr(data-label);position:absolute;left:13px;bottom:11px;font-family:var(--f-lat);font-size:11.5px;font-weight:600;letter-spacing:.1em;color:var(--muted);background:rgba(13,12,11,.8);padding:2px 9px}
+.play{position:absolute;inset:0;margin:auto;width:54px;height:54px;border:2px solid rgba(250,248,245,.55);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.25s}
+.play::before{content:"";border-left:13px solid rgba(250,248,245,.8);border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px}
+a:hover .play{border-color:var(--amber);transform:scale(1.08)}
+a:hover .play::before{border-left-color:var(--amber)}
+.r169{aspect-ratio:16/9}.r916{aspect-ratio:9/16}.r43{aspect-ratio:4/3}.r11{aspect-ratio:1/1}
 
-/* ---------- hero ---------- */
-.hero{padding-top:34px}
-.hero-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:24px;align-items:stretch}
-.hero-main{position:relative;display:flex;flex-direction:column}
-.hero-main .slot{flex:1;min-height:320px}
-.hero-copy{padding:22px 0 0}
-.tagrow{display:flex;gap:10px;align-items:center;margin-bottom:10px;flex-wrap:wrap}
-.tag{font-family:var(--f-mono);font-size:10px;font-weight:600;letter-spacing:.1em;padding:3px 9px;border:1px solid var(--amber-dim);color:var(--amber)}
-.date{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
-.hero-copy h1{font-family:var(--f-disp);font-weight:900;font-size:clamp(24px,3.4vw,36px);line-height:1.35;letter-spacing:-.02em;margin:0 0 10px;text-wrap:balance}
-.hero-copy p{margin:0;color:var(--text-2);font-size:14px;max-width:52ch}
-.hero-side{display:flex;flex-direction:column;gap:14px}
-.side-item{display:grid;grid-template-columns:112px 1fr;gap:12px;align-items:start;padding-bottom:14px;border-bottom:1px solid var(--line-soft)}
-.side-item:last-child{border-bottom:none;padding-bottom:0}
-.side-item h3{font-family:var(--f-disp);font-weight:700;font-size:14px;line-height:1.55;margin:0 0 5px}
-.side-item .date{display:block}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+/* ===== chips ===== */
+.chip{display:inline-block;font-family:var(--f-lat);font-size:11.5px;font-weight:700;letter-spacing:.12em;padding:2px 9px;border:1px solid var(--line-2);color:var(--text-2)}
+.chip.mv{color:var(--amber);border-color:var(--amber-deep)}
+.chip.live{background:var(--amber);border-color:var(--amber);color:#0D0C0B}
+.stamp{font-family:var(--f-lat);font-size:12.5px;font-weight:600;letter-spacing:.08em;color:var(--muted);font-variant-numeric:tabular-nums}
 
-/* ---------- vertical strip ---------- */
-.strip{display:flex;gap:14px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory}
-.strip::-webkit-scrollbar{height:6px}
-.strip::-webkit-scrollbar-thumb{background:var(--line)}
-.vcard{flex:0 0 178px;scroll-snap-align:start}
-.vcard .slot{margin-bottom:9px}
-.vcard p{margin:0;font-size:12.5px;line-height:1.6;color:var(--text-2)}
-.vcard .meta{font-family:var(--f-mono);font-size:10px;color:var(--muted);margin-top:4px}
+/* ===== HERO ===== */
+.hero{position:relative;margin-bottom:74px}
+.hero-media{position:relative;height:min(76vh,660px);min-height:430px}
+.hero-media .slot{position:absolute;inset:0}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,11,.25) 0%,rgba(13,12,11,0) 34%,rgba(13,12,11,.78) 76%,var(--ground) 100%);pointer-events:none}
+.hero-copy{position:relative;max-width:1360px;margin:-124px auto 0;padding:0 28px;z-index:2}
+.hero-copy .row{display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.hero-copy h1{font-family:var(--f-jp);font-weight:900;font-size:clamp(30px,5vw,60px);line-height:1.18;letter-spacing:-.03em;margin:0 0 14px;max-width:19ch;text-wrap:balance}
+.hero-copy p{margin:0;color:var(--text-2);font-size:15px;max-width:56ch}
+@media(max-width:760px){.hero-copy{margin-top:-70px}}
 
-/* ---------- race table ---------- */
-.tblwrap{overflow-x:auto;border:1px solid var(--line)}
-table{border-collapse:collapse;width:100%;min-width:660px;font-family:var(--f-mono);font-size:12.5px}
-th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line-soft);white-space:nowrap}
-thead th{background:var(--surface);color:var(--muted);font-size:10px;letter-spacing:.12em;font-weight:600;border-bottom:1px solid var(--line)}
-tbody tr:last-child td{border-bottom:none}
-tbody tr:hover{background:var(--surface)}
-td.name{font-family:var(--f-body);font-weight:700;white-space:normal;min-width:180px}
-td.place{font-family:var(--f-body);color:var(--text-2);white-space:normal}
-.sts{font-size:10px;letter-spacing:.06em;padding:2px 8px;border:1px solid var(--line)}
-.sts.open{color:var(--amber);border-color:var(--amber-dim)}
-.sts.done{color:var(--muted)}
+/* ===== section head ===== */
+.shead{display:flex;align-items:flex-end;gap:18px;margin:0 0 26px;flex-wrap:wrap}
+.shead h2{font-family:var(--f-lat);font-weight:800;font-size:clamp(26px,3.4vw,40px);letter-spacing:.02em;margin:0;line-height:1}
+.shead .jp{font-family:var(--f-jp);font-weight:700;font-size:14px;color:var(--muted);padding-bottom:3px}
+.shead .more{margin-left:auto;font-family:var(--f-lat);font-size:13px;font-weight:600;letter-spacing:.08em;color:var(--muted);padding-bottom:4px;border-bottom:1px solid var(--line-2)}
+.shead .more:hover{color:var(--amber);border-bottom-color:var(--amber)}
+section{margin-bottom:74px}
 
-/* ---------- article cards ---------- */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:24px}
-.card .slot{margin-bottom:13px}
-.card h3{font-family:var(--f-disp);font-weight:700;font-size:16px;line-height:1.55;margin:0 0 7px;text-wrap:balance}
-.card p{margin:0;font-size:13px;color:var(--text-2);line-height:1.75}
+/* ===== STREAM ===== */
+.stream{display:grid;grid-template-columns:repeat(12,1fr);gap:26px}
+.it{display:block;grid-column:span 4}
+.it.lg{grid-column:span 6}
+.it.tall{grid-column:span 3}
+.it .slot{margin-bottom:14px}
+.it .row{display:flex;align-items:center;gap:10px;margin-bottom:9px;flex-wrap:wrap}
+.it h3{font-family:var(--f-jp);font-weight:700;font-size:17px;line-height:1.5;margin:0 0 7px;text-wrap:balance;transition:color .2s}
+.it.lg h3{font-size:22px;line-height:1.45}
+.it:hover h3{color:var(--amber)}
+.it p{margin:0;font-size:13px;color:var(--text-2);line-height:1.75}
+@media(max-width:1020px){.it,.it.lg{grid-column:span 6}.it.tall{grid-column:span 6}}
+@media(max-width:680px){.it,.it.lg,.it.tall{grid-column:span 12}}
 
-/* ---------- commerce ---------- */
-.buy{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:start;border:1px solid var(--line);background:var(--surface);padding:26px}
-.buy-copy h3{font-family:var(--f-disp);font-weight:700;font-size:18px;line-height:1.55;margin:0 0 10px}
-.buy-copy p{margin:0 0 12px;font-size:13.5px;color:var(--text-2)}
-.inline-buy{border:1px solid var(--line);background:var(--ground);padding:14px;display:grid;grid-template-columns:76px 1fr auto;gap:14px;align-items:center}
-.inline-buy .nm{font-size:13.5px;font-weight:700;line-height:1.5}
-.inline-buy .sb{font-family:var(--f-mono);font-size:10.5px;color:var(--muted)}
-.price{font-family:var(--f-mono);font-size:15px;font-weight:600;text-align:right;white-space:nowrap}
-.btn{display:inline-block;font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.08em;background:var(--amber);color:#17120F;border:none;padding:8px 14px;margin-top:6px;cursor:pointer;white-space:nowrap}
-.prods{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.prod .slot{margin-bottom:8px}
-.prod .nm{font-size:12.5px;font-weight:700;line-height:1.5}
-.prod .sb{font-family:var(--f-mono);font-size:10px;color:var(--muted)}
-.prod .price{text-align:left;font-size:13px;margin-top:3px}
-@media(max-width:820px){.buy{grid-template-columns:1fr;padding:20px}.inline-buy{grid-template-columns:64px 1fr;gap:10px}.inline-buy .price{grid-column:1/-1;text-align:left}}
+/* ===== COMMERCE ===== */
+.shop-block{display:grid;grid-template-columns:1.15fr 1fr;gap:0;border:1px solid var(--line);background:var(--surface)}
+.shop-story{padding:38px 40px;display:flex;flex-direction:column;justify-content:center;gap:14px}
+.shop-story h3{font-family:var(--f-jp);font-weight:900;font-size:clamp(21px,2.5vw,29px);line-height:1.4;margin:0;letter-spacing:-.02em;text-wrap:balance}
+.shop-story p{margin:0;font-size:13.5px;color:var(--text-2);max-width:44ch}
+.shop-story .cta{font-family:var(--f-lat);font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--amber);border-bottom:2px solid var(--amber);padding-bottom:5px;align-self:flex-start;margin-top:4px}
+.shop-rail{border-left:1px solid var(--line);display:flex;flex-direction:column}
+.prow{display:grid;grid-template-columns:88px 1fr auto;gap:16px;align-items:center;padding:17px 24px;border-bottom:1px solid var(--line)}
+.prow:last-child{border-bottom:none}
+.prow .nm{font-size:13.5px;font-weight:700;line-height:1.45}
+.prow .sb{font-family:var(--f-lat);font-size:12px;font-weight:500;letter-spacing:.05em;color:var(--muted)}
+.prow .pr{font-family:var(--f-lat);font-size:18px;font-weight:700;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.prow .add{display:block;font-family:var(--f-lat);font-size:11.5px;font-weight:700;letter-spacing:.08em;color:var(--amber);margin-top:3px}
+@media(max-width:900px){.shop-block{grid-template-columns:1fr}.shop-rail{border-left:none;border-top:1px solid var(--line)}.shop-story{padding:28px 24px}}
 
-/* ---------- courses ---------- */
-.courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.course .slot{margin-bottom:11px}
-.course h3{font-family:var(--f-disp);font-weight:700;font-size:15.5px;margin:0 0 5px;line-height:1.5}
-.course .loc{font-family:var(--f-mono);font-size:10.5px;color:var(--muted);margin:0 0 9px}
-.course dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:12px;line-height:1.7}
-.course dt{font-family:var(--f-mono);font-size:10px;color:var(--muted);letter-spacing:.06em;padding-top:2px}
-.course dd{margin:0;color:var(--text-2)}
-.lv{display:inline-block;font-family:var(--f-mono);font-size:9.5px;letter-spacing:.06em;padding:1px 7px;border:1px solid var(--line);color:var(--text-2)}
-.lv.beg{color:var(--amber);border-color:var(--amber-dim)}
+/* ===== DATABASE BAND ===== */
+.db{border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2);background:var(--surface)}
+.db-in{max-width:1360px;margin:0 auto;padding:34px 28px;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.db-col{padding:0 26px;border-right:1px solid var(--line)}
+.db-col:first-child{padding-left:0}
+.db-col:last-child{border-right:none;padding-right:0}
+.db-col h3{font-family:var(--f-lat);font-size:16px;font-weight:800;letter-spacing:.1em;margin:0 0 3px}
+.db-col .jp{font-family:var(--f-jp);font-size:12px;font-weight:700;color:var(--muted);display:block;margin-bottom:15px}
+.db-col ul{list-style:none;margin:0 0 14px;padding:0;display:flex;flex-direction:column;gap:11px}
+.db-col li{font-size:13px;line-height:1.55}
+.db-col li .d{display:block;font-family:var(--f-lat);font-size:12px;font-weight:600;letter-spacing:.05em;color:var(--muted);font-variant-numeric:tabular-nums}
+.db-col li a:hover{color:var(--amber)}
+.db-col .all{font-family:var(--f-lat);font-size:12.5px;font-weight:700;letter-spacing:.08em;color:var(--text-2);border-bottom:1px solid var(--line-2);padding-bottom:3px}
+.db-col .all:hover{color:var(--amber);border-bottom-color:var(--amber)}
+@media(max-width:1020px){.db-in{grid-template-columns:repeat(2,1fr);gap:30px 0}.db-col{padding:0 22px}.db-col:nth-child(2n){border-right:none;padding-right:0}.db-col:nth-child(2n+1){padding-left:0}}
+@media(max-width:600px){.db-in{grid-template-columns:1fr}.db-col{padding:0;border-right:none;border-bottom:1px solid var(--line);padding-bottom:22px}.db-col:last-child{border-bottom:none;padding-bottom:0}}
 
-/* ---------- schools ---------- */
-.schools{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
-.school{background:var(--surface);padding:18px 20px;display:flex;flex-direction:column;gap:10px}
-.school .next{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.08em;color:var(--amber);border:1px solid var(--amber-dim);padding:3px 9px;align-self:flex-start}
-.school h3{font-family:var(--f-disp);font-weight:700;font-size:15.5px;margin:0;line-height:1.5}
-.school .by{font-family:var(--f-mono);font-size:10.5px;color:var(--muted);margin:0}
-.school ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px;font-size:12.5px;line-height:1.65;color:var(--text-2)}
-.school ul li{position:relative;padding-left:16px}
-.school ul li::before{content:"—";position:absolute;left:0;top:0;color:var(--muted)}
-.school .badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:2px}
-.school .badges span{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.06em;padding:2px 8px;border:1px solid var(--line);color:var(--text-2)}
-.school .badges span.key{color:var(--amber);border-color:var(--amber-dim)}
+/* ===== MAIL ===== */
+.mail{display:grid;grid-template-columns:1fr auto;gap:34px;align-items:center;padding:40px;border:1px solid var(--amber-deep);background:linear-gradient(112deg,rgba(240,168,30,.09),rgba(240,168,30,0) 58%)}
+.mail h2{font-family:var(--f-jp);font-weight:900;font-size:clamp(19px,2.3vw,26px);line-height:1.45;margin:0 0 9px;letter-spacing:-.02em}
+.mail p{margin:0;font-size:13.5px;color:var(--text-2);max-width:48ch}
+.mform{display:flex;gap:10px;flex-wrap:wrap}
+.mform input{font-family:var(--f-body);font-size:14px;background:var(--ground);border:1px solid var(--line-2);color:var(--text);padding:12px 15px;min-width:240px}
+.mform input::placeholder{color:var(--muted)}
+.mform button{font-family:var(--f-lat);font-size:14px;font-weight:700;letter-spacing:.08em;background:var(--amber);color:#0D0C0B;border:none;padding:12px 24px;cursor:pointer}
+@media(max-width:820px){.mail{grid-template-columns:1fr;padding:28px}}
 
-/* ---------- shops ---------- */
-.shops{display:grid;grid-template-columns:200px 1fr;gap:26px;align-items:start}
-.regions{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line)}
-.regions button{font-family:var(--f-body);font-size:13px;text-align:left;background:var(--surface);color:var(--text-2);border:none;padding:9px 14px;cursor:pointer}
-.regions button[aria-pressed="true"]{background:var(--raised);color:var(--text);font-weight:700;box-shadow:inset 3px 0 0 var(--amber)}
-.shoplist{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
-.shop{background:var(--surface);padding:15px 17px}
-.shop h4{font-family:var(--f-disp);font-weight:700;font-size:14.5px;margin:0 0 5px;line-height:1.5}
-.shop .adr{font-family:var(--f-mono);font-size:10.5px;color:var(--muted);margin:0 0 8px}
-.shop .sk{display:flex;gap:6px;flex-wrap:wrap}
-.shop .sk span{font-size:10.5px;padding:2px 7px;border:1px solid var(--line);color:var(--text-2)}
-@media(max-width:760px){.shops{grid-template-columns:1fr}.regions{flex-direction:row;overflow-x:auto}}
+footer{border-top:1px solid var(--line);padding:34px 0 70px}
+.fnav{display:flex;gap:26px;flex-wrap:wrap;font-family:var(--f-lat);font-size:13px;font-weight:600;letter-spacing:.07em;color:var(--muted)}
 
-/* ---------- signup ---------- */
-.signup{border:1px solid var(--amber-dim);background:linear-gradient(180deg,rgba(224,163,43,.07),rgba(224,163,43,0));padding:30px;display:grid;grid-template-columns:1fr auto;gap:26px;align-items:center}
-.signup h2{margin:0 0 8px}
-.signup p{margin:0;font-size:13.5px;color:var(--text-2);max-width:46ch}
-.form{display:flex;gap:9px;flex-wrap:wrap}
-.form input{font-family:var(--f-body);font-size:13px;background:var(--ground);border:1px solid var(--line);color:var(--text);padding:10px 13px;min-width:230px}
-.form input::placeholder{color:var(--muted)}
-@media(max-width:760px){.signup{grid-template-columns:1fr;padding:22px}}
-
-footer{border-top:1px solid var(--line);margin-top:20px;padding:30px 0 60px}
-.foot{display:flex;gap:22px;flex-wrap:wrap;font-family:var(--f-mono);font-size:11px;color:var(--muted)}
-
-/* ---------- annotations ---------- */
-.anno{display:none;border:1px dashed var(--anno);background:var(--anno-bg);color:var(--anno);padding:10px 14px;margin:0 0 16px;font-size:12.5px;line-height:1.75}
-.anno b{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.08em;display:inline-block;background:var(--anno);color:#0B1519;padding:2px 8px;margin-right:9px;font-weight:600}
+/* ===== annotations ===== */
+.anno{display:none;border-left:3px solid var(--anno);background:var(--anno-bg);color:var(--anno);padding:12px 16px;margin:0 0 20px;font-size:13px;line-height:1.75}
+.anno b{font-family:var(--f-lat);font-size:12px;font-weight:700;letter-spacing:.08em;background:var(--anno);color:#08151B;padding:2px 9px;margin-right:10px}
 body.show-anno .anno{display:block}
-body.show-anno section{outline:1px dashed rgba(111,168,199,.28);outline-offset:10px}
+.anno-hero{margin:0 auto 30px;max-width:1360px;padding-left:28px;padding-right:28px}
+body.show-anno .anno-hero{display:block}
 </style>
 
 <div class="mock">
-  <span>画面案（モックアップ）— 写真・動画はすべて枠のみ</span>
+  <span>画面案（モックアップ）／ 写真・動画は枠のみ</span>
   <button id="toggle" type="button" aria-pressed="false">導線の注釈を表示</button>
 </div>
 
 <header class="chrome">
   <div class="chrome-in">
-    <span class="brand">CUSTOM JAPAN</span>
+    <span class="brand">CUSTOM JAPAN <em>OFFROAD</em></span>
     <nav class="gnav">
-      <a href="#">バイク</a>
-      <a href="#">自転車</a>
-      <a href="#">自動車</a>
-      <a href="#">整備工具</a>
-      <a href="#" class="on">オフロード</a>
+      <a href="#" class="on">ホーム</a>
+      <a href="#stream">映像</a>
+      <a href="#db">レース</a>
+      <a href="#db">コース・スクール</a>
+      <a href="#db">店舗</a>
+      <a href="#gear">用品を買う</a>
     </nav>
-    <div class="chrome-r"><span>ログイン</span><span>カート</span></div>
+    <div class="chrome-r"><span>SEARCH</span><span>LOGIN</span><span>CART</span></div>
   </div>
 </header>
 
+<!-- ===== HERO ===== -->
+<div class="anno anno-hero" style="margin-top:24px"><b>① 人を集める</b>トップは分類で割らず、いま最も強い 1 本を全面に出す。カテゴリはナビに置く。ここに来る人の多くは、まだ何を探すか決めていない。</div>
+<section class="hero">
+  <div class="hero-media">
+    <div class="slot" data-label="MOVIE 16:9 ／ EICMA 会場"><span class="play"></span></div>
+    <div class="hero-shade"></div>
+  </div>
+  <div class="hero-copy">
+    <div class="row">
+      <span class="chip live">NEW</span>
+      <span class="chip mv">MOVIE</span>
+      <span class="stamp">2026.11.06 ／ MILANO</span>
+    </div>
+    <h1>2027年モデル、<br>エンデューロはこう変わる</h1>
+    <p>EICMA 現地から。発表された全ラインナップを、実車の映像とあわせて。国内導入の見込みと装備の変更点まで。</p>
+  </div>
+</section>
+
 <div class="wrap">
 
-<!-- HERO -->
-<section class="hero">
-  <div class="anno"><b>導線 ①⑤</b>既存顧客への配信と検索の受け皿。ニュース記事は最も早く数字が出るため、初速をここで作る。記事の下部から商品へ接続する。</div>
-  <div class="hero-grid">
-    <article class="hero-main">
-      <div class="slot r169" data-label="映像 16:9／EICMA 会場"><span class="play"></span></div>
-      <div class="hero-copy">
-        <div class="tagrow">
-          <span class="tag">EICMA 2026</span>
-          <span class="date">2026.11.06</span>
-        </div>
-        <h1>EICMA 2026 速報：2027年モデルのエンデューロ全ラインナップ</h1>
-        <p>ミラノ現地から。各社が発表した 2027 年モデルのうち、エンデューロ・トレール系を一覧で。国内導入の見込みと、装備の変更点をまとめる。</p>
-      </div>
-    </article>
-    <aside class="hero-side">
-      <article class="side-item">
-        <div class="slot r43" data-label="写真"></div>
-        <div>
-          <h3>ハードエンデューロ用タイヤ、2027年モデルの変更点</h3>
-          <span class="date">2026.11.05</span>
-        </div>
-      </article>
-      <article class="side-item">
-        <div class="slot r43" data-label="写真"></div>
-        <div>
-          <h3>ブーツの新作は何が変わったか — 現物を分解して確認する</h3>
-          <span class="date">2026.11.04</span>
-        </div>
-      </article>
-      <article class="side-item">
-        <div class="slot r43" data-label="写真"></div>
-        <div>
-          <h3>JNCC 最終戦レポート：泥のコンディションで何が効いたか</h3>
-          <span class="date">2026.10.28</span>
-        </div>
-      </article>
-    </aside>
+<!-- ===== STREAM ===== -->
+<section id="stream">
+  <div class="anno"><b>① 人を集める ／ ③ 資産</b>映像・レース・コース・取材を<b>種類で分けずに 1 本の流れに混ぜる。</b>分類して並べると、それぞれが小さくなって何も伝わらない。種類はカードのラベルで示す。</div>
+  <div class="shead">
+    <h2>LATEST</h2>
+    <span class="jp">新着</span>
+    <a class="more" href="#">VIEW ALL →</a>
   </div>
-</section>
+  <div class="stream">
 
-<!-- VERTICAL VIDEO -->
-<section>
-  <div class="anno"><b>導線 ②</b>縦型映像。推薦配信で、探していない人にも届く。フェーズ 2 で本格化する領域。同じ素材を Reels・Shorts・TikTok に流用する。</div>
-  <div class="sec-head">
-    <span class="eyebrow">MOVIE</span>
-    <h2>映像で見る</h2>
-    <a class="more" href="#">すべての映像 →</a>
-  </div>
-  <div class="strip">
-    <div class="vcard"><div class="slot r916" data-label="縦型 9:16"><span class="play"></span></div><p>林道でタイヤの空気圧を落とすとどう変わるか</p><div class="meta">0:48</div></div>
-    <div class="vcard"><div class="slot r916" data-label="縦型 9:16"><span class="play"></span></div><p>ゴーグルのロールオフ、実際の使い方</p><div class="meta">0:36</div></div>
-    <div class="vcard"><div class="slot r916" data-label="縦型 9:16"><span class="play"></span></div><p>エアフィルターの洗浄、現場でのやり方</p><div class="meta">1:02</div></div>
-    <div class="vcard"><div class="slot r916" data-label="縦型 9:16"><span class="play"></span></div><p>転倒でハンドガードが折れた、その後</p><div class="meta">0:41</div></div>
-    <div class="vcard"><div class="slot r916" data-label="縦型 9:16"><span class="play"></span></div><p>JNCC 会場の朝、スタート前の 3 分</p><div class="meta">0:55</div></div>
-    <div class="vcard"><div class="slot r916" data-label="縦型 9:16"><span class="play"></span></div><p>チェーンが伸びるとどこが減るのか</p><div class="meta">0:44</div></div>
-  </div>
-</section>
+    <a class="it lg" href="#">
+      <div class="slot r169" data-label="MOVIE 16:9"><span class="play"></span></div>
+      <div class="row"><span class="chip mv">MOVIE</span><span class="stamp">04:12</span></div>
+      <h3>雨の林道で、タイヤの空気圧をどこまで落とすか</h3>
+      <p>同じ区間を 100kPa 刻みで走り比べる。グリップと リム打ちのリスクが入れ替わる境目を、走行映像で。</p>
+    </a>
 
-<!-- RACE -->
-<section>
-  <div class="anno"><b>導線 ②④</b>レース情報。すでに検索されている語で新規流入を拾い、日程と結果が更新され続けるため再訪の理由になる。この 2 つを同時に担うのはこのコンテンツだけ。</div>
-  <div class="sec-head">
-    <span class="eyebrow">RACE</span>
-    <h2>大会情報</h2>
-    <a class="more" href="#">年間カレンダー →</a>
-  </div>
-  <div class="tblwrap">
-    <table>
-      <thead><tr><th>開催日</th><th>大会</th><th>会場</th><th>クラス</th><th>エントリー</th></tr></thead>
-      <tbody>
-        <tr><td>2027.03.14</td><td class="name">JNCC 第1戦 爺ヶ岳</td><td class="place">長野県 大町市</td><td>FUN / COMP</td><td><span class="sts open">受付中 〜2/20</span></td></tr>
-        <tr><td>2027.03.28</td><td class="name">WEX 広島 第2戦</td><td class="place">広島県 世羅町</td><td>AA / A / B / C</td><td><span class="sts open">受付中 〜3/6</span></td></tr>
-        <tr><td>2027.04.11</td><td class="name">全日本モトクロス 第1戦</td><td class="place">熊本県 HSR九州</td><td>IA1 / IA2 / LADIES</td><td><span class="sts open">受付中 〜3/20</span></td></tr>
-        <tr><td>2027.04.25</td><td class="name">JEC 第1戦 和歌山</td><td class="place">和歌山県 日高川町</td><td>IA / IB / NA / NB</td><td><span class="sts">2/1 開始予定</span></td></tr>
-        <tr><td>2026.10.25</td><td class="name">JNCC 最終戦 わっぱか</td><td class="place">新潟県 阿賀町</td><td>FUN / COMP</td><td><span class="sts done">終了・結果を見る</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- ARTICLES -->
-<section>
-  <div class="anno"><b>導線 ①</b>取材記事。他のどこにも存在しない一次情報で、メールで送る「読む理由」になる。工場・ショップ・ライダーは、代理店と取引関係があるから撮れる。</div>
-  <div class="sec-head">
-    <span class="eyebrow">FEATURE</span>
-    <h2>取材</h2>
-    <a class="more" href="#">記事一覧 →</a>
-  </div>
-  <div class="cards">
-    <article class="card">
-      <div class="slot r169" data-label="写真／工房"></div>
+    <a class="it lg" href="#">
+      <div class="slot r169" data-label="PHOTO 16:9 ／ 工房"></div>
+      <div class="row"><span class="chip">FEATURE</span><span class="stamp">2026.11.04</span></div>
       <h3>ブーツはどこで、どう作られているか — イタリアの工房を訪ねる</h3>
-      <p>ソールの積層、縫製、剛性を決める工程。現地でしか撮れない手元を記録した。</p>
-    </article>
-    <article class="card">
-      <div class="slot r169" data-label="写真／店内"></div>
-      <h3>オフロードに強い店 — 群馬・赤城のショップを訪ねる</h3>
-      <p>林道ツーリングの相談から車両整備まで。この地域で頼れる一軒の、仕事の中身。</p>
-    </article>
-    <article class="card">
-      <div class="slot r169" data-label="写真／ライダー"></div>
+      <p>ソールの積層、縫製、剛性を決める工程。代理店だから入れた現場を、手元まで記録した。</p>
+    </a>
+
+    <a class="it tall" href="#">
+      <div class="slot r916" data-label="MOVIE 9:16"><span class="play"></span></div>
+      <div class="row"><span class="chip mv">SHORT</span><span class="stamp">0:48</span></div>
+      <h3>エアフィルター洗浄、現場でのやり方</h3>
+    </a>
+
+    <a class="it tall" href="#">
+      <div class="slot r916" data-label="MOVIE 9:16"><span class="play"></span></div>
+      <div class="row"><span class="chip mv">SHORT</span><span class="stamp">0:36</span></div>
+      <h3>ロールオフの使い方、泥のレースで</h3>
+    </a>
+
+    <a class="it tall" href="#">
+      <div class="slot r916" data-label="MOVIE 9:16"><span class="play"></span></div>
+      <div class="row"><span class="chip mv">SHORT</span><span class="stamp">0:55</span></div>
+      <h3>JNCC 会場の朝、スタート前の 3 分</h3>
+    </a>
+
+    <a class="it tall" href="#">
+      <div class="slot r916" data-label="PHOTO 9:16"></div>
+      <div class="row"><span class="chip">COURSE</span><span class="stamp">埼玉</span></div>
+      <h3>初心者が最初に行くなら、どのコースか</h3>
+    </a>
+
+    <a class="it" href="#">
+      <div class="slot r169" data-label="PHOTO 16:9 ／ レース"></div>
+      <div class="row"><span class="chip">RACE</span><span class="stamp">2026.10.28</span></div>
+      <h3>JNCC 最終戦レポート：泥のコンディションで何が効いたか</h3>
+      <p>上位陣のタイヤ選択と空気圧を、ピットで聞いて回った。</p>
+    </a>
+
+    <a class="it" href="#">
+      <div class="slot r169" data-label="PHOTO 16:9 ／ 店内"></div>
+      <div class="row"><span class="chip">SHOP</span><span class="stamp">群馬</span></div>
+      <h3>オフロードに強い店 — 赤城のショップを訪ねる</h3>
+      <p>林道の相談から車両整備まで。この地域で頼れる一軒の仕事の中身。</p>
+    </a>
+
+    <a class="it" href="#">
+      <div class="slot r169" data-label="PHOTO 16:9 ／ ライダー"></div>
+      <div class="row"><span class="chip">PEOPLE</span><span class="stamp">2026.10.20</span></div>
       <h3>平日は会社員、週末はエンデューロ。続けるための装備の選び方</h3>
-      <p>年間 10 戦。消耗品にいくら使い、何を優先しているのか。実際の支出も聞いた。</p>
-    </article>
+      <p>年間 10 戦。消耗品にいくら使い、何を優先しているのか。</p>
+    </a>
+
   </div>
 </section>
 
-<!-- COMMERCE -->
-<section>
-  <div class="anno"><b>導線 ⑤</b>記事の中に商品を置き、そのページで購入まで完結させる。EC 内に設置するため連携は不要で、どの記事が売ったかを記事単位で把握できる。</div>
-  <div class="sec-head">
-    <span class="eyebrow">GEAR</span>
-    <h2>記事から、そのまま買う</h2>
-    <a class="more" href="#">オフロード用品すべて →</a>
+<!-- ===== COMMERCE ===== -->
+<section id="gear">
+  <div class="anno"><b>② 商品紹介から購入</b>商品は<b>1 か所に集中させる。</b>記事の中に散らすと、どれも小さくなって買う場面にならない。読んだ流れの続きとして、その場で購入まで完結させる。EC 内に置くため連携は不要。</div>
+  <div class="shead">
+    <h2>GEAR</h2>
+    <span class="jp">記事から、そのまま買う</span>
+    <a class="more" href="#">ALL PRODUCTS →</a>
   </div>
-  <div class="buy">
-    <div class="buy-copy">
-      <h3>記事：エアフィルターの洗浄、現場でのやり方</h3>
-      <p>砂塵を吸うオフロードでは、走行のたびに洗浄が必要になる。専用のクリーナーとオイルを使わないと、目詰まりと吸気抵抗の原因になる。</p>
-      <p>この記事で使っている道具は、下からそのまま購入できます。</p>
-      <div class="inline-buy">
-        <div class="slot r11" data-label="商品"></div>
-        <div>
-          <div class="nm">エアフィルターオイル 1L</div>
-          <div class="sb">記事内で使用／在庫あり</div>
-          <button class="btn" type="button">カートに入れる</button>
-        </div>
-        <div class="price">¥2,480</div>
+  <div class="shop-block">
+    <div class="shop-story">
+      <span class="chip mv" style="align-self:flex-start">FROM THE STORY</span>
+      <h3>エアフィルター洗浄の記事で、実際に使っている道具</h3>
+      <p>砂塵を吸うオフロードでは、走行のたびに洗浄が要る。専用のクリーナーとオイルを使わないと、目詰まりと吸気抵抗の原因になる。動画で使っているものをそのまま。</p>
+      <a class="cta" href="#">記事を読む →</a>
+    </div>
+    <div class="shop-rail">
+      <div class="prow">
+        <div class="slot r11" data-label="PRODUCT"></div>
+        <div><div class="nm">エアフィルターオイル 1L</div><div class="sb">IN STOCK</div></div>
+        <div><div class="pr">¥2,480</div><a class="add" href="#">ADD →</a></div>
+      </div>
+      <div class="prow">
+        <div class="slot r11" data-label="PRODUCT"></div>
+        <div><div class="nm">フィルタークリーナー 1L</div><div class="sb">IN STOCK</div></div>
+        <div><div class="pr">¥1,980</div><a class="add" href="#">ADD →</a></div>
+      </div>
+      <div class="prow">
+        <div class="slot r11" data-label="PRODUCT"></div>
+        <div><div class="nm">エアフィルター／2 層スポンジ</div><div class="sb">IN STOCK</div></div>
+        <div><div class="pr">¥3,300</div><a class="add" href="#">ADD →</a></div>
+      </div>
+      <div class="prow">
+        <div class="slot r11" data-label="PRODUCT"></div>
+        <div><div class="nm">ティアオフ 20 枚入</div><div class="sb">IN STOCK</div></div>
+        <div><div class="pr">¥1,650</div><a class="add" href="#">ADD →</a></div>
       </div>
     </div>
-    <div>
-      <div class="eyebrow" style="margin-bottom:12px">あわせて交換されるもの</div>
-      <div class="prods">
-        <div class="prod"><div class="slot r11" data-label="商品"></div><div class="nm">エアフィルター</div><div class="sb">スポンジ／2 層</div><div class="price">¥3,300</div></div>
-        <div class="prod"><div class="slot r11" data-label="商品"></div><div class="nm">フィルタークリーナー</div><div class="sb">1L</div><div class="price">¥1,980</div></div>
-        <div class="prod"><div class="slot r11" data-label="商品"></div><div class="nm">グリップ</div><div class="sb">左右セット</div><div class="price">¥2,200</div></div>
-        <div class="prod"><div class="slot r11" data-label="商品"></div><div class="nm">ティアオフ</div><div class="sb">20 枚入</div><div class="price">¥1,650</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COURSES -->
-<section>
-  <div class="anno"><b>導線 ②③</b>コース紹介。「オフロードコース 関東」のような検索を拾う。<b>車両を買ったが走る場所が分からない</b>という、参入時の最大の障壁に直接答える入口。</div>
-  <div class="sec-head">
-    <span class="eyebrow">COURSE</span>
-    <h2>走れる場所を探す</h2>
-    <a class="more" href="#">全国のコース →</a>
-  </div>
-  <div class="courses">
-    <article class="course">
-      <div class="slot r169" data-label="写真／コース全景"></div>
-      <h3>オフロードヴィレッジ</h3>
-      <p class="loc">埼玉県川越市</p>
-      <dl>
-        <dt>種別</dt><dd>モトクロス／初心者コース併設</dd>
-        <dt>路面</dt><dd>砂質・ウォータージャンプあり</dd>
-        <dt>レンタル</dt><dd>車両・装備ともにあり</dd>
-        <dt>難易度</dt><dd><span class="lv beg">初心者可</span> <span class="lv">中級</span> <span class="lv">上級</span></dd>
-      </dl>
-    </article>
-    <article class="course">
-      <div class="slot r169" data-label="写真／コース全景"></div>
-      <h3>ワイルドクロス パーク ジャパン</h3>
-      <p class="loc">静岡県富士宮市</p>
-      <dl>
-        <dt>種別</dt><dd>エンデューロ／ヒルクライム</dd>
-        <dt>路面</dt><dd>火山灰質・雨天で難度が上がる</dd>
-        <dt>レンタル</dt><dd>装備のみ</dd>
-        <dt>難易度</dt><dd><span class="lv">中級</span> <span class="lv">上級</span></dd>
-      </dl>
-    </article>
-    <article class="course">
-      <div class="slot r169" data-label="写真／林道入口"></div>
-      <h3>秩父・中津川林道</h3>
-      <p class="loc">埼玉県秩父市〜長野県川上村</p>
-      <dl>
-        <dt>種別</dt><dd>林道（一般公道）</dd>
-        <dt>路面</dt><dd>ダート・全長 約 18km</dd>
-        <dt>通行</dt><dd>冬期閉鎖あり・要事前確認</dd>
-        <dt>難易度</dt><dd><span class="lv beg">初心者可</span> <span class="lv">中級</span></dd>
-      </dl>
-    </article>
-  </div>
-</section>
-
-<!-- SCHOOLS -->
-<section>
-  <div class="anno"><b>導線 ②③</b>スクール情報。「オフロード スクール 初心者」のような検索を拾う。<b>乗り方が分からないという、コースと並ぶもう一つの参入障壁</b>に答える。車両レンタルの有無が最大の判断材料になるため、そこを明示する。</div>
-  <div class="sec-head">
-    <span class="eyebrow">SCHOOL</span>
-    <h2>オフロードを習う</h2>
-    <a class="more" href="#">スクール一覧 →</a>
-  </div>
-  <div class="schools">
-    <article class="school">
-      <span class="next">次回 2027.03.08</span>
-      <h3>HMS オフロードコース</h3>
-      <p class="by">主催：ホンダモーターサイクリスト スクール／三重・栃木</p>
-      <ul>
-        <li>未経験から参加可。基本姿勢と低速バランスから</li>
-        <li>費用 12,000 円前後（半日）</li>
-      </ul>
-      <div class="badges"><span class="key">車両レンタルあり</span><span class="key">装備レンタルあり</span><span>未経験可</span></div>
-    </article>
-    <article class="school">
-      <span class="next">次回 2027.03.21</span>
-      <h3>オフロードヴィレッジ ライディング講習</h3>
-      <p class="by">主催：コース運営／埼玉県川越市</p>
-      <ul>
-        <li>初心者クラスと中級クラスを同日開催</li>
-        <li>費用 8,000 円前後（コース走行料込）</li>
-      </ul>
-      <div class="badges"><span class="key">車両レンタルあり</span><span>未経験可</span><span>中級</span></div>
-    </article>
-    <article class="school">
-      <span class="next">次回 2027.04.04</span>
-      <h3>林道ツーリング入門講習</h3>
-      <p class="by">主催：ショップ主催／群馬県前橋市</p>
-      <ul>
-        <li>実際の林道を走りながら、路面の読み方とライン取りを学ぶ</li>
-        <li>費用 6,000 円前後（昼食別）</li>
-      </ul>
-      <div class="badges"><span>要自車両</span><span>公道走行あり</span><span>初級〜</span></div>
-    </article>
-  </div>
-</section>
-
-<!-- SHOPS -->
-<section>
-  <div class="anno"><b>導線 ③</b>店舗紹介。「◯◯県 オフロードバイク 修理」のような地域 × 用途の検索を拾う、別の入口。まとめている場所が国内にない。</div>
-  <div class="sec-head">
-    <span class="eyebrow">SHOP</span>
-    <h2>オフロードに強い店を探す</h2>
-    <a class="more" href="#">全国の掲載店 →</a>
-  </div>
-  <div class="shops">
-    <div class="regions">
-      <button type="button">北海道・東北</button>
-      <button type="button" aria-pressed="true">関東</button>
-      <button type="button">中部</button>
-      <button type="button">近畿</button>
-      <button type="button">中国・四国</button>
-      <button type="button">九州・沖縄</button>
-    </div>
-    <div class="shoplist">
-      <div class="shop">
-        <h4>赤城モーターサイクル</h4>
-        <p class="adr">群馬県前橋市／水 定休</p>
-        <div class="sk"><span>林道</span><span>エンデューロ</span><span>車検</span></div>
-      </div>
-      <div class="shop">
-        <h4>多摩オフロードサービス</h4>
-        <p class="adr">東京都あきる野市／火水 定休</p>
-        <div class="sk"><span>モトクロス</span><span>サス調整</span></div>
-      </div>
-      <div class="shop">
-        <h4>房総ダートワークス</h4>
-        <p class="adr">千葉県君津市／木 定休</p>
-        <div class="sk"><span>林道</span><span>レンタル</span><span>スクール</span></div>
-      </div>
-      <div class="shop">
-        <h4>秩父トレイルガレージ</h4>
-        <p class="adr">埼玉県秩父市／不定休</p>
-        <div class="sk"><span>林道</span><span>タイヤ交換</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SIGNUP -->
-<section>
-  <div class="anno"><b>導線 ④</b>リスト獲得。記事を読んだ人を、こちらから接触できる相手に変える。ここで得たリストが、後から消耗品の販売につながる。</div>
-  <div class="signup">
-    <div>
-      <span class="eyebrow">MAIL</span>
-      <h2>大会情報と新製品を、月 2 回お届けします</h2>
-      <p>エントリー開始の告知、レース結果、装備の入れ替え時期のお知らせ。オフロードに関する内容のみ配信します。</p>
-    </div>
-    <form class="form" onsubmit="return false">
-      <input type="email" placeholder="メールアドレス" aria-label="メールアドレス">
-      <button class="btn" type="submit" style="margin-top:0">登録する</button>
-    </form>
   </div>
 </section>
 
 </div>
 
+<!-- ===== DATABASE ===== -->
+<div class="wrap"><div class="anno"><b>③ 資産として蓄積</b>大会・コース・スクール・店舗は<b>記事ではなくデータ。</b>更新され続けるため再訪の理由になり、検索と AI 検索に引用される。トップでは 4 つまとめて 1 本の帯に置き、詳細は各ページへ。</div></div>
+<div class="db" id="db">
+  <div class="db-in">
+
+    <div class="db-col">
+      <h3>RACE</h3><span class="jp">大会日程</span>
+      <ul>
+        <li><a href="#"><span class="d">2027.03.14</span>JNCC 第1戦 爺ヶ岳 ／ 長野</a></li>
+        <li><a href="#"><span class="d">2027.03.28</span>WEX 広島 第2戦 ／ 世羅</a></li>
+        <li><a href="#"><span class="d">2027.04.11</span>全日本モトクロス 第1戦 ／ HSR九州</a></li>
+      </ul>
+      <a class="all" href="#">年間カレンダー →</a>
+    </div>
+
+    <div class="db-col">
+      <h3>COURSE</h3><span class="jp">走れる場所</span>
+      <ul>
+        <li><a href="#"><span class="d">埼玉県川越市</span>オフロードヴィレッジ ／ 初心者コース併設</a></li>
+        <li><a href="#"><span class="d">静岡県富士宮市</span>ワイルドクロス パーク ジャパン</a></li>
+        <li><a href="#"><span class="d">埼玉〜長野</span>中津川林道 ／ 全長 18km・冬期閉鎖</a></li>
+      </ul>
+      <a class="all" href="#">全国のコース →</a>
+    </div>
+
+    <div class="db-col">
+      <h3>SCHOOL</h3><span class="jp">習える場所</span>
+      <ul>
+        <li><a href="#"><span class="d">2027.03.08</span>HMS オフロードコース ／ 車両レンタルあり</a></li>
+        <li><a href="#"><span class="d">2027.03.21</span>オフロードヴィレッジ 講習 ／ 未経験可</a></li>
+        <li><a href="#"><span class="d">2027.04.04</span>林道ツーリング入門 ／ 要自車両</a></li>
+      </ul>
+      <a class="all" href="#">スクール一覧 →</a>
+    </div>
+
+    <div class="db-col">
+      <h3>SHOP</h3><span class="jp">直せる場所</span>
+      <ul>
+        <li><a href="#"><span class="d">群馬県前橋市</span>赤城モーターサイクル ／ 林道・エンデューロ</a></li>
+        <li><a href="#"><span class="d">東京都あきる野市</span>多摩オフロードサービス ／ サス調整</a></li>
+        <li><a href="#"><span class="d">千葉県君津市</span>房総ダートワークス ／ レンタル・スクール</a></li>
+      </ul>
+      <a class="all" href="#">全国の掲載店 →</a>
+    </div>
+
+  </div>
+</div>
+
+<div class="wrap" style="padding-top:74px">
+<!-- ===== MAIL ===== -->
+<section>
+  <div class="anno"><b>① 人を集める の受け皿</b>読んだ人を、こちらから接触できる相手に変える。ここで得たリストが、後から消耗品の販売につながる。</div>
+  <div class="mail">
+    <div>
+      <h2>大会情報と新製品を、月 2 回。</h2>
+      <p>エントリー開始の告知、レース結果、装備の入れ替え時期。オフロードに関する内容だけをお送りします。</p>
+    </div>
+    <form class="mform" onsubmit="return false">
+      <input type="email" placeholder="メールアドレス" aria-label="メールアドレス">
+      <button type="submit">登録する</button>
+    </form>
+  </div>
+</section>
+</div>
+
 <footer>
   <div class="wrap">
-    <div class="foot">
-      <span>CUSTOM JAPAN ／ OFFROAD</span>
-      <span>大会情報</span>
-      <span>取材</span>
-      <span>映像</span>
-      <span>コースを探す</span>
-      <span>スクール</span>
-      <span>店舗を探す</span>
-      <span>オフロード用品</span>
+    <div class="fnav">
+      <span>CUSTOM JAPAN OFFROAD</span>
+      <span>MOVIE</span>
+      <span>RACE</span>
+      <span>COURSE</span>
+      <span>SCHOOL</span>
+      <span>SHOP</span>
+      <span>GEAR</span>
     </div>
   </div>
 </footer>
@@ -515,11 +389,5 @@ body.show-anno section{outline:1px dashed rgba(111,168,199,.28);outline-offset:1
     const on = document.body.classList.toggle('show-anno');
     btn.setAttribute('aria-pressed', String(on));
     btn.textContent = on ? '注釈を隠す' : '導線の注釈を表示';
-  });
-  document.querySelectorAll('.regions button').forEach(b => {
-    b.addEventListener('click', () => {
-      document.querySelectorAll('.regions button').forEach(x => x.removeAttribute('aria-pressed'));
-      b.setAttribute('aria-pressed', 'true');
-    });
   });
 </script>
