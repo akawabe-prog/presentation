@@ -230,12 +230,12 @@ table.rank .pt span{font-size:10.5px;color:var(--muted);margin-left:3px}
 .mail{border-left:none;border-right:none;padding:56px clamp(22px,4vw,64px)}
 
 /* ===== プレースホルダー写真 ===== */
-.slot img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:contrast(1.05) brightness(.7) saturate(.95);transition:filter .5s}
-.it:hover .slot img.ph,.fb:hover .slot img.ph{filter:contrast(1.05) brightness(.82) saturate(1)}
+.slot img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:sepia(.16) saturate(.78) contrast(.98) brightness(.74);transition:filter .5s}
+.it:hover .slot img.ph,.fb:hover .slot img.ph{filter:sepia(.1) saturate(.9) contrast(1) brightness(.84)}
 .slot .play,.slot .go-ov{z-index:1}
 .slot::before{z-index:1;pointer-events:none}
 .slot::after{z-index:2;opacity:.75}
-.hero-media .slot img.ph{filter:contrast(1.06) brightness(.55) saturate(.9)}
+.hero-media .slot img.ph{filter:sepia(.16) saturate(.72) contrast(1) brightness(.5)}
 
 </style>
 
