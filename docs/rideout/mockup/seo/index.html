@@ -22,6 +22,7 @@
   <nav class="gnav">
     <a href="../">ホーム</a>
     <a href="../races/">レース</a>
+    <a href="../courses/">コース</a>
     <a href="../schools/">スクール</a>
     <a href="../shops/">店舗</a>
     <a href="../#gear">用品を買う</a>
@@ -36,13 +37,15 @@
 <div class="scroll"><table class="tbl"><thead><tr><th>階層</th><th>枚数</th><th>受ける検索</th><th>役割</th></tr></thead><tbody>
 <tr><td class="nm">/races/</td><td>1</td><td>オフロード レース 2026</td><td>シリーズ横断の年間カレンダー。公式サイトに存在しない切り口</td></tr>
 <tr class="pri"><td class="nm">/races/{シリーズ}/</td><td>6</td><td>JNCC 2026 日程／全日本モトクロス スケジュール</td><td>検索需要が明確。構造化データ SportsEvent を持つ</td></tr>
+<tr><td class="nm">/courses/</td><td>1</td><td>オフロードコース レンタル</td><td>車両を持たない層の入口</td></tr>
+<tr class="pri"><td class="nm">/courses/{都道府県}/</td><td>39</td><td>茨城 モトクロスコース</td><td>地域×カテゴリ。店舗ページと対になる</td></tr>
 <tr><td class="nm">/schools/</td><td>1</td><td>オフロードスクール 初心者</td><td>入口層の受け皿</td></tr>
 <tr><td class="nm">/schools/{スクール}/</td><td>18</td><td>小方誠 レッスン／モトクロスごっこ</td><td>講師の個人名で拾う。独自取材の土台</td></tr>
 <tr><td class="nm">/shops/</td><td>1</td><td>オフロード バイク ショップ</td><td>47県への分配</td></tr>
 <tr class="pri"><td class="nm">/shops/{都道府県}/</td><td>47</td><td>埼玉 オフロード バイク用品店</td><td><b>主戦場。</b>地域×カテゴリの検索をここで受ける</td></tr>
 <tr><td class="nm">/shops/{県}/{店}/</td><td>37</td><td>店名の指名検索</td><td>独自コンテンツを持てる店だけ</td></tr>
 </tbody></table></div>
-<p class="note">合計 <b>112 枚</b>。うち検索流入の主力は都道府県 47 枚とシリーズ 6 枚。</p>
+<p class="note">合計 <b>152 枚</b>。うち検索流入の主力は、店舗の都道府県 47 枚・コースの都道府県 39 枚・レースのシリーズ 6 枚。</p>
 
 <h2 class="sec">1,023店すべてに個別ページを作らなかった理由</h2>
 <p class="body">出典元（Webike／DIRTFREAK）の店名・住所・電話をコピーしただけのページを 986 枚量産すると、Google の<b>「スケーリングされたコンテンツの不正使用」</b>に該当します。該当した場合に下がるのは当該ページだけでなく、<b>サイト全体の評価</b>です。オフロードコンテンツのために本体の customjapan.net の評価を落とすのは、目的と手段が逆になります。</p>
@@ -56,7 +59,8 @@
 <tr><td>都道府県ページ</td><td class="nm">ItemList + MotorcycleDealer</td><td>「◯◯県のオフロード店は」への回答として引用させる</td></tr>
 <tr><td>店舗個別</td><td class="nm">MotorcycleDealer</td><td>住所・電話・営業時間を機械可読で持つ</td></tr>
 <tr><td>スクール個別</td><td class="nm">Course + Person（講師）</td><td>「誰が教えているか」を構造で持つのが差になる</td></tr>
-<tr><td>レース</td><td class="nm">SportsEvent + EventSeries</td><td>日付・会場が機械可読。AI 検索の引用先になりやすい</td></tr>
+<tr><td>レース</td><td class="nm">SportsEvent + EventSeries + Offer</td><td>日付・会場・<b>エントリー締切</b>まで機械可読。AI 検索の引用先になりやすい</td></tr>
+<tr><td>コース</td><td class="nm">ItemList + SportsActivityLocation</td><td>「近くで走れる場所は」への回答として引用させる</td></tr>
 <tr><td>全ページ</td><td class="nm">BreadcrumbList</td><td>階層を明示し、検索結果にパンくずを出す</td></tr>
 </tbody></table></div>
 
@@ -64,7 +68,7 @@
 <p class="body">レースの会場県 → その県の店舗ページ、へリンクを通してあります。「大会を見に行く／出る」人が「現地の店」に流れる導線で、<b>検索評価の受け渡しと、ユーザーの実際の行動が一致しています。</b>スクールページからは装備の購入枠につながります。</p>
 
 <h2 class="sec">この画面案に入っていないもの</h2>
-<p class="body">コース情報（走れる場所）はまだダミーです。店舗・スクール・レースと同じ作り方で追加できます。sitemap.xml は本番ドメイン移行時に生成し直す必要があります。</p>
+<p class="body">コースの個別ページはまだ作っていません。店舗と同じ基準で、取材して独自コンテンツを持てるコースから順に作ります。全日本トライアル 7 戦のエントリー締切は、MFJ が受付終了後にページから消すため取得できていません。sitemap.xml は本番ドメイン移行時に生成し直す必要があります。</p>
 <p class="note"><a href="../" style="color:var(--amber)">→ トップ画面案に戻る</a></p>
 </div>
 <footer class="site-foot"><div class="wrap">
