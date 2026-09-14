@@ -1,0 +1,169 @@
+<title>オフロードスクール データベース｜RIDEOUT 画面案</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+:root{
+  --ground:#0D0C0B; --surface:#171513; --raised:#211E1B;
+  --line:#2E2A26; --line-2:#3D3833;
+  --text:#FAF8F5; --text-2:#C6BEB6; --muted:#8B817A;
+  --amber:#F0A81E; --amber-deep:#8F6410; --anno:#66A9CC; --anno-bg:#0F1E26;
+  --f-lat:"Saira Condensed","Arial Narrow",sans-serif;
+  --f-jp:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  --f-body:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+body{background:var(--ground);color:var(--text);font-family:var(--f-body);font-size:15px;line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+
+.mock{position:sticky;top:0;z-index:80;background:var(--amber);color:#0D0C0B;font-family:var(--f-lat);font-size:13px;font-weight:700;letter-spacing:.08em;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:6px 20px;flex-wrap:wrap}
+.mock a{color:#0D0C0B;border-bottom:1px solid rgba(13,12,11,.45)}
+
+.chrome{position:sticky;top:29px;z-index:70;background:rgba(13,12,11,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.chrome-in{max-width:1360px;margin:0 auto;padding:0 28px;display:flex;align-items:center;gap:30px;height:62px}
+.brand{font-family:var(--f-lat);font-size:16px;font-weight:800;letter-spacing:.14em;white-space:nowrap}
+.brand em{font-style:normal;color:var(--amber)}
+.gnav{display:flex;gap:23px;font-family:var(--f-jp);font-size:13.5px;font-weight:700;color:var(--text-2);overflow-x:auto;scrollbar-width:none}
+.gnav::-webkit-scrollbar{display:none}
+.gnav a{white-space:nowrap;padding-bottom:2px;border-bottom:2px solid transparent}
+.gnav a:hover{color:var(--text)}
+.gnav a.on{color:var(--text);border-bottom-color:var(--amber)}
+@media(max-width:900px){.chrome-in{gap:18px;padding:0 16px}}
+
+.wrap{max-width:1360px;margin:0 auto;padding:0 28px}
+@media(max-width:600px){.wrap{padding:0 16px}}
+
+.anno{display:none;border-left:3px solid var(--anno);background:var(--anno-bg);color:#BFE0EF;font-size:12.5px;line-height:1.75;padding:11px 15px;margin:0 0 26px}
+.anno b{color:var(--anno);font-weight:700}
+body.show-anno .anno{display:block}
+
+.phead{padding:46px 0 26px;border-bottom:1px solid var(--line);margin-bottom:26px}
+.phead .kick{font-family:var(--f-lat);font-size:13px;font-weight:700;letter-spacing:.18em;color:var(--amber);display:block;margin-bottom:9px}
+.phead h1{font-family:var(--f-jp);font-size:clamp(27px,4vw,42px);font-weight:900;letter-spacing:-.01em;line-height:1.25;margin:0 0 13px}
+.phead p{font-size:14px;color:var(--text-2);margin:0;max-width:72ch}
+.phead .src{font-size:12px;color:var(--muted);margin-top:11px}
+
+.ctrl{position:sticky;top:92px;z-index:60;background:var(--ground);border-bottom:1px solid var(--line);padding:14px 0 15px;margin-bottom:4px}
+.ctrl .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.ctrl input[type=search]{flex:1 1 260px;min-width:0;background:var(--surface);border:1px solid var(--line-2);color:var(--text);font-family:var(--f-body);font-size:14px;padding:9px 13px}
+.seg{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
+.seg button{font-family:var(--f-jp);font-size:12.5px;font-weight:700;background:transparent;color:var(--text-2);border:1px solid var(--line-2);padding:5px 12px;cursor:pointer;line-height:1.6}
+.seg button:hover{color:var(--text);border-color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--amber);border-color:var(--amber);color:#0D0C0B}
+.count{font-family:var(--f-lat);font-size:13px;font-weight:700;letter-spacing:.07em;color:var(--muted);white-space:nowrap}
+.count b{color:var(--amber);font-size:17px}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:22px 0 0}
+@media(max-width:1020px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.grid{grid-template-columns:1fr}}
+.card{background:var(--surface);padding:19px 20px 17px;display:flex;flex-direction:column;gap:9px}
+.card.is-pri{background:var(--raised);box-shadow:inset 3px 0 0 var(--amber)}
+.card .top{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.card .pf{font-family:var(--f-lat);font-size:12px;font-weight:700;letter-spacing:.09em;color:var(--amber)}
+.tag{font-family:var(--f-jp);font-size:10.5px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1px solid var(--line-2);color:var(--muted);line-height:1.7}
+.tag.pri{border-color:var(--amber-deep);color:var(--amber)}
+.tag.a{border-color:var(--amber);color:#0D0C0B;background:var(--amber)}
+.tag.b{border-color:var(--anno);color:var(--anno)}
+.card h3{font-family:var(--f-jp);font-size:16.5px;font-weight:700;line-height:1.45;margin:0}
+.card .who{font-size:13.5px;color:var(--amber);font-weight:700;margin:-3px 0 0}
+.card .who span{color:var(--text-2);font-weight:400;font-size:12px;display:block;line-height:1.6}
+.card dl{margin:2px 0 0;display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:13px;line-height:1.65}
+.card dt{font-family:var(--f-jp);font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.03em;padding-top:3px}
+.card dd{margin:0;color:var(--text-2);word-break:break-word}
+.card dd.na{color:var(--muted);font-size:12px}
+.card .foot{margin-top:auto;padding-top:10px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.card .foot a{font-family:var(--f-lat);font-size:12.5px;font-weight:700;letter-spacing:.07em;color:var(--text-2);border-bottom:1px solid var(--line-2);padding-bottom:2px}
+.card .foot a:hover{color:var(--amber);border-bottom-color:var(--amber)}
+.card .svc{display:flex;gap:5px;flex-wrap:wrap}
+
+.empty{padding:64px 10px;text-align:center;color:var(--muted);font-size:14px}
+.more{display:block;width:100%;margin:22px 0 0;background:var(--surface);border:1px solid var(--line-2);color:var(--text);font-family:var(--f-lat);font-size:14px;font-weight:700;letter-spacing:.1em;padding:14px;cursor:pointer}
+.more:hover{border-color:var(--amber);color:var(--amber)}
+
+.foot-note{border-top:1px solid var(--line);margin-top:52px;padding:26px 0 60px;font-size:12.5px;color:var(--muted);line-height:1.85}
+.foot-note b{color:var(--text-2);font-weight:700}
+</style>
+<div class="mock">
+  <span>RIDEOUT ／ 画面案 — スクールデータベース</span>
+  <span><a href="../">← トップ画面案へ戻る</a></span>
+</div>
+<header class="chrome">
+  <div class="chrome-in">
+    <span class="brand">CUSTOM JAPAN <em>OFFROAD</em></span>
+    <nav class="gnav">
+      <a href="../">ホーム</a>
+      <a href="../#stream">映像</a>
+      <a href="../#db">レース</a>
+      <a href="../#db">コース</a>
+      <a href="../schools/" class="on">スクール</a>
+      <a href="../shops/">店舗</a>
+      <a href="../#gear">用品を買う</a>
+    </nav>
+  </div>
+</header>
+<div class="wrap">
+  <div class="phead">
+    <span class="kick">DATABASE / SCHOOL</span>
+    <h1>オフロードを習える場所</h1>
+    <p>「買ったが走る場所と教わる相手がわからない」で止まっている層を、実際に走り出すところまで運ぶためのデータ。運営しているのが誰かまで載せることが、他のまとめ記事との差になる。</p>
+    <p class="src">収録 18 件（取材優先度 A 11 件／B 7 件）　主催者・開催地・料金は各公式サイトで確認／2026年9月時点</p>
+  </div>
+  <div class="anno"><b>① 人を集める ＋ ③ 資産として蓄積</b>スクールは「人」で成立しているため、そのまま<b>取材記事と縦型動画の題材になる</b>。データベースが記事の在庫リストを兼ねる。</div>
+
+  <div class="ctrl">
+    <div class="row">
+      <input type="search" id="q" placeholder="スクール名・講師名・開催地で絞り込む" autocomplete="off">
+      <span class="count"><b id="n">0</b> 件</span>
+    </div>
+    <div class="seg" id="kind">
+      <button data-v="" aria-pressed="true">すべて</button>
+      <button data-v="個人ライダー">個人ライダー</button><button data-v="コース運営・店舗">コース運営・店舗</button><button data-v="メーカー">メーカー</button><button data-v="メーカー・ディーラー">メーカー・ディーラー</button><button data-v="競技団体">競技団体</button>
+    </div>
+    <div class="seg" id="flt">
+      <button data-v="A">取材優先度 A のみ</button>
+      <button data-v="who">主催者が個人で立っている</button>
+    </div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" hidden>該当するスクールがありません。条件を変えてください。</div>
+
+  <div class="foot-note">
+    <b>優先度の意味。</b>A は主催者・開催地・料金まで公式サイトで確認済みで、すぐ取材依頼に進める状態。B は存在と内容は確認できているが、講師名やスクールの定期開催有無など一部が未確認、またはメーカー系で取材許諾のハードルが高いもの。<br>
+    <b>空白地帯について。</b>北海道・東北・中国四国・九州は個人主催スクールの情報発信が SNS 中心で、まとまった一覧が存在しない。<b>ここは RIDEOUT が一次情報として最初にまとめられる領域。</b>
+  </div>
+</div>
+
+<script>
+const D=[{"n":"T.E.S RIDING SCHOOL（キッズ／ジュニア／一般／プライベート）","k":"コース運営・店舗","who":"東福寺 保雄","ttl":"(有)東福寺エンタープライズ代表・全日本MX監督","loc":"T.E.S本社コース（川越市大袋473-1）／モトクロスビレッジ／オフロードビレッジEコース","p":"埼玉県","r":"関東","t":"049-242-8401","fee":"キッズ1,650円/h／グループ9,900円／プライベート16,500〜33,000円","tgt":"キッズMK1-3／ジュニアMJ1-3／一般／シニア60歳以上","u":"https://www.tesport.net/","pri":"A","memo":"日本最大級の体系化されたスクール。桜井ホンダとの共催クラスあり"},{"n":"モトクロスごっこ（ごっこ村）","k":"コース運営・店舗","who":"福本 敏夫","ttl":"元全日本モトクロス チャンピオン／オフロードヴィレッジ社長","loc":"オフロードヴィレッジ（川越市的場1336）","p":"埼玉県","r":"関東","t":"未取得（予約は電話のみ）","fee":"男性14,000円／女性12,000円／学生12,000円（3名以上で各500円引）","tgt":"免許不要・手ぶらOK／女性・子ども・親子可","u":"http://www.motocrossgokko.com/","pri":"A","memo":"月10回以上開催。社長自ら指導。都心アクセス良好で取材しやすい"},{"n":"MOTO MIXX SCHOOL「はじめてのオフロード」／オープンロード・クラス","k":"コース運営・店舗","who":"清水 豊／内藤 学","ttl":"清水＝元神奈川県警 白バイ隊員（37年）／内藤＝H-Dユニバーシティ講師","loc":"鹿野山（旧・寮施設を改修）","p":"千葉県","r":"関東","t":"","fee":"","tgt":"完全なオフロード未経験者限定（中級以上不可）／1泊2日クラスあり","u":"https://bike-news.jp/post/183036","pri":"A","memo":"2020年開校。廃施設活用という記事化しやすい背景を持つ"},{"n":"オフロードランスクール（基本編／初めてのクラッチ編／ちょっと実践まで編／キッズ）","k":"コース運営・店舗","who":"ティーエムエムアールドットコム","ttl":"","loc":"ライダーパーク生駒（大東市龍間1999）","p":"大阪府","r":"近畿","t":"072-869-0353","fee":"","tgt":"一般（定員8名）／初心者／キッズ年長〜小6","u":"https://tmmr.jimdofree.com/","pri":"A","memo":"※名称は生駒だが所在地は大阪府大東市。関西の中心的スクール"},{"n":"オフロード走行体験スクール（旧ファーストオフロード）","k":"コース運営・店舗","who":"ウイリー松浦","ttl":"コース運営＋ショップ運営／東京都足立区辰沼2-17-25","loc":"谷田部エンジョイスポーツランド／かすみがうらエンジョイスポーツランド（かすみがうら市西成井319-3）","p":"茨城県","r":"関東","t":"03-3628-2633","fee":"13,500円/1名（レンタル車・装備込み）","tgt":"ほぼマンツーマン／1名から／親子・法人研修も可","u":"http://www.wmatu.com/course/yatabe/school/index.html","pri":"A","memo":"受講料にレンタル全込みは希少。受講者の希望日で随時開催"},{"n":"KTM／Husqvarna／GASGAS オフロード体験試乗会・ベーシックオフロードスクール","k":"メーカー・ディーラー","who":"","ttl":"KTM Japan主催／正規ディーラー経由申込","loc":"全国（開催地は回ごと）","p":"全国","r":"全国","t":"","fee":"","tgt":"最新エンデューロ車の試乗＋スクール","u":"https://www.ktm.com/ja-jp/ktm-world/events/ktm-events.html","pri":"A","memo":"ディーラー（KTM東海等）が窓口。販売店取材と同時に扱える"},{"n":"MKT RIDING LESSON","k":"個人ライダー","who":"小方 誠（マコチン）","ttl":"プロMXライダー・全日本IA1／運営 Milk inc.","loc":"全国のオフロードコースを巡回開催","p":"全国","r":"全国","t":"未取得（問合せフォーム）","fee":"18,000円〜（税込）","tgt":"7歳以上／初級〜上級","u":"https://milkinc1.com/lesson/","pri":"A","memo":"公式サイトで確認済。予約はselect-type.com"},{"n":"IAワタライ オフロードスクール","k":"個人ライダー","who":"渡會 修也","ttl":"モトクロス・エンデューロ 国際A級","loc":"成田MXパーク（成田市津富浦119-1）","p":"千葉県","r":"関東","t":"","fee":"","tgt":"ビギナー〜中級／テーマ別開催","u":"http://riseride.com/","pri":"A","memo":"Off1.jp記事で確認済。日程はRise&Rideで告知"},{"n":"Factory1スクール","k":"個人ライダー","who":"渡辺 学／田中 昇／内山 裕太郎／和泉 拓","ttl":"渡辺＝JNCCチャンピオン／内山＝ISDE参戦／和泉＝ストレンジモーターサイクル店主","loc":"チーズナッツパーク","p":"福島県","r":"北海道・東北","t":"未取得（メールフォーム）","fee":"1DAY 12,000円／2DAY 17,000円（保険別）","tgt":"初心者・女子／中級／上級／ハードED","u":"https://www.c-n-p.jp/event/f1/index.htm","pri":"A","memo":"2026年開催分を公式で確認済。複数の著名ライダーが1度に集まる"},{"n":"GATTI SCHOOL","k":"個人ライダー","who":"小川 友幸","ttl":"全日本トライアル 複数回チャンピオン","loc":"キョウセイドライバーランド（岡崎市須淵町字木の田38）","p":"愛知県","r":"中部","t":"0564-47-2103","fee":"","tgt":"トライアル初心者・入門","u":"https://www.kotsu-daigaku.jp/gatti/","pri":"A","memo":"キョウセイ交通大学と共催"},{"n":"K.R.S オフロード講習／オフロードで遊ぶ・学ぶ会","k":"個人ライダー","who":"柏 秀樹","ttl":"モーターサイクルジャーナリスト・(有)柏カンパニー代表","loc":"朝霧高原イーハトーブの森","p":"静岡県","r":"中部","t":"未取得（問合せフォーム）","fee":"月6,000円（コース使用料別）","tgt":"オフ初心者〜経験者／車種不問","u":"https://kashiwars.com/offroad/","pri":"A","memo":"事務所＝東京都西東京市ひばりが丘4-5-12"},{"n":"北海道オフロードパーク（HOP）","k":"コース運営・店舗","who":"","ttl":"16万坪・MX/エンデューロ/キッズ/雪上コース","loc":"千歳市泉沢1719","p":"北海道","r":"北海道・東北","t":"0123-25-5318","fee":"","tgt":"子ども〜大人・女性／四季通年","u":"http://www.hopmx.com/","pri":"B","memo":"スクールの定期開催有無は要確認。北海道の拠点として取材価値大"},{"n":"トライアルライダー塾","k":"コース運営・店舗","who":"","ttl":"","loc":"スポーツランドSUGO","p":"宮城県","r":"北海道・東北","t":"","fee":"","tgt":"トライアル入門","u":"https://www.sportsland-sugo.co.jp/race/10985/","pri":"B","memo":"東北の数少ない定期スクール。講師名は要確認"},{"n":"HMS オフロード","k":"メーカー","who":"","ttl":"Honda 公式","loc":"もてぎ（栃木）／レインボー埼玉／浜名湖（静岡）／熊本／鈴鹿（三重）の5拠点","p":"全国5拠点","r":"全国","t":"","fee":"","tgt":"オフロード未経験者から","u":"https://global.honda/jp/safetyinfo/HMS/off-road.html","pri":"B","memo":"取材許諾のハードルは高いが、拠点数と信頼性は随一"},{"n":"ヤマハ バイクレッスン／YRA オフロードレッスン＆トレッキング","k":"メーカー","who":"","ttl":"ヤマハ発動機 公式","loc":"全国各地","p":"全国","r":"全国","t":"","fee":"","tgt":"初心者向けカリキュラム／手ぶら参加可","u":"https://www.yamaha-motor.co.jp/mc/yra/otona/","pri":"B","memo":"「電車で手ぶら参加OK」が入口コンテンツとして強い"},{"n":"オフロードライディングパーティ 中級スクール","k":"個人ライダー","who":"野崎 史高 ほか毎回著名ライダー","ttl":"全日本トライアル IAS","loc":"ONTAKE EXPLORER PARK","p":"長野県","r":"中部","t":"","fee":"","tgt":"エンデューロデビュー狙いの中級","u":"https://www.bikejin.jp/events/ofrp_2026_3/","pri":"B","memo":"BikeJIN主催イベント内のスクール。講師は回ごとに変更"},{"n":"MFJ トライアル体験スクール","k":"競技団体","who":"","ttl":"日本モーターサイクルスポーツ協会","loc":"全国各地","p":"全国","r":"全国","t":"","fee":"","tgt":"レンタル車・ヘルメット完備／レディース枠あり","u":"https://www.mfj.or.jp/motosports/lets-start-mcs/trialportal/experience-meeting/","pri":"B","memo":"開催カレンダーが公開されており、大会情報DBと相性が良い"},{"n":"キッズバイクスクール","k":"競技団体","who":"","ttl":"日本二輪車普及安全協会","loc":"全国各地","p":"全国","r":"全国","t":"","fee":"","tgt":"キッズ","u":"https://www.jmpsa.or.jp/joy/kidsschool/","pri":"B","memo":"親子・入口層コンテンツとして有効"}];
+const g=document.getElementById('grid'),q=document.getElementById('q'),
+ nEl=document.getElementById('n'),emp=document.getElementById('empty');
+let kind='',flt=new Set();
+const CARDS=["<article class=\"card is-pri\">\n    <div class=\"top\"><span class=\"pf\">埼玉県</span>\n      <span class=\"tag a\">取材優先度 A</span>\n      <span class=\"tag\">コース運営・店舗</span></div>\n    <h3>T.E.S RIDING SCHOOL（キッズ／ジュニア／一般／プライベート）</h3>\n    <p class=\"who\">東福寺 保雄<span>(有)東福寺エンタープライズ代表・全日本MX監督</span></p>\n    <dl><dt>開催地</dt><dd>T.E.S本社コース（川越市大袋473-1）／モトクロスビレッジ／オフロードビレッジEコース</dd><dt>対象</dt><dd>キッズMK1-3／ジュニアMJ1-3／一般／シニア60歳以上</dd><dt>料金</dt><dd>キッズ1,650円/h／グループ9,900円／プライベート16,500〜33,000円</dd><dt>電話</dt><dd>049-242-8401</dd></dl>\n    <div class=\"foot\"><a href=\"https://www.tesport.net/\" target=\"_blank\" rel=\"noopener\">公式ページ →</a><a href=\"tel:0492428401\">電話する →</a></div>\n  </article>","<article class=\"card is-pri\">\n    <div class=\"top\"><span class=\"pf\">埼玉県</span>\n      <span class=\"tag a\">取材優先度 A</span>\n      <span class=\"tag\">コース運営・店舗</span></div>\n    <h3>モトクロスごっこ（ごっこ村）</h3>\n    <p class=\"who\">福本 敏夫<span>元全日本モトクロス チャンピオン／オフロードヴィレッジ社長</span></p>\n    <dl><dt>開催地</dt><dd>オフロードヴィレッジ（川越市的場1336）</dd><dt>対象</dt><dd>免許不要・手ぶらOK／女性・子ども・親子可</dd><dt>料金</dt><dd>男性14,000円／女性12,000円／学生12,000円（3名以上で各500円引）</dd><dt>電話</dt><dd>未取得（予約は電話のみ）</dd></dl>\n    <div class=\"foot\"><a href=\"http://www.motocrossgokko.com/\" target=\"_blank\" rel=\"noopener\">公式ページ →</a><a href=\"tel:\">電話する →</a></div>\n  </article>","<article class=\"card is-pri\">\n    <div class=\"top\"><span class=\"pf\">千葉県</span>\n      <span class=\"tag a\">取材優先度 A</span>\n      <span class=\"tag\">コース運営・店舗</span></div>\n    <h3>MOTO MIXX SCHOOL「はじめてのオフロード」／オープンロード・クラス</h3>\n    <p class=\"who\">清水 豊／内藤 学<span>清水＝元神奈川県警 白バイ隊員（37年）／内藤＝H-Dユニバーシティ講師</span></p>\n    <dl><dt>開催地</dt><dd>鹿野山（旧・寮施設を改修）</dd><dt>対象</dt><dd>完全なオフロード未経験者限定（中級以上不可）／1泊2日クラスあり</dd></dl>\n    <div class=\"foot\"><a href=\"https://bike-news.jp/post/183036\" target=\"_blank\" rel=\"noopener\">公式ページ →</a></div>\n  </article>","<article class=\"card is-pri\">\n    <div class=\"top\"><span class=\"pf\">大阪府</span>\n      <span class=\"tag a\">取材優先度 A</span>\n      <span class=\"tag\">コース運営・店舗</span></div>\n    <h3>オフロードランスクール（基本編／初めてのクラッチ編／ちょっと実践まで編／キッズ）</h3>\n    <p class=\"who\">ティーエムエムアールドットコム</p>\n    <dl><dt>開催地</dt><dd>ライダーパーク生駒（大東市龍間1999）</dd><dt>対象</dt><dd>一般（定員8名）／初心者／キッズ年長〜小6</dd><dt>電話</dt><dd>072-869-0353</dd></dl>\n    <div class=\"foot\"><a href=\"https://tmmr.jimdofree.com/\" target=\"_blank\" rel=\"noopener\">公式ページ →</a><a href=\"tel:0728690353\">電話する →</a></div>\n  </article>","<article class=\"card is-pri\">\n    <div class=\"top\"><span class=\"pf\">茨城県</span>\n      <span class=\"tag a\">取材優先度 A</span>\n      <span class=\"tag\">コース運営・店舗</span></div>\n    <h3>オフロード走行体験スクール（旧ファーストオフロード）</h3>\n    <p class=\"who\">ウイリー松浦<span>コース運営＋ショップ運営／東京都足立区辰沼2-17-25</span></p>\n    <dl><dt>開催地</dt><dd>谷田部エンジョイスポーツランド／かすみがうらエンジョイスポーツランド（かすみがうら市西成井319-3）</dd><dt>対象</dt><dd>ほぼマンツーマン／1名から／親子・法人研修も可</dd><dt>料金</dt><dd>13,500円/1名（レンタル車・装備込み）</dd><dt>電話</dt><dd>03-3628-2633</dd></dl>\n    <div class=\"foot\"><a href=\"http://www.wmatu.com/course/yatabe/school/index.html\" target=\"_blank\" rel=\"noopener\">公式ページ →</a><a href=\"tel:0336282633\">電話する →</a></div>\n  </article>","<article class=\"card is-pri\">\n    <div class=\"top\"><span class=\"pf\">全国</span>\n      <span class=\"tag a\">取材優先度 A</span>\n      <span class=\"tag\">メーカー・ディーラー</span></div>\n    <h3>KTM／Husqvarna／GASGAS オフロード体験試乗会・ベーシックオフロードスクール</h3>\n    \n    <dl><dt>開催地</dt><dd>全国（開催地は回ごと）</dd><dt>対象</dt><dd>最新エンデューロ車の試乗＋スクール</dd></dl>\n    <div class=\"foot\"><a href=\"https://www.ktm.com/ja-jp/ktm-world/events/ktm-events.html\" target=\"_blank\" rel=\"noopener\">公式ページ →</a></div>\n  </article>","<article class=\"card is-pri\">\n    <div class=\"top\"><span class=\"pf\">全国</span>\n      <span class=\"tag a\">取材優先度 A</span>\n      <span class=\"tag\">個人ライダー</span></div>\n    <h3>MKT RIDING LESSON</h3>\n    <p class=\"who\">小方 誠（マコチン）<span>プロMXライダー・全日本IA1／運営 Milk inc.</span></p>\n    <dl><dt>開催地</dt><dd>全国のオフロードコースを巡回開催</dd><dt>対象</dt><dd>7歳以上／初級〜上級</dd><dt>料金</dt><dd>18,000円〜（税込）</dd><dt>電話</dt><dd>未取得（問合せフォーム）</dd></dl>\n    <div class=\"foot\"><a href=\"https://milkinc1.com/lesson/\" target=\"_blank\" rel=\"noopener\">公式ページ →</a><a href=\"tel:\">電話する →</a></div>\n  </article>","<article class=\"card is-pri\">\n    <div class=\"top\"><span class=\"pf\">千葉県</span>\n      <span class=\"tag a\">取材優先度 A</span>\n      <span class=\"tag\">個人ライダー</span></div>\n    <h3>IAワタライ オフロードスクール</h3>\n    <p class=\"who\">渡會 修也<span>モトクロス・エンデューロ 国際A級</span></p>\n    <dl><dt>開催地</dt><dd>成田MXパーク（成田市津富浦119-1）</dd><dt>対象</dt><dd>ビギナー〜中級／テーマ別開催</dd></dl>\n    <div class=\"foot\"><a href=\"http://riseride.com/\" target=\"_blank\" rel=\"noopener\">公式ページ →</a></div>\n  </article>","<article class=\"card is-pri\">\n    <div class=\"top\"><span class=\"pf\">福島県</span>\n      <span class=\"tag a\">取材優先度 A</span>\n      <span class=\"tag\">個人ライダー</span></div>\n    <h3>Factory1スクール</h3>\n    <p class=\"who\">渡辺 学／田中 昇／内山 裕太郎／和泉 拓<span>渡辺＝JNCCチャンピオン／内山＝ISDE参戦／和泉＝ストレンジモーターサイクル店主</span></p>\n    <dl><dt>開催地</dt><dd>チーズナッツパーク</dd><dt>対象</dt><dd>初心者・女子／中級／上級／ハードED</dd><dt>料金</dt><dd>1DAY 12,000円／2DAY 17,000円（保険別）</dd><dt>電話</dt><dd>未取得（メールフォーム）</dd></dl>\n    <div class=\"foot\"><a href=\"https://www.c-n-p.jp/event/f1/index.htm\" target=\"_blank\" rel=\"noopener\">公式ページ →</a><a href=\"tel:\">電話する →</a></div>\n  </article>","<article class=\"card is-pri\">\n    <div class=\"top\"><span class=\"pf\">愛知県</span>\n      <span class=\"tag a\">取材優先度 A</span>\n      <span class=\"tag\">個人ライダー</span></div>\n    <h3>GATTI SCHOOL</h3>\n    <p class=\"who\">小川 友幸<span>全日本トライアル 複数回チャンピオン</span></p>\n    <dl><dt>開催地</dt><dd>キョウセイドライバーランド（岡崎市須淵町字木の田38）</dd><dt>対象</dt><dd>トライアル初心者・入門</dd><dt>電話</dt><dd>0564-47-2103</dd></dl>\n    <div class=\"foot\"><a href=\"https://www.kotsu-daigaku.jp/gatti/\" target=\"_blank\" rel=\"noopener\">公式ページ →</a><a href=\"tel:0564472103\">電話する →</a></div>\n  </article>","<article class=\"card is-pri\">\n    <div class=\"top\"><span class=\"pf\">静岡県</span>\n      <span class=\"tag a\">取材優先度 A</span>\n      <span class=\"tag\">個人ライダー</span></div>\n    <h3>K.R.S オフロード講習／オフロードで遊ぶ・学ぶ会</h3>\n    <p class=\"who\">柏 秀樹<span>モーターサイクルジャーナリスト・(有)柏カンパニー代表</span></p>\n    <dl><dt>開催地</dt><dd>朝霧高原イーハトーブの森</dd><dt>対象</dt><dd>オフ初心者〜経験者／車種不問</dd><dt>料金</dt><dd>月6,000円（コース使用料別）</dd><dt>電話</dt><dd>未取得（問合せフォーム）</dd></dl>\n    <div class=\"foot\"><a href=\"https://kashiwars.com/offroad/\" target=\"_blank\" rel=\"noopener\">公式ページ →</a><a href=\"tel:\">電話する →</a></div>\n  </article>","<article class=\"card\">\n    <div class=\"top\"><span class=\"pf\">北海道</span>\n      <span class=\"tag b\">取材優先度 B</span>\n      <span class=\"tag\">コース運営・店舗</span></div>\n    <h3>北海道オフロードパーク（HOP）</h3>\n    \n    <dl><dt>開催地</dt><dd>千歳市泉沢1719</dd><dt>対象</dt><dd>子ども〜大人・女性／四季通年</dd><dt>電話</dt><dd>0123-25-5318</dd></dl>\n    <div class=\"foot\"><a href=\"http://www.hopmx.com/\" target=\"_blank\" rel=\"noopener\">公式ページ →</a><a href=\"tel:0123255318\">電話する →</a></div>\n  </article>","<article class=\"card\">\n    <div class=\"top\"><span class=\"pf\">宮城県</span>\n      <span class=\"tag b\">取材優先度 B</span>\n      <span class=\"tag\">コース運営・店舗</span></div>\n    <h3>トライアルライダー塾</h3>\n    \n    <dl><dt>開催地</dt><dd>スポーツランドSUGO</dd><dt>対象</dt><dd>トライアル入門</dd></dl>\n    <div class=\"foot\"><a href=\"https://www.sportsland-sugo.co.jp/race/10985/\" target=\"_blank\" rel=\"noopener\">公式ページ →</a></div>\n  </article>","<article class=\"card\">\n    <div class=\"top\"><span class=\"pf\">全国5拠点</span>\n      <span class=\"tag b\">取材優先度 B</span>\n      <span class=\"tag\">メーカー</span></div>\n    <h3>HMS オフロード</h3>\n    \n    <dl><dt>開催地</dt><dd>もてぎ（栃木）／レインボー埼玉／浜名湖（静岡）／熊本／鈴鹿（三重）の5拠点</dd><dt>対象</dt><dd>オフロード未経験者から</dd></dl>\n    <div class=\"foot\"><a href=\"https://global.honda/jp/safetyinfo/HMS/off-road.html\" target=\"_blank\" rel=\"noopener\">公式ページ →</a></div>\n  </article>","<article class=\"card\">\n    <div class=\"top\"><span class=\"pf\">全国</span>\n      <span class=\"tag b\">取材優先度 B</span>\n      <span class=\"tag\">メーカー</span></div>\n    <h3>ヤマハ バイクレッスン／YRA オフロードレッスン＆トレッキング</h3>\n    \n    <dl><dt>開催地</dt><dd>全国各地</dd><dt>対象</dt><dd>初心者向けカリキュラム／手ぶら参加可</dd></dl>\n    <div class=\"foot\"><a href=\"https://www.yamaha-motor.co.jp/mc/yra/otona/\" target=\"_blank\" rel=\"noopener\">公式ページ →</a></div>\n  </article>","<article class=\"card\">\n    <div class=\"top\"><span class=\"pf\">長野県</span>\n      <span class=\"tag b\">取材優先度 B</span>\n      <span class=\"tag\">個人ライダー</span></div>\n    <h3>オフロードライディングパーティ 中級スクール</h3>\n    <p class=\"who\">野崎 史高 ほか毎回著名ライダー<span>全日本トライアル IAS</span></p>\n    <dl><dt>開催地</dt><dd>ONTAKE EXPLORER PARK</dd><dt>対象</dt><dd>エンデューロデビュー狙いの中級</dd></dl>\n    <div class=\"foot\"><a href=\"https://www.bikejin.jp/events/ofrp_2026_3/\" target=\"_blank\" rel=\"noopener\">公式ページ →</a></div>\n  </article>","<article class=\"card\">\n    <div class=\"top\"><span class=\"pf\">全国</span>\n      <span class=\"tag b\">取材優先度 B</span>\n      <span class=\"tag\">競技団体</span></div>\n    <h3>MFJ トライアル体験スクール</h3>\n    \n    <dl><dt>開催地</dt><dd>全国各地</dd><dt>対象</dt><dd>レンタル車・ヘルメット完備／レディース枠あり</dd></dl>\n    <div class=\"foot\"><a href=\"https://www.mfj.or.jp/motosports/lets-start-mcs/trialportal/experience-meeting/\" target=\"_blank\" rel=\"noopener\">公式ページ →</a></div>\n  </article>","<article class=\"card\">\n    <div class=\"top\"><span class=\"pf\">全国</span>\n      <span class=\"tag b\">取材優先度 B</span>\n      <span class=\"tag\">競技団体</span></div>\n    <h3>キッズバイクスクール</h3>\n    \n    <dl><dt>開催地</dt><dd>全国各地</dd><dt>対象</dt><dd>キッズ</dd></dl>\n    <div class=\"foot\"><a href=\"https://www.jmpsa.or.jp/joy/kidsschool/\" target=\"_blank\" rel=\"noopener\">公式ページ →</a></div>\n  </article>"];
+function match(s){
+  if(kind&&s.k!==kind)return false;
+  for(const f of flt){if(f==='A'&&s.pri!=='A')return false;if(f==='who'&&!s.who)return false;}
+  const t=q.value.trim();
+  if(t&&!(s.n+s.who+s.ttl+s.loc+s.p).includes(t))return false;
+  return true;
+}
+function paint(){
+  const idx=D.map((s,i)=>[s,i]).filter(([s])=>match(s));
+  g.innerHTML=idx.map(([,i])=>CARDS[i]).join('');
+  nEl.textContent=idx.length;emp.hidden=idx.length>0;
+}
+q.addEventListener('input',paint);
+document.getElementById('kind').addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  kind=b.dataset.v;[...e.currentTarget.children].forEach(x=>x.setAttribute('aria-pressed',x===b));paint();
+});
+document.getElementById('flt').addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  const v=b.dataset.v,on=b.getAttribute('aria-pressed')==='true';
+  b.setAttribute('aria-pressed',!on);on?flt.delete(v):flt.add(v);paint();
+});
+if(location.hash==='#anno')document.body.classList.add('show-anno');
+paint();
+</script>
