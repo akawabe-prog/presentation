@@ -115,3 +115,18 @@ tr.past{opacity:.45}
 .site-foot b{color:var(--text-2)}
 .note{font-size:12.5px;color:var(--muted);line-height:1.85;max-width:80ch;margin:16px 0 0}
 .note b{color:var(--text-2)}
+
+/* 競技バッジ */
+.tag.d-motocross{border-color:#C88A1A;color:#F0A81E}
+.tag.d-enduro{border-color:#4C8C5A;color:#7FC48F}
+.tag.d-hard-enduro{border-color:#A8412F;color:#E87A63}
+.tag.d-cross-country{border-color:#4A7EA8;color:#7FB6E0}
+.tag.d-trial{border-color:#7A5CA8;color:#B79BE0}
+.disc-nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:0 0 8px}
+.disc-nav a{background:var(--surface);padding:14px 16px;display:block}
+.disc-nav a:hover{background:var(--raised)}
+.disc-nav .en{font-family:var(--f-lat);font-size:13px;font-weight:800;letter-spacing:.12em;display:block;margin-bottom:2px}
+.disc-nav .jp2{font-family:var(--f-jp);font-size:15px;font-weight:700;display:block}
+.disc-nav .n{font-family:var(--f-lat);font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.05em}
+.disc-nav a:hover .jp2{color:var(--amber)}
+.why{font-size:11.5px;color:var(--muted);line-height:1.6}
