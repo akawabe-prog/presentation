@@ -236,6 +236,7 @@ table.rank .pt span{font-size:10.5px;color:var(--muted);margin-left:3px}
 .slot::before{z-index:1;pointer-events:none}
 .slot::after{z-index:2;opacity:.75}
 .hero-media .slot img.ph{filter:sepia(.16) saturate(.72) contrast(1) brightness(.5)}
+.hero-media .slot img.ph.real{filter:sepia(.1) saturate(.85) contrast(1.02) brightness(.62)}
 
 </style>
 
@@ -266,7 +267,7 @@ table.rank .pt span{font-size:10.5px;color:var(--muted);margin-left:3px}
 <div class="anno anno-hero" style="margin-top:24px"><b>① 人を集める</b>トップは分類で割らず、いま最も強い 1 本を全面に出す。カテゴリはナビに置く。ここに来る人の多くは、まだ何を探すか決めていない。</div>
 <section class="hero">
   <div class="hero-media">
-    <div class="slot" data-label="MOVIE 16:9 ／ EICMA 会場"><img class="ph" src="https://picsum.photos/id/158/1600/900" width="1600" height="900" alt="" loading="lazy" decoding="async"><span class="play"></span></div>
+    <div class="slot" data-label="Photo: Sanjay Pradhan / Wikimedia Commons / CC BY 3.0"><img class="ph real" src="./assets/hero.jpg" width="1920" height="1280" alt="" decoding="async" fetchpriority="high"><span class="play"></span></div>
     <div class="hero-shade"></div>
   </div>
   <div class="hero-copy">
@@ -523,7 +524,7 @@ table.rank .pt span{font-size:10.5px;color:var(--muted);margin-left:3px}
       <span>GEAR</span>
     </div>
   </div>
-</footer>
+<div class="wrap" style="font-size:11px;color:var(--muted);padding-top:10px">HERO Photo: Sanjay Pradhan / Wikimedia Commons / CC BY 3.0（構成確認用）。その他の写真はプレースホルダー。</div></footer>
 
 <script>
   const btn = document.getElementById('toggle');
