@@ -155,6 +155,83 @@ footer{border-top:1px solid var(--line);padding:34px 0 70px}
 body.show-anno .anno{display:block}
 .anno-hero{margin:0 auto 30px;max-width:1360px;padding-left:28px;padding-right:28px}
 body.show-anno .anno-hero{display:block}
+
+/* ===== NEWS 速報 ===== */
+.news{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 0 12px}
+.news-in{max-width:1360px;margin:0 auto;padding:0 28px}
+@media(max-width:600px){.news-in{padding:0 16px}}
+.news-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:0}
+@media(max-width:940px){.news-grid{grid-template-columns:1fr}}
+.news-col{padding:26px 30px 28px}
+.news-col+.news-col{border-left:1px solid var(--line)}
+@media(max-width:940px){.news-col+.news-col{border-left:none;border-top:1px solid var(--line)}}
+.news-h{display:flex;align-items:baseline;gap:12px;margin:0 0 4px;flex-wrap:wrap}
+.news-h h2{font-family:var(--f-lat);font-size:17px;font-weight:800;letter-spacing:.13em;margin:0}
+.news-h .jp{font-family:var(--f-jp);font-size:12.5px;font-weight:700;color:var(--muted)}
+.news-h .upd{margin-left:auto;font-family:var(--f-lat);font-size:11.5px;font-weight:700;letter-spacing:.06em;color:var(--muted)}
+.news-list{list-style:none;margin:16px 0 0;padding:0}
+.news-list li{border-top:1px solid var(--line);padding:13px 0 14px}
+.news-list li:first-child{border-top:none;padding-top:4px}
+.news-list .m{display:flex;align-items:center;gap:9px;margin-bottom:5px;flex-wrap:wrap}
+.news-list .dt{font-family:var(--f-lat);font-size:12.5px;font-weight:700;letter-spacing:.05em;color:var(--muted);font-variant-numeric:tabular-nums}
+.news-list h3{font-family:var(--f-jp);font-size:16px;font-weight:700;line-height:1.5;margin:0 0 4px}
+.news-list li.lead h3{font-size:20px;line-height:1.4}
+.news-list p{font-size:13.5px;color:var(--text-2);line-height:1.75;margin:0}
+.news-list .src{font-size:11px;color:var(--muted);margin-top:5px}
+.news-list a:hover h3{color:var(--amber)}
+.chip.flash{background:#B3251A;color:#fff}
+.chip.jp{background:var(--amber);color:#0D0C0B}
+
+/* ランキング */
+.rank-tabs{display:flex;gap:6px;margin:14px 0 12px;flex-wrap:wrap}
+.rank-tabs button{font-family:var(--f-lat);font-size:12px;font-weight:700;letter-spacing:.08em;background:transparent;border:1px solid var(--line-2);color:var(--text-2);padding:4px 11px;cursor:pointer}
+.rank-tabs button[aria-pressed="true"]{background:var(--amber);border-color:var(--amber);color:#0D0C0B}
+.rank-tabs button:hover{color:var(--text)}
+table.rank{width:100%;border-collapse:collapse;font-size:13.5px}
+table.rank td{padding:7px 0;border-top:1px solid var(--line);vertical-align:baseline}
+table.rank tr:first-child td{border-top:none}
+table.rank .p{font-family:var(--f-lat);font-size:16px;font-weight:800;color:var(--muted);width:26px}
+table.rank tr:first-child .p{color:var(--amber)}
+table.rank .nm{font-family:var(--f-jp);font-weight:700}
+table.rank .tm{display:block;font-size:11px;color:var(--muted);font-weight:400;line-height:1.5}
+table.rank .pt{text-align:right;font-family:var(--f-lat);font-size:15px;font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+table.rank .pt span{font-size:10.5px;color:var(--muted);margin-left:3px}
+
+/* ===== 導線（強弱つき） ===== */
+.routes{margin:0}
+.rt-lead{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+@media(max-width:820px){.rt-lead{grid-template-columns:1fr}}
+.rt-sub{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-top:none}
+@media(max-width:820px){.rt-sub{grid-template-columns:1fr}}
+.rt{background:var(--surface);padding:26px 28px 24px;display:flex;flex-direction:column;gap:7px;position:relative}
+.rt:hover{background:var(--raised)}
+.rt .k{font-family:var(--f-lat);font-size:12px;font-weight:800;letter-spacing:.16em;color:var(--amber)}
+.rt h3{font-family:var(--f-jp);font-weight:900;letter-spacing:-.01em;margin:0;line-height:1.3}
+.rt p{font-size:13px;color:var(--text-2);margin:0;line-height:1.7}
+.rt .n{font-family:var(--f-lat);font-weight:800;letter-spacing:.02em;color:var(--text);font-variant-numeric:tabular-nums}
+.rt .go{margin-top:auto;padding-top:12px;font-family:var(--f-lat);font-size:12.5px;font-weight:700;letter-spacing:.08em;color:var(--text-2);display:inline-block}
+.rt .go:hover{color:var(--amber)}
+.rt h3 a:hover{color:var(--amber)}
+.rt .subs{display:flex;flex-wrap:wrap;gap:6px;margin-top:3px}
+.rt .subs a{font-family:var(--f-jp);font-size:11.5px;font-weight:700;border:1px solid var(--line-2);padding:3px 9px;color:var(--text-2)}
+.rt .subs a:hover{border-color:var(--amber);color:var(--amber)}
+/* 強 */
+.rt.s1{background:var(--raised);box-shadow:inset 4px 0 0 var(--amber);padding:34px 32px 30px}
+.rt.s1 h3{font-size:28px}
+.rt.s1 .n{font-size:30px}
+.rt.s1 p{font-size:13.5px}
+/* 中 */
+.rt.s2 h3{font-size:20px}
+.rt.s2 .n{font-size:21px}
+/* 弱 */
+.rt.s3{padding:18px 28px 17px}
+.rt.s3 h3{font-size:16.5px}
+.rt.s3 .n{font-size:17px}
+.rt-foot{border:1px solid var(--line);border-top:none;background:var(--surface);padding:15px 28px;display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+.rt-foot b{font-family:var(--f-jp);font-size:12px;font-weight:700;color:var(--muted);margin-right:4px}
+.rt-foot a{font-family:var(--f-jp);font-size:12.5px;font-weight:700;border:1px solid var(--line-2);padding:4px 11px;color:var(--text-2)}
+.rt-foot a:hover{border-color:var(--amber);color:var(--amber)}
+
 </style>
 
 </head>
@@ -197,6 +274,50 @@ body.show-anno .anno-hero{display:block}
     <p>EICMA 現地から。発表された全ラインナップを、実車の映像とあわせて。国内導入の見込みと装備の変更点まで。</p>
   </div>
 </section>
+
+<div class="wrap"><div class="anno"><b>① 人を集める の中心</b>速報とランキングは<b>更新され続けるため、再訪の理由になる。</b>取材記事は数を作れないが、結果とランキングは毎週動く。ここが弱いとトップに戻ってくる理由がなくなる。</div></div>
+<div class="news">
+ <div class="news-in">
+  <div class="news-grid">
+   <div class="news-col">
+    <div class="news-h"><h2>NEWS</h2><span class="jp">レース結果・選手の動向</span><span class="upd">UPDATED 2026.09.14</span></div>
+    <ul class="news-list"><li class="lead"><a href="./world/mxgp/"><div class="m"><span class="dt">2026.09.13</span><span class="chip flash">速報</span><span class="stamp">MXGP 第18戦 中国・上海</span></div><h3>ハーリングスが2ヒートとも制す。MX2は48点差のまま最終戦へ</h3><p>MXGPクラスはジェフリー・ハーリングスが上海を完全制覇し、ランキング首位を915ポイントに伸ばした。MX2はカムデン・マクレランが優勝したが、ランキング首位のギエム・ファレスが48ポイント差を保持。残り60ポイントの最終戦ダーウィン（9/20）でタイトルが決まる。</p><p class="src">出典：MXGP 公式／MCNews</p></a></li><li class=""><a href="./world/mxgp/"><div class="m"><span class="dt">2026.08.26</span><span class="chip jp">日本代表</span><span class="stamp">Motocross of Nations 2026</span></div><h3>MXoN日本代表の出場クラスとゼッケンが決定</h3><p>10月2〜4日にフランス・エルネーで行われる国別対抗戦に、大城魁之輔（#31／MXGPクラス）、横山遥希（#32／MX2クラス）、大倉由揮（#33／OPENクラス）の3名が出場。日本の過去最高位は2000年と2003年の6位。昨年は9年ぶりに決勝へ進み総合11位だった。</p><p class="src">出典：Motosports Promotion（JMX 公式）</p></a></li><li class=""><a href="./races/motocross/"><div class="m"><span class="dt">2026.09.12</span><span class="chip ">全日本MX</span><span class="stamp">第7戦 近畿大会 MRAカップ</span></div><h3>名阪スポーツランドで第7戦を開催。残すは2戦</h3><p>IA1・IA2・IBOPEN・LMX に加え、JX とヤマハ YZ125 BLU CRU Cup を併催。シリーズは第8戦オフロードヴィレッジ（10/10-11）、最終戦MFJ-GP（10/31-11/1）を残すのみ。</p><p class="src">出典：MFJ 公式</p></a></li><li class=""><a href="./races/motocross/"><div class="m"><span class="dt">2026.08.14</span><span class="chip ">全日本MX</span><span class="stamp">第8戦 TOKIO INKARAMI Super Motocross</span></div><h3>下田丈が全日本第8戦に参戦</h3><p>北米を主戦場とする下田丈が、10月10〜11日にオフロードヴィレッジで行われる第8戦へのエントリーを表明。</p><p class="src">出典：Motosports Promotion（JMX 公式）</p></a></li><li class=""><a href="./races/trial/"><div class="m"><span class="dt">2026.09.13</span><span class="chip ">全日本トライアル</span><span class="stamp">第5戦 広島・三次灰塚大会</span></div><h3>灰塚ダムトライアルパークで第5戦を開催</h3><p>シリーズは第6戦SUGO（10/11）、第7戦湯浅（10/25）、そして京都市内で初開催となる第8戦 City Trial Japan（11/29・平安神宮前 岡崎公園）へ。</p><p class="src">出典：Motosports Promotion（TRJ 公式）／MFJ</p></a></li><li class=""><a href="./races/enduro/"><div class="m"><span class="dt">2026.09.20</span><span class="chip ">JEC</span><span class="stamp">全日本エンデューロ 第3戦</span></div><h3>日高2DAYSエンデューロが今週末に開幕</h3><p>北海道・日高町で2日間開催。エントリーは8月31日で締め切り済み。シリーズは10月24〜25日のチーズナッツパークで最終戦を迎える。</p><p class="src">出典：JEC Promotion 公式</p></a></li></ul>
+   </div>
+   <div class="news-col">
+    <div class="news-h"><h2>STANDINGS</h2><span class="jp">シリーズランキング</span></div>
+    <div class="rank-tabs" id="rk">
+      <button data-k="IA1" aria-pressed="true">全日本 IA1</button>
+      <button data-k="IA2">IA2</button>
+      <button data-k="LMX">レディース</button>
+      <button data-k="MXGP">MXGP</button>
+    </div>
+    <table class="rank"><tbody id="rkb"><tr><td class="p">1</td><td class="nm">大倉 由揮<span class="tm">Honda Dream Racing Bells</span></td><td class="pt">381<span>pt</span></td></tr><tr><td class="p">2</td><td class="nm">Wilson Jay<span class="tm">YAMAHA FACTORY RACING TEAM</span></td><td class="pt">375<span>pt</span></td></tr><tr><td class="p">3</td><td class="nm">大城 魁之輔<span class="tm">YAMAHA FACTORY RACING TEAM</span></td><td class="pt">356<span>pt</span></td></tr><tr><td class="p">4</td><td class="nm">大塚 豪太<span class="tm">T.E.SPORT</span></td><td class="pt">322<span>pt</span></td></tr><tr><td class="p">5</td><td class="nm">内田 篤基<span class="tm">Team Kawasaki R&amp;D</span></td><td class="pt">305<span>pt</span></td></tr></tbody></table>
+    <p class="src" style="font-size:11px;color:var(--muted);margin-top:12px;line-height:1.7">
+      出典：Motosports Promotion（JMX 公式ランキング）／MXGP 公式。2026年9月14日時点。<br>
+      <a href="./races/" style="color:var(--amber)">国内49戦のカレンダー →</a>　<a href="./world/" style="color:var(--amber)">世界選手権57戦 →</a></p>
+
+    <div class="news-h" style="margin-top:30px;padding-top:22px;border-top:1px solid var(--line)">
+      <h2>INTERVIEW</h2><span class="jp">取材記事</span></div>
+    <ul class="news-list">
+      <li><div class="m"><span class="dt">企画中</span><span class="chip">PEOPLE</span></div>
+        <h3>元全日本王者が、毎月10回スクールに立つ理由</h3>
+        <p>福本敏夫／オフロードヴィレッジ（埼玉）。免許を持たない人に免許不要で乗せ続けて20年。</p>
+        <p class="src">取材候補。スクールDBに掲載済み</p></li>
+      <li><div class="m"><span class="dt">企画中</span><span class="chip">PEOPLE</span></div>
+        <h3>「装備ごと13,500円」で教える、たった一人の指導</h3>
+        <p>ウイリー松浦／谷田部エンジョイスポーツランド（茨城）。ほぼマンツーマン、1名から随時開催。</p>
+        <p class="src">取材候補。スクールDBに掲載済み</p></li>
+      <li><div class="m"><span class="dt">企画中</span><span class="chip">SHOP</span></div>
+        <h3>レースのたびに閉める店</h3>
+        <p>和田屋（千葉）。MFJエンデューロ・JNCCをサポートし、定休日が不定になる競技系専門店。</p>
+        <p class="src">取材候補37件のうちの1件</p></li>
+    </ul>
+    <p class="src" style="font-size:11px;color:var(--muted);margin-top:10px;line-height:1.7">
+      インタビューは<b style="color:var(--text-2)">これから制作するコンテンツ</b>。取材先は実在し、スクール・店舗のデータベースに収録済み。</p>
+   </div>
+  </div>
+ </div>
+</div>
 
 <div class="wrap">
 
@@ -362,6 +483,66 @@ body.show-anno .anno-hero{display:block}
   </div>
 </div>
 
+
+<div class="wrap"><div class="anno"><b>導線の強弱</b>大会・スクール・店舗へ<b>同じ大きさで並べない。</b>いま最も動きがあり、次の行動が決まっているものを大きく置く。<b>大会（日付が決まっている）→ スクール（申し込める）→ 店舗（買う・直す）</b>の順に面積を落とす。</div>
+
+<section class="routes">
+  <div class="shead"><h2>次にどこへ行くか</h2></div>
+
+  <!-- 強：大会 -->
+  <div class="rt-lead">
+    <div class="rt s1">
+      <span class="k">RACE ／ 最優先</span>
+      <h3><a href="./races/">大会に行く・出る</a></h3>
+      <p><span class="n">国内 49戦</span>　＋　<span class="n">世界 57戦</span></p>
+      <p>日付とエントリー締切が決まっている＝<b>いま動かないと間に合わない</b>。残り 15 戦。次は 2026.09.20　日高2DAYSエンデューロ大会（北海道）</p>
+      <div class="subs">
+        <a href="./races/motocross/">モトクロス</a><a href="./races/enduro/">エンデューロ</a>
+        <a href="./races/hard-enduro/">ハードエンデューロ</a><a href="./races/cross-country/">クロスカントリー</a>
+        <a href="./races/trial/">トライアル</a><a href="./world/">世界選手権</a>
+      </div>
+      <a class="go" href="./races/">年間カレンダーを見る →</a>
+    </div>
+    <div class="rt s1">
+      <span class="k">COURSE ／ 最優先</span>
+      <h3><a href="./courses/">走れる場所を探す</a></h3>
+      <p><span class="n">全国 112カ所</span>　／　レンタル・スクールあり <span class="n">18</span></p>
+      <p>「買ったが走る場所がわからない」で止まる人が最も多い。<b>車両を持っていなくても行ける 18 カ所</b>を先頭に置いている。</p>
+      <div class="subs">
+        <a href="./courses/motocross/">モトクロス</a><a href="./courses/enduro/">エンデューロ</a>
+        <a href="./courses/hard-enduro/">ハードエンデューロ</a><a href="./courses/trial/">トライアル</a>
+      </div>
+      <a class="go" href="./courses/">都道府県から探す →</a>
+    </div>
+  </div>
+
+  <!-- 中：スクール／店舗 -->
+  <div class="rt-sub">
+    <a class="rt s2" href="./schools/">
+      <span class="k">SCHOOL</span>
+      <h3>習いに行く</h3>
+      <p><span class="n">18件</span>　元全日本王者・現役IAライダーが直接教える個人スクールを含む</p>
+      <p>スクールは「誰が教えているか」で選ばれる。主催者・講師の名前まで載せている。</p>
+      <span class="go">スクール一覧 →</span>
+    </a>
+    <a class="rt s2" href="./shops/">
+      <span class="k">SHOP</span>
+      <h3>買う・直す</h3>
+      <p><span class="n">1,023店</span>　47都道府県／取材候補 37件</p>
+      <p>走り出したあとに必要になる場所。消耗品とトラブルはオフロードでは必ず起きる。</p>
+      <span class="go">都道府県から探す →</span>
+    </a>
+  </div>
+
+  <div class="rt-foot">
+    <b>都道府県から一度に：</b>
+    <a href="./shops/saitama/">埼玉</a><a href="./shops/chiba/">千葉</a><a href="./shops/tokyo/">東京</a>
+    <a href="./shops/ibaraki/">茨城</a><a href="./shops/osaka/">大阪</a><a href="./shops/hokkaido/">北海道</a>
+    <a href="./shops/">全国の店舗一覧</a>
+  </div>
+</section>
+</div>
+
 <div class="wrap" style="padding-top:74px">
 <!-- ===== MAIL ===== -->
 <section>
@@ -400,6 +581,16 @@ body.show-anno .anno-hero{display:block}
     btn.setAttribute('aria-pressed', String(on));
     btn.textContent = on ? '注釈を隠す' : '導線の注釈を表示';
   });
+</script>
+
+<script>
+const RK={"IA1":`<tr><td class="p">1</td><td class="nm">大倉 由揮<span class="tm">Honda Dream Racing Bells</span></td><td class="pt">381<span>pt</span></td></tr><tr><td class="p">2</td><td class="nm">Wilson Jay<span class="tm">YAMAHA FACTORY RACING TEAM</span></td><td class="pt">375<span>pt</span></td></tr><tr><td class="p">3</td><td class="nm">大城 魁之輔<span class="tm">YAMAHA FACTORY RACING TEAM</span></td><td class="pt">356<span>pt</span></td></tr><tr><td class="p">4</td><td class="nm">大塚 豪太<span class="tm">T.E.SPORT</span></td><td class="pt">322<span>pt</span></td></tr><tr><td class="p">5</td><td class="nm">内田 篤基<span class="tm">Team Kawasaki R&amp;D</span></td><td class="pt">305<span>pt</span></td></tr>`,"IA2":`<tr><td class="p">1</td><td class="nm">柳瀬 大河<span class="tm">Honda Dream Racing</span></td><td class="pt">364<span>pt</span></td></tr><tr><td class="p">2</td><td class="nm">田中 淳也<span class="tm">YAMAHA BLUCRU RACING TEAM YSP浜松 BOSS RACING</span></td><td class="pt">347<span>pt</span></td></tr><tr><td class="p">3</td><td class="nm">吉田 琉雲<span class="tm">Bells Racing</span></td><td class="pt">310<span>pt</span></td></tr><tr><td class="p">4</td><td class="nm">横澤 拓夢<span class="tm">Kawasaki PLAZA 盛岡 TKM motor sports</span></td><td class="pt">304<span>pt</span></td></tr><tr><td class="p">5</td><td class="nm">渡辺 陵<span class="tm">BLU CRU Team Pitin with M:F</span></td><td class="pt">300<span>pt</span></td></tr>`,"LMX":`<tr><td class="p">1</td><td class="nm">川井 麻央<span class="tm">T.E.SPORT</span></td><td class="pt">175<span>pt</span></td></tr><tr><td class="p">2</td><td class="nm">川上 真花<span class="tm">YSP浜松 BOSS RACING</span></td><td class="pt">158<span>pt</span></td></tr><tr><td class="p">3</td><td class="nm">本田 七海<span class="tm">TEAM KOH-Z</span></td><td class="pt">144<span>pt</span></td></tr><tr><td class="p">4</td><td class="nm">箕浦 未夢<span class="tm">Team ITOMO</span></td><td class="pt">144<span>pt</span></td></tr><tr><td class="p">5</td><td class="nm">楠本 菜月<span class="tm">TEAM HAMMER</span></td><td class="pt">128<span>pt</span></td></tr>`,"MXGP":`<tr><td class="p">1</td><td class="nm">Jeffrey Herlings<span class="tm">オランダ</span></td><td class="pt">915<span>pt</span></td></tr><tr><td class="p">2</td><td class="nm">Romain Febvre<span class="tm">フランス</span></td><td class="pt">752<span>pt</span></td></tr><tr><td class="p">3</td><td class="nm">Tom Gajser<span class="tm">スロベニア</span></td><td class="pt">659<span>pt</span></td></tr>`};
+const rkb=document.getElementById('rkb');
+document.getElementById('rk').addEventListener('click',ev=>{
+  const b=ev.target.closest('button'); if(!b) return;
+  [...ev.currentTarget.children].forEach(x=>x.setAttribute('aria-pressed',x===b));
+  rkb.innerHTML=RK[b.dataset.k];
+});
 </script>
 </body>
 </html>
