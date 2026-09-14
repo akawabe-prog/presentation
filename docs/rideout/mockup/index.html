@@ -237,6 +237,10 @@ table.rank .pt span{font-size:10.5px;color:var(--muted);margin-left:3px}
 .slot::after{z-index:2;opacity:.75}
 .hero-media .slot img.ph{filter:sepia(.16) saturate(.72) contrast(1) brightness(.5)}
 .hero-media .slot img.ph.real{filter:sepia(.1) saturate(.85) contrast(1.02) brightness(.62)}
+/* HERO 見出しの段落ち防止：2行目「エンデューロはこう変わる」が収まる幅に */
+.hero-copy h1{max-width:26ch;text-wrap:balance}
+.hero-copy h1 br{display:inline}
+@media(max-width:760px){.hero-copy h1{max-width:none}}
 
 </style>
 
