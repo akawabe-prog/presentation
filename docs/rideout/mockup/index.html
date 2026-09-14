@@ -209,18 +209,7 @@ table.rank .pt span{font-size:10.5px;color:var(--muted);margin-left:3px}
 .go-quick a{font-family:var(--f-jp);font-size:12.5px;font-weight:700;color:var(--text-2);border:1px solid var(--line-2);padding:5px 12px}
 .go-quick a:hover{border-color:var(--amber);color:var(--amber)}
 .go-quick .sep{width:1px;height:18px;background:var(--line-2);margin:0 6px}
-/* ===== 数字タイル ===== */
-.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.stats-in{max-width:1360px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line)}
-@media(max-width:900px){.stats-in{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:560px){.stats-in{grid-template-columns:repeat(2,1fr)}}
-.st{background:var(--ground);padding:28px 22px 24px;display:flex;flex-direction:column;align-items:flex-start;color:inherit}
-.st:hover{background:var(--surface)}
-.st .k{font-family:var(--f-lat);font-size:12px;font-weight:800;letter-spacing:.16em;color:var(--amber);margin-bottom:6px}
-.st .n{font-family:var(--f-lat);font-size:54px;font-weight:800;line-height:.95;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-.st .u{font-family:var(--f-jp);font-size:13px;font-weight:700;color:var(--text-2);margin-top:6px}
-.st .s{font-size:11.5px;color:var(--muted);margin-top:2px}
-.st:hover .n{color:var(--amber)}
+.go-d.go-t{font-family:var(--f-jp);font-size:clamp(26px,2.8vw,38px);font-weight:900;letter-spacing:-.02em;line-height:1.2}
 
 </style>
 
@@ -425,15 +414,6 @@ table.rank .pt span{font-size:10.5px;color:var(--muted);margin-left:3px}
 
 </div>
 
-<!-- ===== DATABASE ===== -->
-<div class="wrap"><div class="anno"><b>③ 資産として蓄積</b>大会・コース・スクール・店舗は記事ではなくデータ。数字だけ見せて、詳細は各ページへ。</div></div>
-<div class="stats" id="db"><div class="stats-in">
-  <a class="st" href="./races/"><span class="k">RACE</span><span class="n">49</span><span class="u">戦</span><span class="s">国内 2026</span></a>
-  <a class="st" href="./world/"><span class="k">WORLD</span><span class="n">57</span><span class="u">戦</span><span class="s">世界選手権 9シリーズ</span></a>
-  <a class="st" href="./courses/"><span class="k">COURSE</span><span class="n">112</span><span class="u">カ所</span><span class="s">レンタルあり 18</span></a>
-  <a class="st" href="./schools/"><span class="k">SCHOOL</span><span class="n">18</span><span class="u">件</span><span class="s">講師名まで収録</span></a>
-  <a class="st" href="./shops/"><span class="k">SHOP</span><span class="n">1,023</span><span class="u">店</span><span class="s">47都道府県</span></a>
-</div></div>
 
 
 <div class="wrap"><div class="anno"><b>導線の強弱</b>大会・スクール・店舗へ同じ大きさで並べない。日付が決まっている大会を最大に、コースを次に、スクール・店舗は一段下げる。見せ方は上の LATEST と同じ言語（写真・映像の枠＋ラベル）で揃える。</div>
@@ -462,9 +442,9 @@ table.rank .pt span{font-size:10.5px;color:var(--muted);margin-left:3px}
     <a class="it lg" href="./courses/">
       <div class="slot r169" data-label="PHOTO 16:9 ／ 林間コースのゲート">
         <div class="go-ov">
-          <span class="go-k">RENTAL OK</span>
-          <span class="go-d">18<small>カ所</small></span>
-          <span class="go-v">車両を持っていなくても走れる場所</span>
+          <span class="go-k">RENTAL &amp; SCHOOL</span>
+          <span class="go-d go-t">手ぶらで<br>走れる場所</span>
+          <span class="go-v">車両も装備も借りられるコースから</span>
         </div>
       </div>
       <div class="row"><span class="chip">COURSE</span><span class="stamp">全国 112カ所</span></div>
