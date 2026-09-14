@@ -232,6 +232,19 @@ table.rank .pt span{font-size:10.5px;color:var(--muted);margin-left:3px}
 .rt-foot a{font-family:var(--f-jp);font-size:12.5px;font-weight:700;border:1px solid var(--line-2);padding:4px 11px;color:var(--text-2)}
 .rt-foot a:hover{border-color:var(--amber);color:var(--amber)}
 
+/* ===== 数字タイル ===== */
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats-in{max-width:1360px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line)}
+@media(max-width:900px){.stats-in{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.stats-in{grid-template-columns:repeat(2,1fr)}}
+.st{background:var(--ground);padding:28px 22px 24px;display:flex;flex-direction:column;align-items:flex-start;color:inherit}
+.st:hover{background:var(--surface)}
+.st .k{font-family:var(--f-lat);font-size:12px;font-weight:800;letter-spacing:.16em;color:var(--amber);margin-bottom:6px}
+.st .n{font-family:var(--f-lat);font-size:54px;font-weight:800;line-height:.95;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.st .u{font-family:var(--f-jp);font-size:13px;font-weight:700;color:var(--text-2);margin-top:6px}
+.st .s{font-size:11.5px;color:var(--muted);margin-top:2px}
+.st:hover .n{color:var(--amber)}
+
 </style>
 
 </head>
@@ -436,55 +449,17 @@ table.rank .pt span{font-size:10.5px;color:var(--muted);margin-left:3px}
 </div>
 
 <!-- ===== DATABASE ===== -->
-<div class="wrap"><div class="anno"><b>③ 資産として蓄積</b>大会・コース・スクール・店舗は<b>記事ではなくデータ。</b>更新され続けるため再訪の理由になり、検索と AI 検索に引用される。トップでは 4 つまとめて 1 本の帯に置き、詳細は各ページへ。<b>レース45戦・コース84カ所・スクール18件・店舗1,023件はすべて実データで、すでに閲覧できる。</b></div></div>
-<div class="db" id="db">
-  <div class="db-in">
-
-    <div class="db-col">
-      <h3>RACE</h3><span class="jp">大会日程・エントリー締切</span>
-      <ul>
-        <li><a href="./races/"><span class="d">2026.09.20</span>日高2DAYSエンデューロ大会 ／ 北海道<br><span class="d" style="color:var(--amber)">エントリー締切済</span></a></li>
-        <li><a href="./races/"><span class="d">2026.09.20</span>WEX 東日本全国大会 GAIA ／ 長野県<br><span class="d" style="color:var(--amber)">エントリー締切 9/14</span></a></li>
-        <li><a href="./races/"><span class="d">2026.10.10</span>TOKIO INKARAMI Super ／ 埼玉県<br><span class="d" style="color:var(--amber)">エントリー締切済</span></a></li>
-      </ul>
-      <a class="all" href="./races/">2026年 全45戦 →</a>
-    </div>
-
-    <div class="db-col">
-      <h3>COURSE</h3><span class="jp">走れる場所</span>
-      <ul>
-        <li><a href="./courses/saitama/"><span class="d">埼玉県川越市</span>オフロードヴィレッジ ／ レンタル・スクールあり</a></li>
-        <li><a href="./courses/hokkaido/"><span class="d">北海道千歳市</span>新千歳モーターランド ／ キッズ・初心者コース</a></li>
-        <li><a href="./courses/osaka/"><span class="d">大阪府</span>プラザ阪下 ／ JNCC・JEC 開催コース</a></li>
-      </ul>
-      <a class="all" href="./courses/">全国84カ所 →</a>
-    </div>
-
-    <div class="db-col">
-      <h3>SCHOOL</h3><span class="jp">習える場所</span>
-      <ul>
-        <li><a href="./schools/"><span class="d">埼玉県川越市</span>モトクロスごっこ ／ 福本敏夫（元全日本王者）が直接指導</a></li>
-        <li><a href="./schools/"><span class="d">福島県</span>Factory1スクール ／ 渡辺学ほか JNCC 王者陣が講師</a></li>
-        <li><a href="./schools/"><span class="d">茨城県つくば市</span>ウイリー松浦 ／ 13,500円・車両と装備すべて込み</a></li>
-      </ul>
-      <a class="all" href="./schools/">スクール一覧 18件 →</a>
-    </div>
-
-    <div class="db-col">
-      <h3>SHOP</h3><span class="jp">直せる場所</span>
-      <ul>
-        <li><a href="./shops/"><span class="d">茨城県龍ケ崎市</span>ウエストウッド井原商会 ／ THOR・LEATT 正規輸入</a></li>
-        <li><a href="./shops/"><span class="d">千葉県市川市</span>和田屋 ／ MFJ エンデューロ・JNCC サポート</a></li>
-        <li><a href="./shops/"><span class="d">北海道札幌市</span>ダートバイクプラス札幌 ／ 在庫 6 万点超</a></li>
-      </ul>
-      <a class="all" href="./shops/">全国の掲載店 1,023件 →</a>
-    </div>
-
-  </div>
-</div>
+<div class="wrap"><div class="anno"><b>③ 資産として蓄積</b>大会・コース・スクール・店舗は記事ではなくデータ。数字だけ見せて、詳細は各ページへ。</div></div>
+<div class="stats" id="db"><div class="stats-in">
+  <a class="st" href="./races/"><span class="k">RACE</span><span class="n">49</span><span class="u">戦</span><span class="s">国内 2026</span></a>
+  <a class="st" href="./world/"><span class="k">WORLD</span><span class="n">57</span><span class="u">戦</span><span class="s">世界選手権 9シリーズ</span></a>
+  <a class="st" href="./courses/"><span class="k">COURSE</span><span class="n">112</span><span class="u">カ所</span><span class="s">レンタルあり 18</span></a>
+  <a class="st" href="./schools/"><span class="k">SCHOOL</span><span class="n">18</span><span class="u">件</span><span class="s">講師名まで収録</span></a>
+  <a class="st" href="./shops/"><span class="k">SHOP</span><span class="n">1,023</span><span class="u">店</span><span class="s">47都道府県</span></a>
+</div></div>
 
 
-<div class="wrap"><div class="anno"><b>導線の強弱</b>大会・スクール・店舗へ<b>同じ大きさで並べない。</b>いま最も動きがあり、次の行動が決まっているものを大きく置く。<b>大会（日付が決まっている）→ スクール（申し込める）→ 店舗（買う・直す）</b>の順に面積を落とす。</div>
+<div class="wrap"><div class="anno"><b>導線の強弱</b>日付が決まっている大会を最大に、スクール・店舗は一段下げる。</div>
 
 <section class="routes">
   <div class="shead"><h2>次にどこへ行くか</h2></div>
@@ -495,7 +470,7 @@ table.rank .pt span{font-size:10.5px;color:var(--muted);margin-left:3px}
       <span class="k">RACE ／ 最優先</span>
       <h3><a href="./races/">大会に行く・出る</a></h3>
       <p><span class="n">国内 49戦</span>　＋　<span class="n">世界 57戦</span></p>
-      <p>日付とエントリー締切が決まっている＝<b>いま動かないと間に合わない</b>。残り 15 戦。次は 2026.09.20　日高2DAYSエンデューロ大会（北海道）</p>
+      <p>次は 09/20　日高2DAYSエンデューロ大会（北海道）</p>
       <div class="subs">
         <a href="./races/motocross/">モトクロス</a><a href="./races/enduro/">エンデューロ</a>
         <a href="./races/hard-enduro/">ハードエンデューロ</a><a href="./races/cross-country/">クロスカントリー</a>
@@ -507,7 +482,6 @@ table.rank .pt span{font-size:10.5px;color:var(--muted);margin-left:3px}
       <span class="k">COURSE ／ 最優先</span>
       <h3><a href="./courses/">走れる場所を探す</a></h3>
       <p><span class="n">全国 112カ所</span>　／　レンタル・スクールあり <span class="n">18</span></p>
-      <p>「買ったが走る場所がわからない」で止まる人が最も多い。<b>車両を持っていなくても行ける 18 カ所</b>を先頭に置いている。</p>
       <div class="subs">
         <a href="./courses/motocross/">モトクロス</a><a href="./courses/enduro/">エンデューロ</a>
         <a href="./courses/hard-enduro/">ハードエンデューロ</a><a href="./courses/trial/">トライアル</a>
@@ -522,14 +496,12 @@ table.rank .pt span{font-size:10.5px;color:var(--muted);margin-left:3px}
       <span class="k">SCHOOL</span>
       <h3>習いに行く</h3>
       <p><span class="n">18件</span>　元全日本王者・現役IAライダーが直接教える個人スクールを含む</p>
-      <p>スクールは「誰が教えているか」で選ばれる。主催者・講師の名前まで載せている。</p>
       <span class="go">スクール一覧 →</span>
     </a>
     <a class="rt s2" href="./shops/">
       <span class="k">SHOP</span>
       <h3>買う・直す</h3>
       <p><span class="n">1,023店</span>　47都道府県／取材候補 37件</p>
-      <p>走り出したあとに必要になる場所。消耗品とトラブルはオフロードでは必ず起きる。</p>
       <span class="go">都道府県から探す →</span>
     </a>
   </div>
