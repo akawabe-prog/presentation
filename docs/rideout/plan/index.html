@@ -1,0 +1,210 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>オフロードコンテンツ機能 実施方針（改訂）</title><meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+:root{--ink:#1a1a1a;--sub:#4a4a4a;--muted:#7a7a7a;--line:#d9d9d9;--line2:#bdbdbd;--bg:#fff;--soft:#f6f6f4;--acc:#8a6a1c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;font-size:15px;line-height:1.95;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 32px 80px}
+h1,h2,h3,th,.head,.lbl{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}
+.cover{padding:64px 0 36px;border-bottom:2px solid var(--ink);margin-bottom:8px}
+.cover .lbl{font-size:12px;letter-spacing:.18em;color:var(--muted);margin-bottom:14px}
+.cover h1{font-size:30px;font-weight:700;letter-spacing:.02em;margin:0 0 10px;line-height:1.4}
+.cover .sub{font-size:14px;color:var(--sub);margin:0 0 22px}
+.cover .meta{font-size:13px;color:var(--muted);display:flex;gap:26px;flex-wrap:wrap}
+h2{font-size:19px;font-weight:700;margin:52px 0 16px;padding:0 0 8px;border-bottom:1px solid var(--ink);letter-spacing:.02em}
+h2 small{font-size:12px;color:var(--muted);font-weight:500;margin-left:12px;letter-spacing:.08em}
+h3{font-size:15.5px;font-weight:700;margin:28px 0 8px}
+p{margin:0 0 14px}
+p.key{padding:14px 18px;background:var(--soft);border-left:3px solid var(--ink);margin:16px 0 20px}
+ul{margin:0 0 14px;padding-left:1.3em}li{margin-bottom:5px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:12px 0 20px;font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.7}
+th{background:var(--soft);font-weight:700;font-size:12.5px;border-bottom:1px solid var(--line2);white-space:nowrap}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td b{font-weight:700}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:700px){.two{grid-template-columns:1fr}}
+.box{border:1px solid var(--line2);padding:16px 18px;background:#fff}
+.box .head{font-size:12px;letter-spacing:.14em;color:var(--muted);margin-bottom:8px}
+.box b{display:block;font-family:"Noto Sans JP",sans-serif;font-size:15px;margin-bottom:6px}
+.box p{font-size:13.5px;margin:0}
+.tier{display:grid;grid-template-columns:120px 1fr;gap:0 18px;border-top:1px solid var(--line);padding:14px 0}
+.tier .head{font-size:12.5px;font-weight:700;color:var(--ink);letter-spacing:.06em}
+.tier p{font-size:14px;margin:0 0 6px}
+a{color:var(--acc)}
+.small{font-size:12.5px;color:var(--muted)}
+table.funnel td:first-child{font-size:15px;white-space:nowrap}
+table.funnel tbody tr:nth-child(1) td:first-child{padding-left:11px}table.funnel tbody tr:nth-child(2) td:first-child{padding-left:19px}table.funnel tbody tr:nth-child(3) td:first-child{padding-left:27px}table.funnel tbody tr:nth-child(4) td:first-child{padding-left:35px}
+.note{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px;margin-top:26px}
+@media print{.wrap{padding:0 12mm}.cover{padding-top:20mm}h2{page-break-after:avoid}table,.box{page-break-inside:avoid}}
+</style></head><body><div class="wrap">
+
+<div class="cover"><div class="lbl">社内資料</div>
+<h1>オフロードコンテンツ機能 実施方針（改訂）</h1>
+<p class="sub">「ノル人をツクる」を実現するための、大きな漏斗の仕組み。前回の打合せでいただいた12項目のご指摘に一つずつ答える形で、方針を組み直しました。</p>
+<div class="meta"><span>2026年9月15日</span><span>作成：川邉</span><span>宛先：村井社長</span></div></div>
+
+<h2>0. ご指摘と本書の対応</h2>
+<table><thead><tr><th>ご指摘（議事メモ）</th><th>本書の対応</th></tr></thead><tbody>
+<tr><td>「メディアを作る」発想から入らない。何を売るためにどんなコンテンツを作るのかを先に</td><td>第2章。販売テーマを3つ定め、商材の棚を先に置く。本書では「メディア」と呼ばず「コンテンツ機能」とする</td></tr>
+<tr><td>独立メディアは時期尚早。まずEC内で</td><td>第3章。独立ドメインは選ばない。<b>offroad.customjapan.net</b> に置く理由と、SEO資産分散への回答</td></tr>
+<tr><td>集客記事と販売記事を分ける</td><td>第4章。集客／販売／資産の3種に分け、実物を3本用意</td></tr>
+<tr><td>編集責任者・ディレクションを誰が持つか</td><td>第5章。編集責任者は川邉。取材体制は補足に記載</td></tr>
+<tr><td>EICMA・東京MCSは別枠で積極的に</td><td>第6章。イベント区分を独立させ、集客と販売の結節点として使う</td></tr>
+<tr><td>PV・EC流入・CV・売上で検証し、区別して評価</td><td>第7章。ご指摘のKPIを全て含む表と、6か月での判断</td></tr>
+<tr><td>ダートフリークの運営モデルを調べる</td><td>第8章。公開情報で確認できた範囲と、できなかった項目</td></tr>
+</tbody></table>
+
+
+<h2>1. 全体像 ── 大きな漏斗 <small>ノル人をツクる</small></h2>
+<p class="key">目的は「ノル人をツクる」こと。そのために、知ってから買い続けるまでを一本につなぐ<b>大きな漏斗</b>を作ります。各段に置くものはすべて、すでにデータか実物として用意してあります。</p>
+<table class="funnel"><thead><tr><th>段</th><th>ユーザーの状態</th><th>置くもの</th><th>いま手元にあるもの</th></tr></thead><tbody>
+<tr><td><b>知る</b></td><td>オフロードに興味はあるが、何も持っていない</td><td>EICMA・東京MCS速報、大会結果とランキング、世界選手権</td><td>イベント4件、国内49戦＋世界57戦のカレンダー（締切つき）</td></tr>
+<tr><td><b>走る</b></td><td>一度走ってみたい</td><td>手ぶらで走れる場所、スクール、近くの店</td><td>コース112カ所（レンタル・スクールあり18）、スクール18件、店舗1,023件</td></tr>
+<tr><td><b>出る</b></td><td>大会に出ると決めた</td><td>参戦装備一式、車両プロテクション、大会前チェックリスト</td><td>販売テーマB・C（第2章）、サンプル記事「出走前の消耗品チェック」</td></tr>
+<tr><td><b>買い続ける</b></td><td>走り続けている</td><td>消耗品、メンテHow To、次の大会</td><td>販売テーマA。<b>ここが収益の中心</b></td></tr>
+</tbody></table>
+<p>上の段が広く、下に行くほど狭くなります。上の段は検索需要が大きく人を集めますが、売上は下の段で立ちます。<b>上の段だけ、下の段だけでは成立しません。</b>集客記事と販売記事を分けつつ一本の流れにするというご指摘は、この漏斗そのものです。</p>
+<h2>2. 何を売るために作るのか <small>ご指摘 3・7・11</small></h2>
+<p class="key">メディアより先に、売るものの棚を定めます。棚は3つ。</p>
+<table><thead><tr><th>販売テーマ</th><th>中心商材</th><th>買われ方</th><th>対応するコンテンツ</th></tr></thead><tbody>
+<tr><td><b>A. 消耗品</b></td><td>ARIETE（レンズ・ティアオフ）、グリップ、フォークシール、エアフィルター、チェーン、ケミカル</td><td>繰り返し買われる。<b>最終的な収益源</b></td><td>大会前チェックリスト、走行後メンテHow To</td></tr>
+<tr><td><b>B. 車両プロテクション</b></td><td><b>力造</b>（スキッドプレート・ラジエターガード）、ACERBIS・UFO（外装・ハンドガード）</td><td>転倒で壊れたら買う、車両を買ったら付ける</td><td>車両カスタム、「この車両に最初に付ける3点」</td></tr>
+<tr><td><b>C. 参戦・入門装備</b></td><td>ELEVEIT（ブーツ）、プロテクター、工具、タイダウン、トランポ用品ほか<b>オフロードにも使える既存商材</b></td><td>始めるとき・大会に出るときに一式</td><td>JEC参戦装備、ブーツの選び方、入門者の一式</td></tr>
+</tbody></table>
+<p>ELEVEIT・ARIETE に限らず、工具・ケミカル・タイダウン・トランポ用品は既存在庫のままオフロードユーザー全員が使います。<b>「オフロード専用」ではなく「オフロードにも使える」商材を棚に入れる</b>ことで、記事を継続して作るだけの商材の幅があると考えます。</p>
+<h3>商材強化と連動させる</h3>
+<table><thead><tr><th>時期</th><th>商材側</th><th>コンテンツ側</th></tr></thead><tbody>
+<tr><td>フェーズ1（〜6か月）</td><td>既存商材（A・C中心）で棚を作る。力造の強化準備</td><td>集客：大会・イベント・都道府県データ／販売：消耗品と入門装備の記事</td></tr>
+<tr><td>EICMA 2026（11月5〜8日）</td><td>新規取引の可能性を現地で確認</td><td>「EICMAで見た新型・新作」速報。取扱が決まったブランドは<b>「EICMAで見た → 取扱開始」を一本の流れ</b>で記事化</td></tr>
+<tr><td>フェーズ2</td><td>力造ほかB商材の強化、EICMA由来の新ブランド導入</td><td>車両カスタム記事、新ブランド導入記事、取材店舗での取扱紹介</td></tr>
+</tbody></table>
+<p class="small">力造の取扱条件・時期は未確認のため、本書では「強化予定」とのみ記載しています。</p>
+
+<h2>3. どこに置くのか <small>ご指摘 8</small></h2>
+<p class="key">独立ドメインは作りません。<b>offroad.customjapan.net</b> に置きます。</p>
+<p>本来の最適は <code>customjapan.net/offroad/</code> です。ただし既存の通販システム上ではデザインの自由度が低く、EICMAで写真・動画を大量に見せる型のコンテンツが作れません。見せ方を取るため、既存の moto／cycle／car／tool と同じサブドメイン方式を採ります。</p>
+<table><thead><tr><th></th><th>customjapan.net/offroad/</th><th>offroad.customjapan.net</th><th>独立ドメイン</th></tr></thead><tbody>
+<tr><td>SEO評価の集約</td><td>◎</td><td>○　ブランドドメインを共有。記事→商品ページのリンクで評価を渡す</td><td>×</td></tr>
+<tr><td>デザイン自由度</td><td>×　通販システムの制約</td><td>◎</td><td>◎</td></tr>
+<tr><td>既存構造との整合</td><td>△</td><td>◎　moto／cycle／car／tool と同型</td><td>×</td></tr>
+<tr><td>撤退コスト</td><td>低</td><td>低</td><td>高</td></tr>
+</tbody></table>
+<h3>SEO資産の分散について</h3>
+<ul>
+<li><b>分散はすでに起きている構造です。</b>moto／cycle／car／tool がサブドメインで成果を出していることが、この方式が機能する実証になります</li>
+<li>ご懸念の本質は「記事の評価が商品ページに届かないこと」です。これは配置ではなく<b>リンク設計</b>で解決します。記事内の商品はすべて customjapan.net の商品ページへ直接リンクし、共通ヘッダー・フッターで相互に結びます</li>
+<li>Search Console はドメインプロパティで一括計測でき、分散しても数字が見えなくなることはありません</li>
+<li>大会・コース・店舗のデータベースは記事より被リンクを集めやすく、その評価が商品ページへ流れます</li>
+</ul>
+
+<h2>4. 何を作るのか <small>ご指摘 7</small></h2>
+<p>ご指摘どおり、集客と販売を分けます。加えて、更新され続けることで再訪と検索流入を生む「資産」を第3の種類として置きます。</p>
+<div class="two">
+<div class="box"><div class="head">① 集客</div><b>PVと検索流入を取る</b><p>EICMA・東京MCS速報、大会カレンダー（国内49戦＋世界57戦）、レース結果とランキング、手ぶらで走れる場所</p></div>
+<div class="box"><div class="head">② 販売</div><b>商品ページへつなぐ</b><p>大会前の消耗品チェック、車両別プロテクション、参戦装備一式、ブーツの選び方、取付・使用方法</p></div>
+<div class="box"><div class="head">③ 資産</div><b>データとして育てる</b><p>店舗1,023件（都道府県別47ページ）、コース112カ所、スクール18件、イベント4件。競技別・地域別に整理済み</p></div>
+<div class="box"><div class="head">実物</div><b>すでに動く形で用意しています</b><p><a href="https://akawabe-prog.github.io/presentation/rideout/mockup/samples/">3本のサンプル記事と回遊図</a>／<a href="https://akawabe-prog.github.io/presentation/rideout/mockup/">画面案トップ</a>。数値・固有名詞はすべて実データ、写真は仮</p></div>
+</div>
+<p class="key" style="margin-top:22px">導線は「集客記事 → 販売記事 → 商品ページ → 売上」。3本のサンプルは互いに行き先になるように作ってあります。</p>
+
+<h2>5. 誰がやるのか <small>ご指摘 4・5</small></h2>
+<p class="key">編集責任者は川邉が持ちます。前回単発で終わった原因が「企画・商品接続・ディレクション・展開・数値報告を誰が持つか」だったことを踏まえ、これを一人に集約します。</p>
+<p>編集責任者を一人に置くことで足ります。取材・撮影を遠方でも回すための体制は、本文の判断材料ではないため、末尾の補足に分けて記しました。</p>
+
+<h2>6. EICMAをどう使うのか <small>ご指摘 1・6</small></h2>
+<p>ご指摘どおり、毎週の記事運営とは別枠で扱います。ただし切り離すのではなく、<b>集客記事と販売記事をつなぐ結節点</b>として使います。</p>
+<ul>
+<li>会期：2026年11月5〜8日（11月3〜4日はプレス・業界日）。Fiera Milano Rho</li>
+<li>現地で写真・動画・一次情報を収集 → AIと川邉で速報化 → offroad.customjapan.net に掲載 → FB・Instagram・PR TIMESへ展開</li>
+<li><b>会場全体ではなく、オフロードだけを歩く</b>切り口にします。全ブースを網羅する既存メディアと役割を分けます</li>
+<li>新規取引の可能性があるブランドは、「EICMAで見た → 取扱開始」を一本の記事の流れにし、集客と販売を直接つなぎます</li>
+<li>東京・大阪モーターサイクルショー2027（3月20〜22日、26〜28日）も同じ区分で扱います。鈴鹿8耐などロードレースは対象外です</li>
+</ul>
+
+<h2>7. どの数字で判断するのか <small>ご指摘 9</small></h2>
+<p>ご指摘のKPIを全て含め、「どの記事が集客に効き、どれが販売に効き、どれは読まれただけか」を区別できる形で見ます。</p>
+<table><thead><tr><th>区分</th><th>KPI</th><th>計測</th><th>見方</th></tr></thead><tbody>
+<tr><td rowspan="5">① 集客</td><td>記事PV／UU</td><td>GA4</td><td>記事別。イベント記事とレース記事を分ける</td></tr>
+<tr><td>検索流入</td><td>Search Console</td><td>都道府県ページとシリーズ別ページを個別に追う</td></tr>
+<tr><td>SNS流入</td><td>GA4</td><td>FB／Instagram／PR TIMES</td></tr>
+<tr><td>指名検索</td><td>Search Console</td><td>「カスタムジャパン オフロード」の表示回数</td></tr>
+<tr><td>リスト獲得</td><td>登録数</td><td>記事からの登録率</td></tr>
+<tr><td rowspan="5">② 販売</td><td>ECへの遷移数</td><td>GA4</td><td>記事別</td></tr>
+<tr><td>商品ページへの遷移率</td><td>遷移数÷記事UU</td><td><b>集客記事と販売記事で別に出す</b></td></tr>
+<tr><td>CV・売上</td><td>EC（UTM付きリンクで注文を紐づけ）</td><td>記事別・テーマA/B/C別</td></tr>
+<tr><td>新規顧客獲得</td><td>EC</td><td>記事経由の初回購入者</td></tr>
+<tr><td>消耗品のリピート</td><td>EC</td><td>記事経由の初回購入者の再購入率。<b>最終収益源</b></td></tr>
+<tr><td rowspan="3">③ 資産</td><td>収録件数と更新頻度</td><td>自社</td><td>店舗・コース・大会・スクール・イベント</td></tr>
+<tr><td>取材完了数</td><td>自社</td><td>取材候補37店のうち何店を取材し、個別ページが何枚増えたか</td></tr>
+<tr><td>被リンク・AI検索での引用</td><td>Search Console／確認</td><td>大会カレンダー・都道府県ページ</td></tr>
+<tr><td rowspan="4">④ コスト</td><td>記事制作費</td><td>自社</td><td>外注費（月5〜10万円上限）＋内製工数</td></tr>
+<tr><td>1PV当たりコスト</td><td>制作費÷PV</td><td>月次</td></tr>
+<tr><td>1送客当たりコスト</td><td>制作費÷EC遷移数</td><td>月次</td></tr>
+<tr><td>1CV当たりコスト</td><td>制作費÷CV</td><td>現在は社内で計測していない指標。UTMと注文の紐づけを1か月目に整備し、2か月目から算出</td></tr>
+</tbody></table>
+<p class="key">月次で1枚に集約して報告します。<b>6か月で「独立したメディアとして成立する数字があるか」を判断</b>し、それまで独立化の議論はしません。</p>
+
+<h2>8. ダートフリークの運営構造 <small>ご指摘 2・10</small></h2>
+<table><thead><tr><th>項目</th><th>公開情報で確認できたこと</th></tr></thead><tbody>
+<tr><td>Webの実態</td><td>独立したオフロードメディアは運営していない。製品ポータル兼ニュースサイト（新商品、月次ニュースレター、ギャラリー、イベント告知）。編集記事を毎週複数本出す構造ではない</td></tr>
+<tr><td>商材の規模</td><td>自社ブランド ZETA・DRC・DFG に加え、FOX・Alpinestars・BELL・SRAM の正規代理店。取扱30ブランド以上</td></tr>
+<tr><td>Off1との関係</td><td>Off1.jp に同社のタグページがあることは確認。受託制作の事実は確認できず</td></tr>
+<tr><td>月額費用・DFRとの関係・PV・収益性</td><td>確認できず</td></tr>
+</tbody></table>
+<p>当社との差は商材の規模だけでなく、<b>全国のオフロードショップとの接点の有無</b>にあると考えます。店舗1,023件のデータベースと取材候補37店を持つのは、この差を埋めるためです。</p>
+
+<h2>9. やらないこと</h2>
+<ul>
+<li>独立ドメイン、別ブランドの立ち上げ</li>
+<li>商品名を起点にした記事（当社のオフロード商材は指名検索されていないため、人が来ない）</li>
+<li>鈴鹿8耐などロードレースの収録</li>
+<li>外部ライターへの丸投げ。編集責任は社内に置く</li>
+<li>出典のコピーだけの店舗ページの量産（検索評価を下げるため。個別ページは取材した店だけ）</li>
+</ul>
+
+<h2>10. 費用</h2>
+<ul>
+<li>WEB制作、編集・ディレクション、基本撮影は川邉が担当（人件費内）</li>
+<li>取材・撮影の外注費：月5〜10万円以内（層2の現地取材者への案件単価）</li>
+<li>EICMAの渡航費は本件とは別枠（従来の出張枠）</li>
+</ul>
+
+<h2>11. 確認いただきたい事項</h2>
+<ol>
+<li>サブドメイン <b>offroad.customjapan.net</b> での実施</li>
+<li>販売テーマ A・B・C と、力造ほかの商材強化スケジュールの共有</li>
+<li>EICMA 2026 での現地取材と、新規取引候補の情報共有</li>
+<li>取材・撮影の外注枠（月5〜10万円）の使い方を補足の形で進めること</li>
+<li>6か月後に数字で判断すること</li>
+</ol>
+<h2>補足. コンテンツ部隊の基礎 <small>取材・撮影の体制</small></h2>
+<p>本件に合わせて、<b>大型イベントの取材、ブランドに必要なイメージ撮影、遠方でも現地で安く撮影できる取材者の配置</b>ができる体制の基礎を作ります。正社員の採用ではなく、3層の構造です。</p>
+<div class="tier"><div class="head">層1　編集中枢</div><div><p><b>川邉（1名）。</b>企画、編集、ディレクション、WEB制作、基本撮影、数値報告、撤退判断。全ての素材はここを通って公開されます。</p></div></div>
+<div class="tier"><div class="head">層2　現地ネットワーク</div><div><p><b>地域ごとに1名以上の登録制取材者。</b>案件単価で依頼し、固定費を持ちません。候補は、すでにデータベースにある取材候補店37店、スクール講師（優先度A 11件）、コース運営者、大会会場で活動しているフォトグラファー。<b>現地にいて、機材と土地勘を持っている人</b>を使います。</p>
+<p class="small">単価の目安（案）：写真のみ 1〜1.5万円／件、写真＋短尺動画 2〜3万円／件、交通費は実費。月5〜10万円の外注枠で月3〜5件。</p></div></div>
+<div class="tier"><div class="head">層3　大型イベント派遣</div><div><p>EICMA は社長または川邉が現地（社長がプレスデーに入られた経験が、そのまま一次情報の強みになります）。東京・大阪MCSは自社。全日本MX・JEC・JNCC は層2の現地取材者。</p></div></div>
+<h3>配置の優先順位（データから）</h3>
+<table><thead><tr><th>地域</th><th>掲載店</th><th>取材候補</th><th>2026年の大会</th><th>配置</th></tr></thead><tbody><tr><td>北海道・東北</td><td class='n'>111</td><td class='n'>6</td><td class='n'>8</td><td>第1優先</td></tr><tr><td>関東</td><td class='n'>308</td><td class='n'>14</td><td class='n'>5</td><td>第1優先</td></tr><tr><td>中部</td><td class='n'>222</td><td class='n'>6</td><td class='n'>16</td><td>第1優先</td></tr><tr><td>近畿</td><td class='n'>176</td><td class='n'>2</td><td class='n'>12</td><td>第2優先</td></tr><tr><td>中国・四国</td><td class='n'>103</td><td class='n'>1</td><td class='n'>5</td><td>第2優先</td></tr><tr><td>九州・沖縄</td><td class='n'>103</td><td class='n'>8</td><td class='n'>3</td><td>第1優先</td></tr></tbody></table>
+<p class="small">取材候補と大会が多い地域から先に1名を置きます。</p>
+<h3>基礎として整備するもの</h3>
+<table><thead><tr><th>整備物</th><th>内容</th><th>時期</th></tr></thead><tbody>
+<tr><td>撮影指示書</td><td>コンテンツ種類ごとのショットリスト（画面案の各写真枠に付けたラベルがそのまま指示書になります）。比率別の納品規格（16:9／9:16／21:9／3:4）</td><td>着手時</td></tr>
+<tr><td>権利処理の書式</td><td>写真使用許諾、被写体同意、店舗掲載同意。EC商品ページへの二次利用を含む</td><td>着手時</td></tr>
+<tr><td>素材管理とクレジット規則</td><td>撮影者・撮影日・許諾状態を素材単位で管理。記事・EC・SNSへの再利用を追える形</td><td>1か月目</td></tr>
+<tr><td>単価・支払い規程</td><td>案件単価、交通費、納期、修正回数</td><td>1か月目</td></tr>
+<tr><td>品質基準</td><td>トーン（褪せたカラー、黒・白・アンバー）を画面案で共有。現地取材者が同じ見え方に揃えられる</td><td>着手時</td></tr>
+</tbody></table>
+<h3>ブランドイメージの撮影</h3>
+<p>ELEVEIT・ARIETE・力造などのキービジュアルは、取材で訪れるコースで現地ライダーと撮影します。<b>1回の撮影を記事とEC商品ページの双方に使う</b>ことで、撮影費を二重に活かします。四半期に1回を目安にします。</p>
+<h3>6か月後の到達点</h3>
+<ul>
+<li>第1優先の4地域に現地取材者を各1名以上登録</li>
+<li>大会取材 月2戦、店舗取材 月2店、ブランド撮影 四半期1回</li>
+<li>指標：1件あたり撮影コスト、素材の再利用数（記事→EC→SNS）</li>
+</ul>
+
+
+<p class="note">本書の数値は2026年9月14日時点の取得データ（Webike・DIRTFREAK・MFJ・JEC・JNCC・各公式）に基づきます。画面案の写真はすべて仮のもので、本番では自社撮影に置き換えます。</p>
+</div></body></html>
