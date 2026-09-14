@@ -229,6 +229,14 @@ table.rank .pt span{font-size:10.5px;color:var(--muted);margin-left:3px}
 /* メール帯も全幅寄りに */
 .mail{border-left:none;border-right:none;padding:56px clamp(22px,4vw,64px)}
 
+/* ===== プレースホルダー写真 ===== */
+.slot img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:grayscale(.28) contrast(1.08) brightness(.66) saturate(.85);transition:filter .5s}
+.it:hover .slot img.ph,.fb:hover .slot img.ph{filter:grayscale(.1) contrast(1.08) brightness(.78) saturate(.95)}
+.slot .play,.slot .go-ov{z-index:1}
+.slot::before{z-index:1;pointer-events:none}
+.slot::after{z-index:2;opacity:.75}
+.hero-media .slot img.ph{filter:grayscale(.2) contrast(1.1) brightness(.6)}
+
 </style>
 
 </head>
@@ -258,7 +266,7 @@ table.rank .pt span{font-size:10.5px;color:var(--muted);margin-left:3px}
 <div class="anno anno-hero" style="margin-top:24px"><b>① 人を集める</b>トップは分類で割らず、いま最も強い 1 本を全面に出す。カテゴリはナビに置く。ここに来る人の多くは、まだ何を探すか決めていない。</div>
 <section class="hero">
   <div class="hero-media">
-    <div class="slot" data-label="MOVIE 16:9 ／ EICMA 会場"><span class="play"></span></div>
+    <div class="slot" data-label="MOVIE 16:9 ／ EICMA 会場"><img class="ph" src="https://picsum.photos/id/158/1600/900" width="1600" height="900" alt="" loading="lazy" decoding="async"><span class="play"></span></div>
     <div class="hero-shade"></div>
   </div>
   <div class="hero-copy">
@@ -329,59 +337,59 @@ table.rank .pt span{font-size:10.5px;color:var(--muted);margin-left:3px}
   <div class="stream">
 
     <a class="it lg" href="#">
-      <div class="slot r169" data-label="MOVIE 16:9"><span class="play"></span></div>
+      <div class="slot r169" data-label="MOVIE 16:9"><img class="ph" src="https://picsum.photos/id/190/1600/900" width="1600" height="900" alt="" loading="lazy" decoding="async"><span class="play"></span></div>
       <div class="row"><span class="chip mv">MOVIE</span><span class="stamp">04:12</span></div>
       <h3>雨の林道で、タイヤの空気圧をどこまで落とすか</h3>
       <p>同じ区間を 100kPa 刻みで走り比べる。グリップと リム打ちのリスクが入れ替わる境目を、走行映像で。</p>
     </a>
 
     <a class="it lg" href="#">
-      <div class="slot r169" data-label="PHOTO 16:9 ／ 工房"></div>
+      <div class="slot r169" data-label="PHOTO 16:9 ／ 工房"><img class="ph" src="https://picsum.photos/id/36/1600/900" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
       <div class="row"><span class="chip">FEATURE</span><span class="stamp">2026.11.04</span></div>
       <h3>ブーツはどこで、どう作られているか — イタリアの工房を訪ねる</h3>
       <p>ソールの積層、縫製、剛性を決める工程。代理店だから入れた現場を、手元まで記録した。</p>
     </a>
 
     <a class="it tall" href="#">
-      <div class="slot r916" data-label="MOVIE 9:16"><span class="play"></span></div>
+      <div class="slot r916" data-label="MOVIE 9:16"><img class="ph" src="https://picsum.photos/id/123/720/1280" width="720" height="1280" alt="" loading="lazy" decoding="async"><span class="play"></span></div>
       <div class="row"><span class="chip mv">SHORT</span><span class="stamp">0:48</span></div>
       <h3>エアフィルター洗浄、現場でのやり方</h3>
     </a>
 
     <a class="it tall" href="#">
-      <div class="slot r916" data-label="MOVIE 9:16"><span class="play"></span></div>
+      <div class="slot r916" data-label="MOVIE 9:16"><img class="ph" src="https://picsum.photos/id/115/720/1280" width="720" height="1280" alt="" loading="lazy" decoding="async"><span class="play"></span></div>
       <div class="row"><span class="chip mv">SHORT</span><span class="stamp">0:36</span></div>
       <h3>ロールオフの使い方、泥のレースで</h3>
     </a>
 
     <a class="it tall" href="#">
-      <div class="slot r916" data-label="MOVIE 9:16"><span class="play"></span></div>
+      <div class="slot r916" data-label="MOVIE 9:16"><img class="ph" src="https://picsum.photos/id/131/720/1280" width="720" height="1280" alt="" loading="lazy" decoding="async"><span class="play"></span></div>
       <div class="row"><span class="chip mv">SHORT</span><span class="stamp">0:55</span></div>
       <h3>JNCC 会場の朝、スタート前の 3 分</h3>
     </a>
 
     <a class="it tall" href="#">
-      <div class="slot r916" data-label="PHOTO 9:16"></div>
+      <div class="slot r916" data-label="PHOTO 9:16"><img class="ph" src="https://picsum.photos/id/127/720/1280" width="720" height="1280" alt="" loading="lazy" decoding="async"></div>
       <div class="row"><span class="chip">COURSE</span><span class="stamp">埼玉</span></div>
       <h3>初心者が最初に行くなら、どのコースか</h3>
     </a>
 
     <a class="it" href="#">
-      <div class="slot r169" data-label="PHOTO 16:9 ／ レース"></div>
+      <div class="slot r169" data-label="PHOTO 16:9 ／ レース"><img class="ph" src="https://picsum.photos/id/170/1600/900" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
       <div class="row"><span class="chip">RACE</span><span class="stamp">2026.10.28</span></div>
       <h3>JNCC 最終戦レポート：泥のコンディションで何が効いたか</h3>
       <p>上位陣のタイヤ選択と空気圧を、ピットで聞いて回った。</p>
     </a>
 
     <a class="it" href="#">
-      <div class="slot r169" data-label="PHOTO 16:9 ／ 店内"></div>
+      <div class="slot r169" data-label="PHOTO 16:9 ／ 店内"><img class="ph" src="https://picsum.photos/id/60/1600/900" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
       <div class="row"><span class="chip">SHOP</span><span class="stamp">群馬</span></div>
       <h3>オフロードに強い店 — 赤城のショップを訪ねる</h3>
       <p>林道の相談から車両整備まで。この地域で頼れる一軒の仕事の中身。</p>
     </a>
 
     <a class="it" href="#">
-      <div class="slot r169" data-label="PHOTO 16:9 ／ ライダー"></div>
+      <div class="slot r169" data-label="PHOTO 16:9 ／ ライダー"><img class="ph" src="https://picsum.photos/id/64/1600/900" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
       <div class="row"><span class="chip">PEOPLE</span><span class="stamp">2026.10.20</span></div>
       <h3>平日は会社員、週末はエンデューロ。続けるための装備の選び方</h3>
       <p>年間 10 戦。消耗品にいくら使い、何を優先しているのか。</p>
@@ -407,22 +415,22 @@ table.rank .pt span{font-size:10.5px;color:var(--muted);margin-left:3px}
     </div>
     <div class="shop-rail">
       <div class="prow">
-        <div class="slot r11" data-label="PRODUCT"></div>
+        <div class="slot r11" data-label="PRODUCT"><img class="ph" src="https://picsum.photos/id/119/800/800" width="800" height="800" alt="" loading="lazy" decoding="async"></div>
         <div><div class="nm">エアフィルターオイル 1L</div><div class="sb">IN STOCK</div></div>
         <div><div class="pr">¥2,480</div><a class="add" href="#">ADD →</a></div>
       </div>
       <div class="prow">
-        <div class="slot r11" data-label="PRODUCT"></div>
+        <div class="slot r11" data-label="PRODUCT"><img class="ph" src="https://picsum.photos/id/80/800/800" width="800" height="800" alt="" loading="lazy" decoding="async"></div>
         <div><div class="nm">フィルタークリーナー 1L</div><div class="sb">IN STOCK</div></div>
         <div><div class="pr">¥1,980</div><a class="add" href="#">ADD →</a></div>
       </div>
       <div class="prow">
-        <div class="slot r11" data-label="PRODUCT"></div>
+        <div class="slot r11" data-label="PRODUCT"><img class="ph" src="https://picsum.photos/id/72/800/800" width="800" height="800" alt="" loading="lazy" decoding="async"></div>
         <div><div class="nm">エアフィルター／2 層スポンジ</div><div class="sb">IN STOCK</div></div>
         <div><div class="pr">¥3,300</div><a class="add" href="#">ADD →</a></div>
       </div>
       <div class="prow">
-        <div class="slot r11" data-label="PRODUCT"></div>
+        <div class="slot r11" data-label="PRODUCT"><img class="ph" src="https://picsum.photos/id/24/800/800" width="800" height="800" alt="" loading="lazy" decoding="async"></div>
         <div><div class="nm">ティアオフ 20 枚入</div><div class="sb">IN STOCK</div></div>
         <div><div class="pr">¥1,650</div><a class="add" href="#">ADD →</a></div>
       </div>
@@ -440,7 +448,7 @@ table.rank .pt span{font-size:10.5px;color:var(--muted);margin-left:3px}
   <div class="wrap"><div class="shead"><h2>WHERE NEXT</h2><span class="jp">次にどこへ行くか</span><a class="more" href="./races/">ALL →</a></div></div>
 
   <a class="fb fb-xl" href="./races/">
-    <div class="slot" data-label="PHOTO 21:9 ／ スタート直前のゲート・全幅"></div>
+    <div class="slot" data-label="PHOTO 21:9 ／ スタート直前のゲート・全幅"><img class="ph" src="https://picsum.photos/id/182/1920/820" width="1920" height="820" alt="" loading="lazy" decoding="async"></div>
     <div class="fb-ov">
       <div class="row"><span class="chip live">RACE</span><span class="stamp">国内 49戦 ＋ 世界 57戦</span></div>
       <h3>次の大会は<br>9月20日、北海道。</h3>
@@ -450,7 +458,7 @@ table.rank .pt span{font-size:10.5px;color:var(--muted);margin-left:3px}
   </a>
 
   <a class="fb fb-lg" href="./courses/">
-    <div class="slot" data-label="PHOTO 21:9 ／ 林間コース・レンタル車両"></div>
+    <div class="slot" data-label="PHOTO 21:9 ／ 林間コース・レンタル車両"><img class="ph" src="https://picsum.photos/id/28/1920/820" width="1920" height="820" alt="" loading="lazy" decoding="async"></div>
     <div class="fb-ov right">
       <div class="row"><span class="chip">COURSE</span><span class="stamp">全国 112カ所</span></div>
       <h3>手ぶらで、<br>走れる場所へ。</h3>
@@ -461,17 +469,17 @@ table.rank .pt span{font-size:10.5px;color:var(--muted);margin-left:3px}
 
   <div class="fb-split">
     <a class="fb fb-sm" href="./schools/">
-      <div class="slot" data-label="PHOTO 3:4 ／ 講師と受講者"></div>
+      <div class="slot" data-label="PHOTO 3:4 ／ 講師と受講者"><img class="ph" src="https://picsum.photos/id/4/900/1200" width="900" height="1200" alt="" loading="lazy" decoding="async"></div>
       <div class="fb-ov"><div class="row"><span class="chip">SCHOOL</span><span class="stamp">18件</span></div>
         <h3>習いに行く</h3><p>元全日本王者が教える個人スクールから、メーカー公式まで。</p><span class="fb-go">→</span></div>
     </a>
     <a class="fb fb-sm" href="./world/">
-      <div class="slot" data-label="PHOTO 3:4 ／ MXGP パドック"></div>
+      <div class="slot" data-label="PHOTO 3:4 ／ MXGP パドック"><img class="ph" src="https://picsum.photos/id/111/900/1200" width="900" height="1200" alt="" loading="lazy" decoding="async"></div>
       <div class="fb-ov"><div class="row"><span class="chip mv">WORLD</span><span class="stamp">9シリーズ</span></div>
         <h3>世界の頂点を見る</h3><p>MXGP、SMX、EnduroGP、TrialGP、ダカール。</p><span class="fb-go">→</span></div>
     </a>
     <a class="fb fb-sm" href="./shops/">
-      <div class="slot" data-label="PHOTO 3:4 ／ 店内・在庫棚"></div>
+      <div class="slot" data-label="PHOTO 3:4 ／ 店内・在庫棚"><img class="ph" src="https://picsum.photos/id/20/900/1200" width="900" height="1200" alt="" loading="lazy" decoding="async"></div>
       <div class="fb-ov"><div class="row"><span class="chip">SHOP</span><span class="stamp">47都道府県</span></div>
         <h3>買う・直す</h3><p>近くの取扱店を、自分の県から。</p><span class="fb-go">→</span></div>
     </a>
