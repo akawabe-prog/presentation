@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="カスタムジャパンのオフロード映像メディア兼コマースサイトの画面案。レース・コース・スクール・店舗のデータベースと、用品購入までを1本の流れでつないだ構成。">
 <link rel="canonical" href="https://akawabe-prog.github.io/presentation/rideout/mockup/">
-<title>オフロード映像メディア 画面案</title>
+<title>RIDEOUT by CustomJapan 画面案</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap">
@@ -242,18 +242,25 @@ table.rank .pt span{font-size:10.5px;color:var(--muted);margin-left:3px}
 .hero-copy h1 br{display:inline}
 @media(max-width:760px){.hero-copy h1{max-width:none}}
 
+/* ===== ブランド：RIDEOUT by CustomJapan ===== */
+.brand{display:inline-flex;align-items:center;gap:9px;font-family:var(--f-lat);font-size:19px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;line-height:1;color:var(--text)}
+.brand em{font-style:normal;font-family:var(--f-jp);font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:none;color:var(--muted);margin-left:2px;padding-top:2px}
+.rmark{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:var(--text);color:var(--ground);border-radius:4px;font-family:var(--f-lat);font-size:15px;font-weight:800;letter-spacing:0}
+.brand:hover .rmark{background:var(--amber)}
+.tag-line{font-family:var(--f-lat);font-size:11px;font-weight:800;letter-spacing:.16em;color:var(--text-2);margin-left:8px}
+
 </style>
 
 </head>
 <body>
 <div class="mock">
-  <span>画面案（モックアップ）／ 写真・動画は枠のみ</span>
+  <span>RIDEOUT by CustomJapan ／ 画面案 ── 写真・動画は仮</span>
   <button id="toggle" type="button" aria-pressed="false">導線の注釈を表示</button>
 </div>
 
 <header class="chrome">
   <div class="chrome-in">
-    <span class="brand">CUSTOM JAPAN <em>OFFROAD</em></span>
+    <a class="brand" href="./"><span class="rmark">R</span>RIDEOUT <em>by CustomJapan</em></a>
     <nav class="gnav">
       <a href="#" class="on">ホーム</a>
       <a href="#stream">映像</a>
@@ -521,7 +528,7 @@ table.rank .pt span{font-size:10.5px;color:var(--muted);margin-left:3px}
 <footer>
   <div class="wrap">
     <div class="fnav">
-      <span>CUSTOM JAPAN OFFROAD</span>
+      <span>RIDEOUT by CustomJapan</span>
       <span>MOVIE</span>
       <span>RACE</span>
       <span>COURSE</span>

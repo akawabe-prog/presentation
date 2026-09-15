@@ -352,3 +352,10 @@ img.ph.real{filter:sepia(.1) saturate(.85) contrast(1.02) brightness(.7)}
 .lr .lc a:first-child:hover{color:var(--amber)}
 .lr .lc .ic{margin:0;width:28px;height:28px;font-size:13px}
 @media(max-width:820px){.lr{grid-template-columns:1fr auto;gap:4px 12px}.lr .lp{grid-column:1/-1}.lr .lt{grid-column:1/-1}.lr .lc{justify-content:flex-start}}
+
+/* ===== ブランド：RIDEOUT by CustomJapan ===== */
+.brand{display:inline-flex;align-items:center;gap:9px;font-family:var(--f-lat);font-size:19px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;line-height:1;color:var(--text)}
+.brand em{font-style:normal;font-family:var(--f-jp);font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:none;color:var(--muted);margin-left:2px;padding-top:2px}
+.rmark{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:var(--text);color:var(--ground);border-radius:4px;font-family:var(--f-lat);font-size:15px;font-weight:800;letter-spacing:0}
+.brand:hover .rmark{background:var(--amber)}
+.tag-line{font-family:var(--f-lat);font-size:11px;font-weight:800;letter-spacing:.16em;color:var(--text-2);margin-left:8px}
