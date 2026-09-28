@@ -395,3 +395,10 @@ img.ph,.slot img.ph,img.ph.real,.phead.phero>img.hero,.phead.phero>img.hero.real
 a.go,.fb-go,.nx .nk,.go-k,.jstep[aria-current="page"] .jn,.eh .num,.kick,.phead .kick,.st .k,.rb .pf,.cc .pf,.card .pf,.ebody .pf,.gk,.nb .nk,.sbox .sk,.news-h h2 small{color:var(--text-2)}
 /* テーマ切替ボタン */
 .theme-toggle{font-family:var(--f-lat);font-size:11.5px;font-weight:800;letter-spacing:.12em;border:1px solid currentColor;background:transparent;color:inherit;padding:3px 10px;cursor:pointer;margin-left:12px}
+
+/* ===== 本番 ===== */
+.slot::after{content:none!important}
+.chrome{top:0}
+.ctrl,.lctrl{top:60px}
+.journey{top:60px}
+.anno,.mock,.theme-toggle{display:none!important}

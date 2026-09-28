@@ -3,13 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="カスタムジャパンのオフロード映像メディア兼コマースサイトの画面案。レース・コース・スクール・店舗のデータベースと、用品購入までを1本の流れでつないだ構成。">
+<title>RIDEOUT by CustomJapan ── オフロードの大会・コース・スクール・店舗</title>
+<meta name="description" content="オフロードバイクの大会日程（国内49戦・世界57戦）、走れるコース112カ所、スクール18件、取扱店1,023件。レース速報と、大会前の備え。">
 <link rel="canonical" href="https://akawabe-prog.github.io/presentation/rideout/mockup/">
-<title>RIDEOUT by CustomJapan 画面案</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="./assets/logo-r.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap">
-
 <style>
 :root{
   --ground:#0D0C0B;
@@ -180,12 +179,12 @@ body.show-anno .anno-hero{display:block}
 .news-list .src{font-size:11px;color:var(--muted);margin-top:5px}
 .news-list a:hover h3{color:var(--amber)}
 .chip.flash{background:#B3251A;color:#fff}
-.chip.jp{background:var(--amber);color:var(--on-accent)}
+.chip.jp{background:var(--amber);color:#0D0C0B}
 
 /* ランキング */
 .rank-tabs{display:flex;gap:6px;margin:14px 0 12px;flex-wrap:wrap}
 .rank-tabs button{font-family:var(--f-lat);font-size:12px;font-weight:700;letter-spacing:.08em;background:transparent;border:1px solid var(--line-2);color:var(--text-2);padding:4px 11px;cursor:pointer}
-.rank-tabs button[aria-pressed="true"]{background:var(--amber);border-color:var(--amber);color:var(--on-accent)}
+.rank-tabs button[aria-pressed="true"]{background:var(--amber);border-color:var(--amber);color:#0D0C0B}
 .rank-tabs button:hover{color:var(--text)}
 table.rank{width:100%;border-collapse:collapse;font-size:13.5px}
 table.rank td{padding:7px 0;border-top:1px solid var(--line);vertical-align:baseline}
@@ -285,315 +284,144 @@ a.go,.fb-go,.nx .nk,.go-k,.jstep[aria-current="page"] .jn,.eh .num,.kick,.phead 
 /* テーマ切替ボタン */
 .theme-toggle{font-family:var(--f-lat);font-size:11.5px;font-weight:800;letter-spacing:.12em;border:1px solid currentColor;background:transparent;color:inherit;padding:3px 10px;cursor:pointer;margin-left:12px}
 
-</style>
+/* ===== 本番 ===== */
+.slot::after{content:none!important}
+.chrome{top:0}
+.ctrl,.lctrl{top:60px}
+.journey{top:60px}
+.anno,.mock,.theme-toggle{display:none!important}
 
+.themes{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+@media(max-width:820px){.themes{grid-template-columns:1fr}}
+.th{background:var(--surface);padding:24px 24px 22px;display:flex;flex-direction:column;gap:8px;color:inherit}
+.th:hover{background:var(--raised)}
+.th .k{font-family:var(--f-lat);font-size:11.5px;font-weight:800;letter-spacing:.16em;color:var(--text-2)}
+.th h3{font-family:var(--f-jp);font-size:20px;font-weight:900;margin:0;letter-spacing:-.01em}
+.th p{margin:0;font-size:13px;color:var(--text-2);line-height:1.75}
+.th .go{margin-top:auto;padding-top:10px;font-family:var(--f-lat);font-size:12.5px;font-weight:700;letter-spacing:.08em;color:var(--text)}
+.chrome-r a{color:var(--text-2)}
+</style>
 </head>
 <body>
-<div class="mock">
-  <span>RIDEOUT by CustomJapan ／ 画面案 ── 写真・動画は仮</span>
-  <span><button id="toggle" type="button" aria-pressed="false">導線の注釈を表示</button><button class="theme-toggle" type="button">LIGHT</button></span>
-</div>
+<header class="chrome"><div class="chrome-in">
+  <a class="brand" href="./"><span class="rb" aria-hidden="true"></span><span class="rw" role="img" aria-label="RIDEOUT"></span><em>by CustomJapan</em></a>
+  <nav class="gnav">
+    <a href="./" class="on">ホーム</a><a href="./races/">レース</a><a href="./events/">イベント</a><a href="./world/">世界選手権</a>
+    <a href="./courses/">コース</a><a href="./schools/">スクール</a><a href="./shops/">店舗</a><a href="./samples/">特集</a>
+    <a href="https://www.customjapan.net/" target="_blank" rel="noopener">用品を買う</a>
+  </nav>
+</div></header>
 
-<header class="chrome">
-  <div class="chrome-in">
-    <a class="brand" href="./"><span class="rb" aria-hidden="true"></span><span class="rw" role="img" aria-label="RIDEOUT"></span><em>by CustomJapan</em></a>
-    <nav class="gnav">
-      <a href="#" class="on">ホーム</a>
-      <a href="#stream">映像</a>
-      <a href="./races/">レース</a>
-      <a href="./events/">イベント</a>
-      <a href="./courses/">コース</a>
-      <a href="./schools/">スクール</a>
-      <a href="./shops/">店舗</a>
-      <a href="#gear">用品を買う</a>
-    </nav>
-    <div class="chrome-r"><span>SEARCH</span><span>LOGIN</span><span>CART</span></div>
-  </div>
-</header>
-
-<!-- ===== HERO ===== -->
-<div class="anno anno-hero" style="margin-top:24px"><b>① 人を集める</b>トップは分類で割らず、いま最も強い 1 本を全面に出す。カテゴリはナビに置く。ここに来る人の多くは、まだ何を探すか決めていない。</div>
 <a class="hero" href="./events/eicma/" style="display:block">
   <div class="hero-media">
-    <div class="slot" data-label="Photo: Sanjay Pradhan / Wikimedia Commons / CC BY 3.0"><img class="ph real" src="./assets/hero.jpg" width="1920" height="1280" alt="" decoding="async" fetchpriority="high"><span class="play"></span></div>
+    <div class="slot r169"><img class="ph real" src="./assets/hero.jpg" width="1920" height="1280" alt="" decoding="async" fetchpriority="high"></div>
     <div class="hero-shade"></div><span class="wm"></span>
   </div>
   <div class="hero-copy">
-    <div class="row">
-      <span class="chip live">NEW</span>
-      <span class="chip mv">MOVIE</span>
-      <span class="stamp">2026.11.06 ／ MILANO</span>
-    </div>
-    <h1>2027年モデル、<br>エンデューロはこう変わる</h1>
-    <p>EICMA 現地から。発表された全ラインナップを、実車の映像とあわせて。国内導入の見込みと装備の変更点まで。</p>
+    <div class="row"><span class="chip live">EVENT</span><span class="chip mv">EICMA 2026</span><span class="stamp">2026.11.05–08 ／ MILANO</span></div>
+    <h1>EICMA 2026、<br>11月5日開幕。</h1>
+    <p>世界のオフロード新型が最初に姿を見せる場所。KTM／Husqvarna／GASGAS／Beta／Sherco／Fantic の2027年型エンデューロ・モトクロッサーと、ブーツ・ゴーグル・プロテクターの新作を「オフロードだけ」で歩く。</p>
   </div>
 </a>
 
-<div class="wrap"><div class="anno"><b>① 人を集める の中心</b>速報とランキングは<b>更新され続けるため、再訪の理由になる。</b>取材記事は数を作れないが、結果とランキングは毎週動く。ここが弱いとトップに戻ってくる理由がなくなる。</div></div>
-<div class="news">
- <div class="news-in">
-  <div class="news-grid">
-   <div class="news-col">
+<div class="news"><div class="news-in"><div class="news-grid">
+  <div class="news-col">
     <div class="news-h"><h2>NEWS</h2><span class="jp">レース結果・選手の動向</span><span class="upd">UPDATED 2026.09.28</span></div>
     <ul class="news-list"><li class="lead"><a href="./world/mxgp/"><div class="m"><span class="dt">2026.09.21</span><span class="chip flash">王者決定</span><span class="stamp">MXGP 最終戦 オーストラリア・ダーウィン</span></div><h3>ハーリングスが6度目の世界王者。MX2はファレス、トライアンフ初の世界タイトル</h3><p>最終戦もハーリングスが2ヒートを制し、今季13GP優勝・22レース優勝で王座を確定。MX2はギエム・ファレスが859ポイントで王者となり、チームメイトのマクレラン（811）が2位。トライアンフにとって初の世界タイトルで、英国メーカーとしては1965年のBSA以来。WMXはダニエラ・ギレンがスペイン人初の王座。</p><p class="src">出典：MXGP 公式／MCNews／Racer X</p></a></li><li class=""><a href="./world/supermotocross/"><div class="m"><span class="dt">2026.09.26</span><span class="chip flash">王者決定</span><span class="stamp">SuperMotocross ファイナル（ミズーリ・リッジデール）</span></div><h3>プラドが450 SMX王者、キッチンが250で初戴冠</h3><p>3倍ポイントの最終戦。決勝はハイデン・ディーガンが250・450の両クラスを制したが、王座はホルヘ・プラド（450）とリーヴァイ・キッチン（250）の手に。北米シーズンはこれで閉幕。</p><p class="src">出典：SuperMotocross 公式／Cycle News</p></a></li><li class=""><a href="./races/enduro/"><div class="m"><span class="dt">2026.09.24</span><span class="chip ">JEC</span><span class="stamp">全日本エンデューロ 第3戦 日高2DAYS</span></div><h3>勝山聖がIA初優勝、2日総合も制す</h3><p>DAY1は勝山聖が2本目の三島テストで18秒を奪い、馬場亮太を19秒差で逆転してIA初優勝。DAY2は酢崎友哉が勝ち、馬場は三島テストで失速。2日総合は勝山の手に。シリーズは最終戦チーズナッツ（10/24-25）へ。</p><p class="src">出典：JEC Promotion 公式</p></a></li><li class=""><a href="./races/motocross/"><div class="m"><span class="dt">2026.09.15</span><span class="chip ">全日本MX</span><span class="stamp">第7戦 近畿大会 MRAカップ（名阪）</span></div><h3>雨のマディで大倉由揮が2ヒート制覇。同点だった王座争いで一歩リード</h3><p>深く掘れた轍と水を含んだ路面で、大倉由揮がIA1の2ヒートを制して総合優勝。ランキングは大倉547に対しウィルソン・ジェイ542で、残り2戦。第8戦（10/10-11 オフロードヴィレッジ）には下田丈が参戦する。</p><p class="src">出典：Motosports Promotion（JMX 公式）</p></a></li><li class=""><a href="./races/"><div class="m"><span class="dt">2026.10.05</span><span class="chip jp">締切</span><span class="stamp">エントリー締切</span></div><h3>JNCC 八犬伝（10/11）とJEC チーズナッツ（10/24-25）は、10月5日締切</h3><p>JNCC第8戦サンドバレー八犬伝（千葉）は9/8〜10/5、JEC最終戦チーズナッツ2DAYS（福島）は9/14〜10/5が受付期間。どちらも残り1週間。</p><p class="src">出典：JNCC 公式／JEC Promotion 公式</p></a></li><li class=""><a href="./world/trialgp/"><div class="m"><span class="dt">2026.09.27</span><span class="chip ">世界選手権</span><span class="stamp">FIM Trial des Nations（スペイン・アルテイショ）</span></div><h3>スペインが22年連続32度目の優勝。2位イギリス、3位イタリア</h3><p>トニー・ボウ、ハイメ・ブスト、ガブリエル・マルセリのスペインが27点で圧勝。イギリス65点、イタリア94点。</p><p class="src">出典：TrialGP 公式／Infobae</p></a></li><li class=""><a href="./world/mxgp/"><div class="m"><span class="dt">2026.10.02</span><span class="chip jp">日本代表</span><span class="stamp">Motocross of Nations 2026（フランス・エルネー）</span></div><h3>MXoN TEAM JAPAN は今週末。大城#31、横山#32、大倉#33</h3><p>10月2〜4日。大城魁之輔（MXGP）、横山遥希（MX2）、大倉由揮（OPEN）の3名。昨年は9年ぶりに決勝進出で総合11位、過去最高は2000年・2003年の6位。</p><p class="src">出典：Motosports Promotion（JMX 公式）</p></a></li></ul>
-   </div>
-   <div class="news-col">
-    <div class="news-h"><h2>STANDINGS</h2><span class="jp">シリーズランキング</span></div>
-    <div class="rank-tabs" id="rk">
-      <button data-k="IA1" aria-pressed="true">全日本 IA1</button>
-      <button data-k="IA2">IA2</button>
-      <button data-k="LMX">レディース</button>
-      <button data-k="MX2">MX2 最終</button>
-    </div>
-    <table class="rank"><tbody id="rkb"><tr><td class="p">1</td><td class="nm">大倉 由揮<span class="tm">Bells Racing</span></td><td class="pt">547<span>pt</span></td></tr><tr><td class="p">2</td><td class="nm">Wilson Jay<span class="tm">YAMAHA FACTORY RACING TEAM</span></td><td class="pt">542<span>pt</span></td></tr><tr><td class="p">3</td><td class="nm">大城 魁之輔<span class="tm">YAMAHA FACTORY RACING TEAM</span></td><td class="pt">501<span>pt</span></td></tr><tr><td class="p">4</td><td class="nm">大塚 豪太<span class="tm">T.E.SPORT</span></td><td class="pt">457<span>pt</span></td></tr><tr><td class="p">5</td><td class="nm">内田 篤基<span class="tm">Team Kawasaki R&amp;D</span></td><td class="pt">428<span>pt</span></td></tr></tbody></table>
-    <p class="src" style="font-size:11px;color:var(--muted);margin-top:12px;line-height:1.7">
-      出典：Motosports Promotion（JMX 公式ランキング、第7戦終了時点）／MXGP 公式（最終）。2026年9月28日時点。<br>
-      <a href="./races/" style="color:var(--amber)">国内49戦のカレンダー →</a>　<a href="./world/" style="color:var(--amber)">世界選手権57戦 →</a></p>
-
-    <div class="news-h" style="margin-top:30px;padding-top:22px;border-top:1px solid var(--line)">
-      <h2>INTERVIEW</h2><span class="jp">取材記事</span></div>
-    <ul class="news-list">
-      <li><div class="m"><span class="dt">企画中</span><span class="chip">PEOPLE</span></div>
-        <h3>元全日本王者が、毎月10回スクールに立つ理由</h3>
-        <p>福本敏夫／オフロードヴィレッジ（埼玉）。免許を持たない人に免許不要で乗せ続けて20年。</p>
-        <p class="src">取材候補。スクールDBに掲載済み</p></li>
-      <li><div class="m"><span class="dt">企画中</span><span class="chip">PEOPLE</span></div>
-        <h3>「装備ごと13,500円」で教える、たった一人の指導</h3>
-        <p>ウイリー松浦／谷田部エンジョイスポーツランド（茨城）。ほぼマンツーマン、1名から随時開催。</p>
-        <p class="src">取材候補。スクールDBに掲載済み</p></li>
-      <li><div class="m"><span class="dt">企画中</span><span class="chip">SHOP</span></div>
-        <h3>レースのたびに閉める店</h3>
-        <p>和田屋（千葉）。MFJエンデューロ・JNCCをサポートし、定休日が不定になる競技系専門店。</p>
-        <p class="src">取材候補37件のうちの1件</p></li>
-    </ul>
-    <p class="src" style="font-size:11px;color:var(--muted);margin-top:10px;line-height:1.7">
-      インタビューは<b style="color:var(--text-2)">これから制作するコンテンツ</b>。取材先は実在し、スクール・店舗のデータベースに収録済み。</p>
-   </div>
   </div>
- </div>
-</div>
+  <div class="news-col">
+    <div class="news-h"><h2>STANDINGS</h2><span class="jp">シリーズランキング</span></div>
+    <div class="rank-tabs" id="rk"><button data-k="IA1" aria-pressed="true">全日本 IA1</button><button data-k="IA2">IA2</button><button data-k="LMX">レディース</button><button data-k="MX2">MX2 最終</button></div>
+    <table class="rank"><tbody id="rkb"><tr><td class="p">1</td><td class="nm">大倉 由揮<span class="tm">Bells Racing</span></td><td class="pt">547<span>pt</span></td></tr><tr><td class="p">2</td><td class="nm">Wilson Jay<span class="tm">YAMAHA FACTORY RACING TEAM</span></td><td class="pt">542<span>pt</span></td></tr><tr><td class="p">3</td><td class="nm">大城 魁之輔<span class="tm">YAMAHA FACTORY RACING TEAM</span></td><td class="pt">501<span>pt</span></td></tr><tr><td class="p">4</td><td class="nm">大塚 豪太<span class="tm">T.E.SPORT</span></td><td class="pt">457<span>pt</span></td></tr><tr><td class="p">5</td><td class="nm">内田 篤基<span class="tm">Team Kawasaki R&amp;D</span></td><td class="pt">428<span>pt</span></td></tr></tbody></table>
+    <p class="src" style="font-size:11px;color:var(--muted);margin-top:12px;line-height:1.7">出典：Motosports Promotion（JMX 公式ランキング、第7戦終了時点）／MXGP 公式（最終）。<br><a href="./races/">国内49戦のカレンダー →</a>　<a href="./world/">世界選手権57戦 →</a></p>
+    <div class="news-h" style="margin-top:30px;padding-top:22px;border-top:1px solid var(--line)"><h2>NEXT</h2><span class="jp">次の大会</span></div>
+    <ul class="news-list">
+      <li><a href="./races/motocross/"><div class="m"><span class="dt">2026.10.10</span><span class="chip">全日本MX</span></div><h3>TOKIO INKARAMI Super Motocross</h3><p>オフロードヴィレッジ（埼玉県）</p></a></li>
+      <li><a href="./races/cross-country/"><div class="m"><span class="dt">2026.10.11</span><span class="chip">JNCC</span><span class="stamp">締切 10/05</span></div><h3>サンドバレー 八犬伝 関東全国大会</h3><p>サンドバレー（千葉県）</p></a></li>
+    </ul>
+  </div>
+</div></div></div>
 
 <div class="wrap">
-
-<!-- ===== STREAM ===== -->
 <section id="stream">
-  <div class="anno"><b>① 人を集める ／ ③ 資産</b>映像・レース・コース・取材を<b>種類で分けずに 1 本の流れに混ぜる。</b>分類して並べると、それぞれが小さくなって何も伝わらない。種類はカードのラベルで示す。</div>
-  <div class="shead">
-    <h2>LATEST</h2>
-    <span class="jp">新着</span>
-    <a class="more" href="#">VIEW ALL →</a>
-  </div>
+  <div class="shead"><h2>LATEST</h2><span class="jp">新着</span><a class="more" href="./samples/">VIEW ALL →</a></div>
   <div class="stream">
-
-    <a class="it lg" href="#">
-      <div class="slot r169" data-label="MOVIE 16:9"><img class="ph" src="https://picsum.photos/id/190/1600/900" width="1600" height="900" alt="" loading="lazy" decoding="async"><span class="play"></span><span class="wm"></span></div>
-      <div class="row"><span class="chip mv">MOVIE</span><span class="stamp">04:12</span></div>
-      <h3>雨の林道で、タイヤの空気圧をどこまで落とすか</h3>
-      <p>同じ区間を 100kPa 刻みで走り比べる。グリップと リム打ちのリスクが入れ替わる境目を、走行映像で。</p>
-    </a>
-
-    <a class="it lg" href="#">
-      <div class="slot r169" data-label="PHOTO 16:9 ／ 工房"><img class="ph" src="https://picsum.photos/id/36/1600/900" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
-      <div class="row"><span class="chip">FEATURE</span><span class="stamp">2026.11.04</span></div>
-      <h3>ブーツはどこで、どう作られているか — イタリアの工房を訪ねる</h3>
-      <p>ソールの積層、縫製、剛性を決める工程。代理店だから入れた現場を、手元まで記録した。</p>
-    </a>
-
-    <a class="it tall" href="#">
-      <div class="slot r916" data-label="MOVIE 9:16"><img class="ph" src="https://picsum.photos/id/123/720/1280" width="720" height="1280" alt="" loading="lazy" decoding="async"><span class="play"></span></div>
-      <div class="row"><span class="chip mv">SHORT</span><span class="stamp">0:48</span></div>
-      <h3>エアフィルター洗浄、現場でのやり方</h3>
-    </a>
-
-    <a class="it tall" href="#">
-      <div class="slot r916" data-label="MOVIE 9:16"><img class="ph" src="https://picsum.photos/id/115/720/1280" width="720" height="1280" alt="" loading="lazy" decoding="async"><span class="play"></span></div>
-      <div class="row"><span class="chip mv">SHORT</span><span class="stamp">0:36</span></div>
-      <h3>ロールオフの使い方、泥のレースで</h3>
-    </a>
-
-    <a class="it tall" href="#">
-      <div class="slot r916" data-label="MOVIE 9:16"><img class="ph" src="https://picsum.photos/id/131/720/1280" width="720" height="1280" alt="" loading="lazy" decoding="async"><span class="play"></span></div>
-      <div class="row"><span class="chip mv">SHORT</span><span class="stamp">0:55</span></div>
-      <h3>JNCC 会場の朝、スタート前の 3 分</h3>
-    </a>
-
-    <a class="it tall" href="./samples/feature/">
-      <div class="slot r916" data-label="PHOTO 9:16"><img class="ph" src="https://picsum.photos/id/127/720/1280" width="720" height="1280" alt="" loading="lazy" decoding="async"></div>
+    <a class="it lg" href="./samples/feature/"><div class="slot r169"><img class="ph" src="https://picsum.photos/id/190/1600/900" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
       <div class="row"><span class="chip">FEATURE</span><span class="stamp">全国18カ所</span></div>
-      <h3>手ぶらで走れる場所、全国18カ所</h3>
-    </a>
-
-    <a class="it" href="./samples/gear/">
-      <div class="slot r169" data-label="PHOTO 16:9 ／ レース"><img class="ph" src="https://picsum.photos/id/170/1600/900" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
-      <div class="row"><span class="chip">GEAR</span><span class="stamp">JEC 第3戦 ／ 9.20</span></div>
-      <h3>2DAYSエンデューロに出る前に、カートに入れておく10のもの</h3>
-      <p>今週末の日高2DAYS。まずタイヤとバッテリー。買うべきは車両でもブーツでもなく、2日間を走り切る消耗品。</p>
-    </a>
-
-    <a class="it" href="./samples/course/">
-      <div class="slot r169" data-label="PHOTO 16:9 ／ 店内"><img class="ph" src="https://picsum.photos/id/60/1600/900" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
+      <h3>免許があれば、あとは何もいらない。手ぶらで走れる場所、全国18カ所。</h3><p>レンタル車両かスクールがあるコースだけを集めた。今週末に始められる。</p></a>
+    <a class="it lg" href="./samples/course/"><div class="slot r169"><img class="ph" src="https://picsum.photos/id/170/1600/900" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
       <div class="row"><span class="chip">COURSE</span><span class="stamp">埼玉・川越</span></div>
-      <h3>オフロードヴィレッジ — 全日本が年2回開かれ、免許のない人も乗れる</h3>
-      <p>基本情報・2026年の大会・スクール・近くの店。更新され続けるコース詳細。</p>
-    </a>
-
-    <a class="it" href="#">
-      <div class="slot r169" data-label="PHOTO 16:9 ／ ライダー"><img class="ph" src="https://picsum.photos/id/64/1600/900" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
-      <div class="row"><span class="chip">PEOPLE</span><span class="stamp">2026.10.20</span></div>
-      <h3>平日は会社員、週末はエンデューロ。続けるための装備の選び方</h3>
-      <p>年間 10 戦。消耗品にいくら使い、何を優先しているのか。</p>
-    </a>
-
+      <h3>オフロードヴィレッジ ── 全日本が年2回開かれ、免許のない人も乗れる</h3><p>基本情報、2026年の大会、スクール、近くの店。</p></a>
+    <a class="it tall" href="./events/eicma/"><div class="slot r916"><img class="ph" src="https://picsum.photos/id/158/720/1280" width="720" height="1280" alt="" loading="lazy" decoding="async"><span class="wm"></span></div>
+      <div class="row"><span class="chip">EVENT</span><span class="stamp">11.05–08</span></div><h3>EICMA 2026 をオフロードだけで歩く</h3></a>
+    <a class="it tall" href="./world/trialgp/"><div class="slot r916"><img class="ph" src="https://picsum.photos/id/166/720/1280" width="720" height="1280" alt="" loading="lazy" decoding="async"><span class="wm"></span></div>
+      <div class="row"><span class="chip">WORLD</span><span class="stamp">TRIALGP</span></div><h3>世界選手権が日本で開かれる唯一の競技、トライアル</h3></a>
+    <a class="it tall" href="./races/cross-country/"><div class="slot r916"><img class="ph" src="https://picsum.photos/id/93/720/1280" width="720" height="1280" alt="" loading="lazy" decoding="async"><span class="wm"></span></div>
+      <div class="row"><span class="chip">RACE</span><span class="stamp">締切 10/05</span></div><h3>JNCC 八犬伝、エントリーは10月5日まで</h3></a>
+    <a class="it tall" href="./schools/motocross-gokko/"><div class="slot r916"><img class="ph" src="https://picsum.photos/id/4/720/1280" width="720" height="1280" alt="" loading="lazy" decoding="async"><span class="wm"></span></div>
+      <div class="row"><span class="chip">SCHOOL</span><span class="stamp">埼玉</span></div><h3>元全日本王者が月10回、免許なしで乗せる「モトクロスごっこ」</h3></a>
+    <a class="it" href="./samples/gear/"><div class="slot r169"><img class="ph" src="https://picsum.photos/id/36/1600/900" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
+      <div class="row"><span class="chip">GEAR</span><span class="stamp">JEC 最終戦 ／ 10.24–25</span></div>
+      <h3>2DAYSエンデューロに出る前に、カートに入れておく10のもの</h3><p>まずタイヤとバッテリー。</p></a>
+    <a class="it" href="./world/mxgp/"><div class="slot r169"><img class="ph" src="https://picsum.photos/id/131/1600/900" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
+      <div class="row"><span class="chip">WORLD</span><span class="stamp">MXGP</span></div>
+      <h3>ハーリングス6度目の世界王者。MX2はトライアンフ初のタイトル</h3><p>2026年シーズン最終戦ダーウィンの結果と最終順位。</p></a>
+    <a class="it" href="./courses/enduro/"><div class="slot r169"><img class="ph" src="https://picsum.photos/id/28/1600/900" width="1600" height="900" alt="" loading="lazy" decoding="async"></div>
+      <div class="row"><span class="chip">COURSE</span><span class="stamp">ENDURO</span></div>
+      <h3>エンデューロができる全国のコース</h3><p>林間・トレイル区間を持つ常設コースと、2026年の大会会場。</p></a>
   </div>
 </section>
 
-<!-- ===== COMMERCE ===== -->
 <section id="gear">
-  <div class="anno"><b>② 商品紹介から購入</b>商品は<b>1 か所に集中させる。</b>記事の中に散らすと、どれも小さくなって買う場面にならない。読んだ流れの続きとして、その場で購入まで完結させる。EC 内に置くため連携は不要。</div>
-  <div class="shead">
-    <h2>GEAR</h2>
-    <span class="jp">記事から、そのまま買う</span>
-    <a class="more" href="#">ALL PRODUCTS →</a>
-  </div>
-  <div class="shop-block">
-    <div class="shop-story">
-      <span class="chip mv" style="align-self:flex-start">FROM THE STORY</span>
-      <h3>エアフィルター洗浄の記事で、実際に使っている道具</h3>
-      <p>砂塵を吸うオフロードでは、走行のたびに洗浄が要る。専用のクリーナーとオイルを使わないと、目詰まりと吸気抵抗の原因になる。動画で使っているものをそのまま。</p>
-      <a class="cta" href="#">記事を読む →</a>
-    </div>
-    <div class="shop-rail">
-      <div class="prow">
-        <div class="slot r11" data-label="PRODUCT"><img class="ph" src="https://picsum.photos/id/119/800/800" width="800" height="800" alt="" loading="lazy" decoding="async"></div>
-        <div><div class="nm">エアフィルターオイル 1L</div><div class="sb">IN STOCK</div></div>
-        <div><div class="pr">¥2,480</div><a class="add" href="#">ADD →</a></div>
-      </div>
-      <div class="prow">
-        <div class="slot r11" data-label="PRODUCT"><img class="ph" src="https://picsum.photos/id/80/800/800" width="800" height="800" alt="" loading="lazy" decoding="async"></div>
-        <div><div class="nm">フィルタークリーナー 1L</div><div class="sb">IN STOCK</div></div>
-        <div><div class="pr">¥1,980</div><a class="add" href="#">ADD →</a></div>
-      </div>
-      <div class="prow">
-        <div class="slot r11" data-label="PRODUCT"><img class="ph" src="https://picsum.photos/id/72/800/800" width="800" height="800" alt="" loading="lazy" decoding="async"></div>
-        <div><div class="nm">エアフィルター／2 層スポンジ</div><div class="sb">IN STOCK</div></div>
-        <div><div class="pr">¥3,300</div><a class="add" href="#">ADD →</a></div>
-      </div>
-      <div class="prow">
-        <div class="slot r11" data-label="PRODUCT"><img class="ph" src="https://picsum.photos/id/24/800/800" width="800" height="800" alt="" loading="lazy" decoding="async"></div>
-        <div><div class="nm">ティアオフ 20 枚入</div><div class="sb">IN STOCK</div></div>
-        <div><div class="pr">¥1,650</div><a class="add" href="#">ADD →</a></div>
-      </div>
-    </div>
+  <div class="shead"><h2>GEAR</h2><span class="jp">カスタムジャパンで買う</span><a class="more" href="https://www.customjapan.net/" target="_blank" rel="noopener">CUSTOMJAPAN.NET →</a></div>
+  <div class="themes">
+    <a class="th" href="./samples/gear/"><span class="k">01 ／ 消耗品</span><h3>タイヤ・バッテリー・ゴーグル</h3><p>オフロードで最も減るのはタイヤ。大会ごとの路面で替える。バッテリーは直前に気づく。レンズ、ティアオフ、グリップ、フォークシール、エアフィルター。</p><span class="go">出走前の消耗品チェック →</span></a>
+    <a class="th" href="https://www.customjapan.net/" target="_blank" rel="noopener"><span class="k">02 ／ 車両プロテクション</span><h3>スキッドプレート・ガード・外装</h3><p>転倒で壊れたら買う、車両を買ったら付ける。ラジエターガード、ハンドガード、外装。</p><span class="go">カスタムジャパンで探す →</span></a>
+    <a class="th" href="./samples/feature/"><span class="k">03 ／ 参戦・入門装備</span><h3>ブーツ・プロテクター・工具</h3><p>始めるとき、大会に出るときに一式。タイダウン、トランポ用品もここに。</p><span class="go">まず走れる場所から →</span></a>
   </div>
 </section>
-
 </div>
-
-
-
-<div class="wrap"><div class="anno"><b>導線の強弱</b>大会・コース・スクール・店舗へ、写真を全幅で使った帯で誘導する。大会を最も高く、コースを次に、スクール・世界・店舗は3分割で一段下げる。</div></div>
 
 <section class="fbs" id="go">
   <div class="wrap"><div class="shead"><h2>WHERE NEXT</h2><span class="jp">次にどこへ行くか</span><a class="more" href="./races/">ALL →</a></div></div>
-
-  <a class="fb fb-xl" href="./races/">
-    <div class="slot" data-label="PHOTO 21:9 ／ スタート直前のゲート・全幅"><img class="ph" src="https://picsum.photos/id/182/1920/820" width="1920" height="820" alt="" loading="lazy" decoding="async"><span class="wm"></span></div>
-    <div class="fb-ov">
-      <div class="row"><span class="chip live">RACE</span><span class="stamp">国内 49戦 ＋ 世界 57戦</span></div>
+  <a class="fb fb-xl" href="./races/"><div class="slot"><img class="ph" src="https://picsum.photos/id/182/1920/820" width="1920" height="820" alt="" loading="lazy" decoding="async"><span class="wm"></span></div>
+    <div class="fb-ov"><div class="row"><span class="chip live">RACE</span><span class="stamp">国内 49戦 ＋ 世界 57戦</span></div>
       <h3>次の大会は<br>10月10日、埼玉。</h3>
-      <p>TOKIO INKARAMI Super Motocross　／　オフロードヴィレッジ　／　エントリー締切 09/10</p>
-      <span class="fb-go">年間カレンダーへ →</span>
-    </div>
-  </a>
-
-  <a class="fb fb-lg" href="./courses/">
-    <div class="slot" data-label="PHOTO 21:9 ／ 林間コース・レンタル車両"><img class="ph" src="https://picsum.photos/id/28/1920/820" width="1920" height="820" alt="" loading="lazy" decoding="async"><span class="wm"></span></div>
-    <div class="fb-ov right">
-      <div class="row"><span class="chip">COURSE</span><span class="stamp">全国 112カ所</span></div>
-      <h3>手ぶらで、<br>走れる場所へ。</h3>
-      <p>車両も装備も借りられるコースから。モトクロス／エンデューロ／トライアル、都道府県で探す。</p>
-      <span class="fb-go">コースを探す →</span>
-    </div>
-  </a>
-
+      <p>TOKIO INKARAMI Super Motocross　／　オフロードヴィレッジ</p><span class="fb-go">年間カレンダーへ →</span></div></a>
+  <a class="fb fb-lg" href="./courses/"><div class="slot"><img class="ph" src="https://picsum.photos/id/127/1920/820" width="1920" height="820" alt="" loading="lazy" decoding="async"><span class="wm"></span></div>
+    <div class="fb-ov right"><div class="row"><span class="chip">COURSE</span><span class="stamp">全国 112カ所</span></div>
+      <h3>手ぶらで、<br>走れる場所へ。</h3><p>車両も装備も借りられるコースから。モトクロス／エンデューロ／トライアル、都道府県で探す。</p><span class="fb-go">コースを探す →</span></div></a>
   <div class="fb-split">
-    <a class="fb fb-sm" href="./schools/">
-      <div class="slot" data-label="PHOTO 3:4 ／ 講師と受講者"><img class="ph" src="https://picsum.photos/id/4/900/1200" width="900" height="1200" alt="" loading="lazy" decoding="async"></div>
-      <div class="fb-ov"><div class="row"><span class="chip">SCHOOL</span><span class="stamp">18件</span></div>
-        <h3>習いに行く</h3><p>元全日本王者が教える個人スクールから、メーカー公式まで。</p><span class="fb-go">→</span></div>
-    </a>
-    <a class="fb fb-sm" href="./world/">
-      <div class="slot" data-label="PHOTO 3:4 ／ MXGP パドック"><img class="ph" src="https://picsum.photos/id/111/900/1200" width="900" height="1200" alt="" loading="lazy" decoding="async"></div>
-      <div class="fb-ov"><div class="row"><span class="chip mv">WORLD</span><span class="stamp">9シリーズ</span></div>
-        <h3>世界の頂点を見る</h3><p>MXGP、SMX、EnduroGP、TrialGP、ダカール。</p><span class="fb-go">→</span></div>
-    </a>
-    <a class="fb fb-sm" href="./shops/">
-      <div class="slot" data-label="PHOTO 3:4 ／ 店内・在庫棚"><img class="ph" src="https://picsum.photos/id/20/900/1200" width="900" height="1200" alt="" loading="lazy" decoding="async"></div>
-      <div class="fb-ov"><div class="row"><span class="chip">SHOP</span><span class="stamp">47都道府県</span></div>
-        <h3>買う・直す</h3><p>近くの取扱店を、自分の県から。</p><span class="fb-go">→</span></div>
-    </a>
+    <a class="fb fb-sm" href="./schools/"><div class="slot"><img class="ph" src="https://picsum.photos/id/4/900/1200" width="900" height="1200" alt="" loading="lazy" decoding="async"></div><div class="fb-ov"><div class="row"><span class="chip">SCHOOL</span><span class="stamp">18件</span></div><h3>習いに行く</h3><p>元全日本王者が教える個人スクールから、メーカー公式まで。</p><span class="fb-go">→</span></div></a>
+    <a class="fb fb-sm" href="./world/"><div class="slot"><img class="ph" src="https://picsum.photos/id/111/900/1200" width="900" height="1200" alt="" loading="lazy" decoding="async"></div><div class="fb-ov"><div class="row"><span class="chip mv">WORLD</span><span class="stamp">9シリーズ</span></div><h3>世界の頂点を見る</h3><p>MXGP、SMX、EnduroGP、TrialGP、ダカール。</p><span class="fb-go">→</span></div></a>
+    <a class="fb fb-sm" href="./shops/"><div class="slot"><img class="ph" src="https://picsum.photos/id/60/900/1200" width="900" height="1200" alt="" loading="lazy" decoding="async"></div><div class="fb-ov"><div class="row"><span class="chip">SHOP</span><span class="stamp">47都道府県</span></div><h3>買う・直す</h3><p>近くの取扱店を、自分の県から。</p><span class="fb-go">→</span></div></a>
   </div>
-
-  <div class="wrap"><div class="go-quick">
-    <span class="stamp">QUICK</span>
-    <a href="./races/motocross/">モトクロス</a><a href="./races/enduro/">エンデューロ</a><a href="./races/hard-enduro/">ハードエンデューロ</a>
-    <a href="./races/trial/">トライアル</a><a href="./world/">世界選手権</a><a href="./events/">イベント</a>
-    <span class="sep"></span>
-    <a href="./shops/saitama/">埼玉</a><a href="./shops/chiba/">千葉</a><a href="./shops/tokyo/">東京</a><a href="./shops/osaka/">大阪</a>
-    <span class="sep"></span><a href="./samples/" style="border-color:var(--amber);color:var(--amber)">3つのコンテンツと回遊 →</a>
+  <div class="wrap"><div class="go-quick"><span class="stamp">QUICK</span>
+    <a href="./races/motocross/">モトクロス</a><a href="./races/enduro/">エンデューロ</a><a href="./races/hard-enduro/">ハードエンデューロ</a><a href="./races/trial/">トライアル</a><a href="./world/">世界選手権</a><a href="./events/">イベント</a>
+    <span class="sep"></span><a href="./shops/saitama/">埼玉</a><a href="./shops/chiba/">千葉</a><a href="./shops/tokyo/">東京</a><a href="./shops/osaka/">大阪</a><a href="./shops/list/">全店舗を絞り込む</a>
   </div></div>
 </section>
 
 <div class="wrap" style="padding-top:74px">
-<!-- ===== MAIL ===== -->
 <section>
-  <div class="anno"><b>① 人を集める の受け皿</b>読んだ人を、こちらから接触できる相手に変える。ここで得たリストが、後から消耗品の販売につながる。</div>
   <div class="mail">
-    <div>
-      <h2>大会情報と新製品を、月 2 回。</h2>
-      <p>エントリー開始の告知、レース結果、装備の入れ替え時期。オフロードに関する内容だけをお送りします。</p>
-    </div>
-    <form class="mform" onsubmit="return false">
-      <input type="email" placeholder="メールアドレス" aria-label="メールアドレス">
-      <button type="submit">登録する</button>
-    </form>
+    <div><h2>大会情報と新製品を、月 2 回。</h2><p>エントリー開始の告知、レース結果、装備の入れ替え時期。オフロードに関する内容だけをお送りします。</p></div>
+    <form class="mform" onsubmit="return false"><input type="email" placeholder="メールアドレス" aria-label="メールアドレス"><button type="submit">登録する</button></form>
   </div>
 </section>
 </div>
 
-<footer>
-  <div class="wrap">
-    <div class="fnav">
-      <span>RIDEOUT by CustomJapan <span class="tag-line">BUILT TO GET OUT.</span></span>
-      <span>MOVIE</span>
-      <span>RACE</span>
-      <span>COURSE</span>
-      <span>SCHOOL</span>
-      <span>SHOP</span>
-      <span>GEAR</span>
-    </div>
+<footer><div class="wrap">
+  <div class="fgrid">
+    <span>RIDEOUT by CustomJapan <span class="tag-line">BUILT TO GET OUT.</span></span>
+    <span><a href="./races/">RACE</a> <a href="./events/">EVENT</a> <a href="./world/">WORLD</a> <a href="./courses/">COURSE</a> <a href="./schools/">SCHOOL</a> <a href="./shops/">SHOP</a> <a href="https://www.customjapan.net/" target="_blank" rel="noopener">GEAR</a></span>
   </div>
-<div class="wrap" style="font-size:11px;color:var(--muted);padding-top:10px">HERO Photo: Sanjay Pradhan / Wikimedia Commons / CC BY 3.0（構成確認用）。その他の写真はプレースホルダー。</div></footer>
-
-<script>
-  const btn = document.getElementById('toggle');
-  btn.addEventListener('click', () => {
-    const on = document.body.classList.toggle('show-anno');
-    btn.setAttribute('aria-pressed', String(on));
-    btn.textContent = on ? '注釈を隠す' : '導線の注釈を表示';
-  });
-</script>
-
+  <p style="font-size:11px;color:var(--muted);margin-top:14px;line-height:1.7">HERO Photo: Sanjay Pradhan / Wikimedia Commons / CC BY 3.0。データ：MFJ／JEC Promotion／JNCC／各シリーズ公式、Webike ショップナビ、DIRTFREAK 販売店情報、各コース・スクール公式（2026年9月時点）。</p>
+</div></footer>
 <script>
 const RK={"IA1":`<tr><td class="p">1</td><td class="nm">大倉 由揮<span class="tm">Bells Racing</span></td><td class="pt">547<span>pt</span></td></tr><tr><td class="p">2</td><td class="nm">Wilson Jay<span class="tm">YAMAHA FACTORY RACING TEAM</span></td><td class="pt">542<span>pt</span></td></tr><tr><td class="p">3</td><td class="nm">大城 魁之輔<span class="tm">YAMAHA FACTORY RACING TEAM</span></td><td class="pt">501<span>pt</span></td></tr><tr><td class="p">4</td><td class="nm">大塚 豪太<span class="tm">T.E.SPORT</span></td><td class="pt">457<span>pt</span></td></tr><tr><td class="p">5</td><td class="nm">内田 篤基<span class="tm">Team Kawasaki R&amp;D</span></td><td class="pt">428<span>pt</span></td></tr>`,"IA2":`<tr><td class="p">1</td><td class="nm">柳瀬 大河<span class="tm">Honda Dream Racing</span></td><td class="pt">504<span>pt</span></td></tr><tr><td class="p">2</td><td class="nm">田中 淳也<span class="tm">YSP浜松 BOSS RACING</span></td><td class="pt">462<span>pt</span></td></tr><tr><td class="p">3</td><td class="nm">横澤 拓夢<span class="tm">Kawasaki PLAZA 盛岡 TKM</span></td><td class="pt">420<span>pt</span></td></tr><tr><td class="p">4</td><td class="nm">渡辺 陵<span class="tm">BLU CRU Team Pitin</span></td><td class="pt">409<span>pt</span></td></tr><tr><td class="p">5</td><td class="nm">吉田 琉雲<span class="tm">Bells Racing</span></td><td class="pt">404<span>pt</span></td></tr>`,"LMX":`<tr><td class="p">1</td><td class="nm">川井 麻央<span class="tm">T.E.SPORT</span></td><td class="pt">245<span>pt</span></td></tr><tr><td class="p">2</td><td class="nm">川上 真花<span class="tm">YSP浜松 BOSS RACING</span></td><td class="pt">222<span>pt</span></td></tr><tr><td class="p">3</td><td class="nm">本田 七海<span class="tm">TEAM KOH-Z</span></td><td class="pt">202<span>pt</span></td></tr><tr><td class="p">4</td><td class="nm">箕浦 未夢<span class="tm">Team ITOMO</span></td><td class="pt">197<span>pt</span></td></tr><tr><td class="p">5</td><td class="nm">楠本 菜月<span class="tm">TEAM HAMMER</span></td><td class="pt">182<span>pt</span></td></tr>`,"MX2":`<tr><td class="p">1</td><td class="nm">Guillem Farres<span class="tm">スペイン／Triumph　王者</span></td><td class="pt">859<span>pt</span></td></tr><tr><td class="p">2</td><td class="nm">Camden McLellan<span class="tm">南アフリカ／Triumph</span></td><td class="pt">811<span>pt</span></td></tr>`};
 const rkb=document.getElementById('rkb');
-document.getElementById('rk').addEventListener('click',ev=>{
-  const b=ev.target.closest('button'); if(!b) return;
-  [...ev.currentTarget.children].forEach(x=>x.setAttribute('aria-pressed',x===b));
-  rkb.innerHTML=RK[b.dataset.k];
-});
+document.getElementById('rk').addEventListener('click',ev=>{const b=ev.target.closest('button');if(!b)return;[...ev.currentTarget.children].forEach(x=>x.setAttribute('aria-pressed',x===b));rkb.innerHTML=RK[b.dataset.k];});
 </script>
-<script>(function(){var k="rideout-theme",r=document.documentElement;try{var t=localStorage.getItem(k);if(t)r.setAttribute("data-theme",t);}catch(e){}
-document.addEventListener("click",function(ev){var b=ev.target.closest(".theme-toggle");if(!b)return;var cur=r.getAttribute("data-theme")==="light"?"dark":"light";r.setAttribute("data-theme",cur);try{localStorage.setItem(k,cur);}catch(e){}b.textContent=cur==="light"?"DARK":"LIGHT";});
-document.querySelectorAll(".theme-toggle").forEach(function(b){b.textContent=r.getAttribute("data-theme")==="light"?"DARK":"LIGHT";});})();</script></body>
+</body>
 </html>
