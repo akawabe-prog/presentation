@@ -359,3 +359,39 @@ img.ph.real{filter:sepia(.1) saturate(.85) contrast(1.02) brightness(.7)}
 .rmark{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:var(--text);color:var(--ground);border-radius:4px;font-family:var(--f-lat);font-size:15px;font-weight:800;letter-spacing:0}
 .brand:hover .rmark{background:var(--amber)}
 .tag-line{font-family:var(--f-lat);font-size:11px;font-weight:800;letter-spacing:.16em;color:var(--text-2);margin-left:8px}
+
+/* ===== RIDEOUT ブランド規範：モノクロ、ライト／ダーク両対応 ===== */
+:root{--amber:#F5F5F3;--amber-deep:#9A9A97;--on-accent:#0D0C0B;--anno:#9CC7DB;--wm:#FFFFFF}
+:root[data-theme="light"]{--ground:#F4F4F2;--surface:#FFFFFF;--raised:#ECECEA;--line:#DCDCDA;--line-2:#C6C6C3;--text:#111111;--text-2:#3E3A39;--muted:#77746F;--amber:#111111;--amber-deep:#3E3A39;--on-accent:#FFFFFF;--anno:#3E6C80;--anno-bg:#E6EEF2}
+body{transition:background .2s,color .2s}
+/* 写真はモノクロ */
+img.ph,.slot img.ph,img.ph.real,.phead.phero>img.hero,.phead.phero>img.hero.real,.slot>img.slotph,.disc-nav a.has-ph>img.ph,.art-hero>img.hero,.eimg img.ph,.gc img.ph,.node img.ph,.slot.movie img.ph,.rimg img.ph,.cc-img img.ph{filter:grayscale(1) contrast(1.06) brightness(.78)}
+.phead.phero>img.hero,.phead.phero>img.hero.real,.art-hero>img.hero,.slot>img.slotph,.disc-nav a.has-ph>img.ph{filter:grayscale(1) contrast(1.08) brightness(.5)}
+.hero-media .slot img.ph,.hero-media .slot img.ph.real{filter:grayscale(1) contrast(1.08) brightness(.62)}
+.it:hover .slot img.ph,.fb:hover .slot img.ph,.cc.media:hover .cc-img img.ph,.rc:hover .rimg img.ph,.disc-nav a.has-ph:hover>img.ph,.node:hover img.ph{filter:grayscale(1) contrast(1.06) brightness(.9)}
+:root[data-theme="light"] img.ph{filter:grayscale(1) contrast(1.04) brightness(.96)}
+:root[data-theme="light"] .phead.phero>img.hero,:root[data-theme="light"] .art-hero>img.hero,:root[data-theme="light"] .slot>img.slotph,:root[data-theme="light"] .disc-nav a.has-ph>img.ph{filter:grayscale(1) contrast(1.06) brightness(.55)}
+/* ブランド：正式ワードマーク（SVGマスク＝テーマ色に追従） */
+.brand{display:inline-flex;align-items:center;gap:10px;color:var(--text);line-height:1}
+.brand .rb{width:24px;height:24px;background:currentColor;-webkit-mask:url(logo-r.svg) center/contain no-repeat;mask:url(logo-r.svg) center/contain no-repeat}
+.brand .rw{width:128px;height:20px;background:currentColor;-webkit-mask:url(logo.svg) center/contain no-repeat;mask:url(logo.svg) center/contain no-repeat}
+.brand em{font-style:normal;font-family:var(--f-jp);font-size:10.5px;font-weight:700;letter-spacing:.06em;color:var(--muted);margin-left:2px;padding-top:3px}
+.brand:hover{color:var(--text)}
+/* ウォーターマーク：白ワードマーク 35%（映像・ヒーローの右下） */
+.wm{position:absolute;right:18px;bottom:16px;width:96px;height:15px;background:var(--wm);opacity:.35;-webkit-mask:url(logo.svg) center/contain no-repeat;mask:url(logo.svg) center/contain no-repeat;z-index:3;pointer-events:none}
+/* 信号は色ではなく反転で */
+.mock{background:var(--text);color:var(--ground)}
+.mock a,.mock button{color:var(--ground)}
+.mock button{background:var(--ground);color:var(--text)}
+.chip.live,.chip.jp,.pill,.tag.a,.tag-next,.tag-jp,.buy{background:var(--text);color:var(--ground)!important;border-color:var(--text)}
+.chip.flash{background:var(--text);color:var(--ground)}
+.chip.mv{color:var(--text);border-color:var(--text-2)}
+.seg button[aria-pressed="true"],.rank-tabs button[aria-pressed="true"]{background:var(--text);border-color:var(--text);color:var(--ground)}
+.cc.media.pri .cc-img::after{background:var(--text);color:var(--ground)}
+.jstep[aria-current="page"]{box-shadow:inset 0 -3px 0 var(--text)}
+.fb-xl .slot,.fb-lg .slot,.go-race .slot{background:var(--surface)}
+.mail{border-color:var(--line-2);background:var(--surface)}
+.mail button,.mform button{background:var(--text);color:var(--ground)}
+a.go,.fb-go,.nx .nk,.go-k,.jstep[aria-current="page"] .jn,.eh .num,.kick,.phead .kick,.st .k,.rb .pf,.cc .pf,.card .pf,.ebody .pf,.gk,.nb .nk,.sbox .sk,.news-h h2 small{color:var(--text-2)}
+/* テーマ切替ボタン */
+.theme-toggle{font-family:var(--f-lat);font-size:11.5px;font-weight:800;letter-spacing:.12em;border:1px solid currentColor;background:transparent;color:inherit;padding:3px 10px;cursor:pointer;margin-left:12px}

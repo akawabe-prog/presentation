@@ -6,8 +6,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="../../assets/db.css"><link rel="stylesheet" href="../../assets/samples.css">
 </head><body>
-<div class="mock"><span>RIDEOUT by CustomJapan ／ 画面案 — サンプル記事（① 集客）</span><span><a href="../../">← トップ画面案</a> ／ <a href="../">回遊図</a></span></div>
-<header class="chrome"><div class="chrome-in"><a class="brand" href="../../"><span class="rmark">R</span>RIDEOUT <em>by CustomJapan</em></a>
+<div class="mock"><span>RIDEOUT by CustomJapan ／ 画面案 — サンプル記事（① 集客）</span><span><a href="../../">← トップ画面案</a> ／ <a href="../">回遊図</a><button class="theme-toggle" type="button">LIGHT</button></span></div>
+<header class="chrome"><div class="chrome-in"><a class="brand" href="../../"><span class="rb" aria-hidden="true"></span><span class="rw" role="img" aria-label="RIDEOUT"></span><em>by CustomJapan</em></a>
 <nav class="gnav"><a href="../../">ホーム</a><a href="../../races/">レース</a><a href="../../world/">世界選手権</a><a href="../../events/">イベント</a><a href="../../courses/">コース</a><a href="../../schools/">スクール</a><a href="../../shops/">店舗</a><a href="../../#gear">用品を買う</a></nav></div></header>
 <nav class="journey"><span class="jhead">回遊</span><a class="jstep" href="../feature/" aria-current="page"><span class="jn">①</span><span class="jl">集客</span><span class="jt">手ぶらで走れる場所 18カ所</span></a><a class="jstep" href="../course/"><span class="jn">③</span><span class="jl">資産</span><span class="jt">コース詳細：オフロードヴィレッジ</span></a><a class="jstep" href="../gear/"><span class="jn">②</span><span class="jl">購入</span><span class="jt">出走前の消耗品チェック</span></a><a class="jstep back" href="../"><span class="jl">回遊図</span></a></nav>
 
@@ -20,7 +20,7 @@
   <div class="art-cols">
    <div class="art-main">
     <p class="lead-p">全国112カ所のオフロードコースのうち、<b>レンタル車両かスクールのどちらかがある場所は18カ所</b>。両方そろっているのは14カ所しかない。裏を返せば、この18カ所さえ知っていれば、今週末にでもオフロードは始められる。</p>
-    <div class="slot r169 movie"><img class="ph " src="https://picsum.photos/id/162/1280/720" width="1280" height="720" alt="" loading="lazy" decoding="async"><span class="play"></span><span class="slot-cap">MOVIE 06:40 ／ 初めての人がレンタル車で1日走る様子（取材後に入る）</span></div>
+    <div class="slot r169 movie"><img class="ph " src="https://picsum.photos/id/162/1280/720" width="1280" height="720" alt="" loading="lazy" decoding="async"><span class="play"></span><span class="wm"></span><span class="slot-cap">MOVIE 06:40 ／ 初めての人がレンタル車で1日走る様子（取材後に入る）</span></div>
     <h2 class="ah">なぜ「レンタルがある」が決定的なのか</h2>
     <p>オフロード車を買う前に、乗ってみる場所がない。これが、この競技の入口を狭くしてきた。レンタルがあるコースは、「買うかどうか」を決める前の一日を提供する。スクールがあれば、その一日に指導がつく。</p>
     <p>たとえば埼玉のオフロードヴィレッジで開かれている「モトクロスごっこ」は、<b>免許がなくても参加でき、車両・装備すべて込みで男性14,000円、女性12,000円</b>。月に10回以上開かれている（<a href="../../schools/motocross-gokko/">スクール詳細</a>）。茨城のウイリー松浦のスクールは13,500円で車両も装備も含み、1名から希望日に開催する（<a href="../../schools/willy-matsuura/">詳細</a>）。</p>
@@ -98,4 +98,7 @@
 </article>
 <footer class="site-foot"><div class="wrap"><p><b>RIDEOUT</b> by CustomJapan　画面案・サンプル記事（2026年9月14日時点の実データ）　<span class="tag-line">BUILT TO GET OUT.</span></p>
 <p>写真はプレースホルダー。本文中の数値・固有名詞は取得済みデータベースと各公式発表に基づく。「取材後に入る」と記した部分は未取材。</p></div></footer>
+<script>(function(){var k="rideout-theme",r=document.documentElement;try{var t=localStorage.getItem(k);if(t)r.setAttribute("data-theme",t);}catch(e){}
+document.addEventListener("click",function(ev){var b=ev.target.closest(".theme-toggle");if(!b)return;var cur=r.getAttribute("data-theme")==="light"?"dark":"light";r.setAttribute("data-theme",cur);try{localStorage.setItem(k,cur);}catch(e){}b.textContent=cur==="light"?"DARK":"LIGHT";});
+document.querySelectorAll(".theme-toggle").forEach(function(b){b.textContent=r.getAttribute("data-theme")==="light"?"DARK":"LIGHT";});})();</script>
 </body></html>
