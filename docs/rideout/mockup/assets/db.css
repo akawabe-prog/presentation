@@ -402,3 +402,16 @@ a.go,.fb-go,.nx .nk,.go-k,.jstep[aria-current="page"] .jn,.eh .num,.kick,.phead 
 .ctrl,.lctrl{top:60px}
 .journey{top:60px}
 .anno,.mock,.theme-toggle{display:none!important}
+
+/* ===== 写真は褪せたカラー（モノクロはロゴとUIのみ） ===== */
+img.ph,.slot img.ph,img.ph.real,.eimg img.ph,.gc img.ph,.node img.ph,.slot.movie img.ph,.rimg img.ph,.cc-img img.ph{filter:sepia(.16) saturate(.78) contrast(.98) brightness(.74)}
+.phead.phero>img.hero,.phead.phero>img.hero.real,.art-hero>img.hero,.slot>img.slotph,.disc-nav a.has-ph>img.ph{filter:sepia(.16) saturate(.72) contrast(1) brightness(.5)}
+.hero-media .slot img.ph,.hero-media .slot img.ph.real{filter:sepia(.12) saturate(.82) contrast(1.02) brightness(.62)}
+.it:hover .slot img.ph,.fb:hover .slot img.ph,.cc.media:hover .cc-img img.ph,.rc:hover .rimg img.ph,.node:hover img.ph{filter:sepia(.1) saturate(.9) contrast(1) brightness(.84)}
+.disc-nav a.has-ph:hover>img.ph{filter:sepia(.1) saturate(.85) contrast(1) brightness(.62)}
+:root[data-theme="light"] img.ph{filter:sepia(.12) saturate(.85) contrast(1) brightness(.96)}
+:root[data-theme="light"] .phead.phero>img.hero,:root[data-theme="light"] .art-hero>img.hero,:root[data-theme="light"] .slot>img.slotph,:root[data-theme="light"] .disc-nav a.has-ph>img.ph{filter:sepia(.14) saturate(.75) contrast(1) brightness(.55)}
+:root[data-theme="light"] .rimg img.ph,:root[data-theme="light"] .cc-img img.ph{filter:sepia(.12) saturate(.85) contrast(1) brightness(.92)}
+/* by CUSTOM JAPAN */
+.brand em{font-family:var(--f-lat);font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--muted);margin-left:4px;padding-top:4px;text-transform:lowercase}
+.brand .cj{width:92px;height:11px;background:currentColor;opacity:.85;-webkit-mask:url(cj-logo.svg) center/contain no-repeat;mask:url(cj-logo.svg) center/contain no-repeat;margin-top:4px}
