@@ -415,3 +415,17 @@ img.ph,.slot img.ph,img.ph.real,.eimg img.ph,.gc img.ph,.node img.ph,.slot.movie
 /* by CUSTOM JAPAN */
 .brand em{font-family:var(--f-lat);font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--muted);margin-left:4px;padding-top:4px;text-transform:lowercase}
 .brand .cj{width:92px;height:11px;background:currentColor;opacity:.85;-webkit-mask:url(cj-logo.svg) center/contain no-repeat;mask:url(cj-logo.svg) center/contain no-repeat;margin-top:4px}
+
+/* ===== ヘッダー：ロゴはフルサイズで左、メニューは右 ===== */
+.chrome-in{height:72px;gap:32px;justify-content:space-between;max-width:none;padding:0 clamp(20px,3vw,44px)}
+.brand{gap:12px;flex:0 0 auto}
+.brand .rb{width:36px;height:36px}
+.brand .rw{width:184px;height:29px}
+.brand em{font-size:12px;padding-top:6px;margin-left:6px}
+.brand .cj{width:128px;height:15px;margin-top:6px;opacity:.9}
+.gnav{margin-left:auto;gap:28px;font-size:14.5px;letter-spacing:.06em}
+.gnav a{padding:6px 0 4px}
+@media(max-width:1100px){.brand .rw{width:150px;height:24px}.brand .rb{width:30px;height:30px}.brand .cj{display:none}.brand em{display:none}.gnav{gap:20px;font-size:13.5px}}
+@media(max-width:820px){.chrome-in{height:60px}.brand .rw{width:128px;height:20px}.brand .rb{width:26px;height:26px}}
+.ctrl,.lctrl,.journey{top:72px}
+@media(max-width:820px){.ctrl,.lctrl,.journey{top:60px}}
