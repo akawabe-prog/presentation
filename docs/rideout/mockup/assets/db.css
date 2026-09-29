@@ -436,3 +436,38 @@ img.ph,.slot img.ph,img.ph.real,.eimg img.ph,.gc img.ph,.node img.ph,.slot.movie
 .cart:hover{color:var(--text)}
 .cart .n{position:absolute;top:2px;right:0;min-width:16px;height:16px;padding:0 4px;border-radius:8px;background:var(--text);color:var(--ground);font-family:var(--f-lat);font-size:10px;font-weight:800;line-height:16px;text-align:center}
 .gnav{margin-left:auto}
+
+/* ===== アクセントカラー：アンバー #F0A81E（信号と要所だけに） ===== */
+:root{--amber:#F0A81E;--amber-deep:#8F6410;--on-accent:#0D0C0B}
+:root[data-theme="light"]{--amber:#D9940F;--amber-deep:#F0A81E;--on-accent:#0D0C0B}
+/* 信号：締切・NEW・購入 */
+.chip.live,.chip.jp,.chip.flash,.tag-next,.tag-jp,.buy,.pill{background:var(--amber);color:var(--on-accent)!important;border-color:var(--amber)}
+.pill.soft{background:transparent;color:var(--text-2)!important;border-color:var(--line-2)}
+.tag.a{background:var(--amber);border-color:var(--amber);color:var(--on-accent)}
+.tag.next,.tag.pri{border-color:var(--amber);color:var(--amber)}
+.cart .n{background:var(--amber);color:var(--on-accent)}
+.mail button,.mform button,.seg button[aria-pressed="true"],.rank-tabs button[aria-pressed="true"]{background:var(--amber);border-color:var(--amber);color:var(--on-accent)}
+.buy:hover,.mail button:hover,.mform button:hover{background:#F7B93C}
+/* 要所：キッカー・章番号・NEXT・現在地 */
+.kick,.phead .kick,.eh .num,.go-k,.nb .nk,.nx .nk,.sbox .sk,.gk,.news-h .upd{color:var(--amber)}
+.rc.next{box-shadow:inset 3px 0 0 var(--amber)}
+.rc.next .rd .dy,.rlist .rc.next .rd .dy{color:var(--amber)}
+.re .tag.next{border-color:var(--amber);color:var(--amber)}
+.gnav a.on{border-bottom-color:var(--amber)}
+.jstep[aria-current="page"]{box-shadow:inset 0 -3px 0 var(--amber)}
+.jstep[aria-current="page"] .jn{color:var(--amber)}
+.disc-nav a.has-ph[aria-current="page"]::after{background:var(--amber)}
+.disc-nav .en{color:var(--amber)}
+.cc.media.pri .cc-img::after{background:var(--amber);color:var(--on-accent)}
+.cc.pri,.card.is-pri,.lr.pri{box-shadow:inset 3px 0 0 var(--amber)}
+.fb-go,.go,.card .foot a:hover,.cc-foot a:hover,.nearby a:hover,.pref-grid a:hover,.pref-grid a:hover b,.brand:hover .rb,.ic:hover{color:var(--amber)}
+.fb:hover .fb-go{color:var(--amber)}
+.phead.phero .lead{border-left-color:var(--amber)}
+.art-hero .dek{border-left-color:var(--amber)}
+.sbox{border-top-color:var(--amber)}
+.racebox{box-shadow:inset 3px 0 0 var(--amber)}
+.mail{border-color:var(--amber-deep);background:linear-gradient(112deg,rgba(240,168,30,.10),rgba(240,168,30,0) 58%),var(--surface)}
+.go-quick a:hover,.nearby a:hover{border-color:var(--amber)}
+a.go:hover,.th .go{color:var(--amber)}
+.hero-copy .chip.mv{color:var(--amber);border-color:var(--amber-deep)}
+/* 反転ブロックのまま残すもの（信号ではない識別）：EVENT／FEATURE 等の通常チップ、店舗のDIRTFREAKピル */
