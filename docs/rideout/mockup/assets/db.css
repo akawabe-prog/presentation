@@ -471,3 +471,23 @@ img.ph,.slot img.ph,img.ph.real,.eimg img.ph,.gc img.ph,.node img.ph,.slot.movie
 a.go:hover,.th .go{color:var(--amber)}
 .hero-copy .chip.mv{color:var(--amber);border-color:var(--amber-deep)}
 /* 反転ブロックのまま残すもの（信号ではない識別）：EVENT／FEATURE 等の通常チップ、店舗のDIRTFREAKピル */
+
+/* ===== ライトテーマの可読性修正：暗い写真・暗いヘッダーの上は白文字に ===== */
+:root[data-theme="light"] .chrome{background:rgba(244,244,242,.94);border-bottom-color:var(--line)}
+:root[data-theme="light"] .brand{color:var(--text)}
+:root[data-theme="light"] .gnav{color:var(--text-2)}
+:root[data-theme="light"] .gnav a.on,:root[data-theme="light"] .gnav a:hover{color:var(--text)}
+:root[data-theme="light"] .cart{color:var(--text-2)}
+:root[data-theme="light"] .phead.phero{color:#FAF8F5}
+:root[data-theme="light"] .phead.phero h1{color:#FAF8F5}
+:root[data-theme="light"] .phead.phero .lead{color:#F4F4F2;border-left-color:var(--amber-deep)}
+:root[data-theme="light"] .phead.phero .issue{color:#D9D9D7;border-bottom-color:rgba(255,255,255,.22)}
+:root[data-theme="light"] .phead.phero .kick{color:var(--amber-deep)}
+:root[data-theme="light"] .phead.phero .meta{color:#C6C6C3}
+:root[data-theme="light"] .phead.phero .crumb,:root[data-theme="light"] .phead.phero .crumb a{color:#D9D9D7}
+:root[data-theme="light"] .crumb{color:var(--muted)}
+:root[data-theme="light"] .disc-nav a.has-ph,:root[data-theme="light"] .disc-nav a.has-ph .jp2{color:#FAF8F5}
+:root[data-theme="light"] .disc-nav a.has-ph .n{color:#D9D9D7}
+:root[data-theme="light"] .disc-nav a.has-ph .en{color:var(--amber-deep)}
+:root[data-theme="light"] .art-hero{color:#FAF8F5}
+:root[data-theme="light"] .wm{background:#FFFFFF}
