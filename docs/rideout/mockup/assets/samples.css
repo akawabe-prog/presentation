@@ -102,3 +102,7 @@
 .arr.a3::before{left:18px;right:18px;top:auto;bottom:24px;height:2px;border-radius:0}
 .arr.a3::after{right:auto;left:8px;top:auto;bottom:18px;border-left:none;border-right:10px solid var(--amber)}
 .arr.a3 span{transform:translateY(-4px)}
+/* ===== ワイドスクリーン対応：ヒーローは全幅、本文は読みやすい幅で中央寄せ ===== */
+.art-hero-in{max-width:1720px;padding-left:clamp(20px,3vw,44px);padding-right:clamp(20px,3vw,44px)}
+.art-cols{max-width:1400px;margin:0 auto}
+@media(min-width:1500px){.art-cols{grid-template-columns:minmax(0,1fr) 340px;gap:64px}}

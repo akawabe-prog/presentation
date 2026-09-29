@@ -491,3 +491,15 @@ a.go:hover,.th .go{color:var(--amber)}
 :root[data-theme="light"] .disc-nav a.has-ph .en{color:var(--amber-deep)}
 :root[data-theme="light"] .art-hero{color:#FAF8F5}
 :root[data-theme="light"] .wm{background:#FFFFFF}
+/* ===== ワイドスクリーン対応：コンテナを画面幅に追従（上限1720px・左右余白はヘッダーと同じ） ===== */
+.wrap{max-width:1720px;padding:0 clamp(20px,3vw,44px)}
+.phead.phero{padding-left:clamp(20px,3vw,44px);padding-right:clamp(20px,3vw,44px)}
+.phead.phero>*:not(img),.phead.phero .issue{max-width:1632px}
+@media(max-width:600px){.wrap{padding:0 16px}.phead.phero{padding-left:16px;padding-right:16px}}
+@media(min-width:1500px){
+ .rlist{grid-template-columns:repeat(3,1fr)}
+ .cards{grid-template-columns:repeat(3,1fr)}
+ .disc-nav{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+ .pref-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+ .rlist .rc.next .rb h3{font-size:clamp(24px,2.2vw,38px)}
+}
