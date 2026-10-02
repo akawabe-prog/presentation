@@ -113,3 +113,17 @@
 .bt.tires-banner .bc b{color:#fff}
 .bt.tires-banner img.pv{mix-blend-mode:normal;width:26%;right:3%;bottom:-6%}
 .bt.tires-banner:hover{background:#1c1a17}
+
+/* 検索ボックス・特徴チップ */
+.pctrl .qbox{flex:1 1 100%;display:block}
+.pctrl .qbox input,.tsearch input[type=search]{width:100%;font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--line-2);background:var(--ground);color:var(--text)}
+.pctrl .qbox input::placeholder,.tsearch input::placeholder{color:var(--muted)}
+.pctrl .qbox input:focus,.tsearch input:focus,.tsearch select:focus{outline:2px solid var(--amber);outline-offset:0}
+.seg .seglb{font-family:var(--f-lat);font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--muted);align-self:center;margin-right:2px}
+.seg-feat{flex:1 1 100%}
+.seg-feat button[aria-pressed="true"]{background:var(--amber);border-color:var(--amber);color:var(--on-accent)}
+.seg-feat button[aria-pressed="true"] small{color:var(--on-accent);opacity:.75}
+.tsearch .qwide{grid-column:1/-1}
+.tsearch .seg-feat{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px}
+.tsearch .seg-feat button{font-family:var(--f-jp);font-size:12px;font-weight:700;background:transparent;border:1px solid var(--line-2);color:var(--text-2);padding:5px 11px;cursor:pointer;line-height:1.5}
+.tsearch .seg-feat button small{font-family:var(--f-lat);font-size:10px;margin-left:5px;color:var(--muted)}

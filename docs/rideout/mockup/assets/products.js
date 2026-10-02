@@ -2,11 +2,12 @@
   var ctrl=document.querySelector('.pctrl');
   if(ctrl){
     var grid=document.getElementById('pgrid'), cnt=ctrl.querySelector('.cnt b');
-    var state={cat:'',in:''};
+    var state={cat:'',in:'',ser:''}, q=ctrl.querySelector('#q');
     function apply(){
-      var n=0;
+      var n=0, words=String(q&&q.value||'').toLowerCase().replace(/[　\s]+/g,' ').trim().split(' ').filter(Boolean);
       grid.querySelectorAll('.pc').forEach(function(c){
-        var ok=(!state.cat||c.dataset.cat===state.cat)&&(!state.in||c.dataset.in==='1');
+        var ok=(!state.cat||c.dataset.cat===state.cat)&&(!state.in||c.dataset.in==='1')&&(!state.ser||c.dataset.ser===state.ser);
+        if(ok&&words.length){ var t=c.dataset.q||''; ok=words.every(function(w){return t.indexOf(w)>=0}); }
         c.hidden=!ok; if(ok)n++;
       });
       if(cnt)cnt.textContent=n;
@@ -17,10 +18,11 @@
         var b=ev.target.closest('button'); if(!b)return;
         var v=b.dataset.v;
         if(f==='in'){ state.in=(state.in===v)?'':v; b.setAttribute('aria-pressed',state.in?'true':'false'); }
-        else{ state.cat=v; seg.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')}); }
+        else{ state[f]=v; seg.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')}); }
         apply();
       });
     });
+    if(q){ var t; q.addEventListener('input',function(){clearTimeout(t);t=setTimeout(apply,120)}); }
     var m=/[#&]cat=([^&]+)/.exec(decodeURIComponent(location.hash||''));
     if(m){ var want=m[1]; var btn=[].slice.call(ctrl.querySelectorAll('.seg[data-f=cat] button')).find(function(x){return x.dataset.v===want});
       if(btn) btn.click(); }
