@@ -127,3 +127,21 @@
 .tsearch .seg-feat{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px}
 .tsearch .seg-feat button{font-family:var(--f-jp);font-size:12px;font-weight:700;background:transparent;border:1px solid var(--line-2);color:var(--text-2);padding:5px 11px;cursor:pointer;line-height:1.5}
 .tsearch .seg-feat button small{font-family:var(--f-lat);font-size:10px;margin-left:5px;color:var(--muted)}
+
+/* タイヤ：パターン見出し・路面タグ・チューブ導線・バイク検索 */
+.pgh{flex-wrap:wrap;row-gap:2px}
+.pgh .pat{font-family:var(--f-lat);font-size:15px;font-weight:800;letter-spacing:.04em;color:var(--text)}
+.pgh small{font-family:var(--f-lat);font-size:11.5px;letter-spacing:.06em;color:var(--muted)}
+.pgh em{font-style:normal;font-size:12px;color:var(--text-2);flex-basis:100%}
+.pgh .tube-link{margin-left:auto;font-family:var(--f-lat);font-size:11.5px;font-weight:700;letter-spacing:.08em;color:var(--amber);white-space:nowrap}
+.pc .tg{font-size:10.5px;color:var(--text-2);border:1px solid var(--line);padding:1px 6px;line-height:1.6;white-space:nowrap}
+.tbike .models{grid-column:1/-1;font-size:12.5px;color:var(--text-2);line-height:1.6}
+.bres{margin-bottom:8px}
+.bres .eh.sub{margin:22px 0 10px}
+.bres .eh.sub .cnt{font-family:var(--f-lat);font-size:12px;letter-spacing:.08em;color:var(--text-2)}
+.bres .eh.sub .cnt b{color:var(--text)}
+.uses-tires{grid-template-columns:repeat(3,1fr)}
+@media(max-width:980px){.uses-tires{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.uses-tires{grid-template-columns:1fr}}
+.seg-surf button[aria-pressed="true"]{background:var(--amber);border-color:var(--amber);color:var(--on-accent)}
+.seg-surf button[aria-pressed="true"] small{color:var(--on-accent);opacity:.75}
