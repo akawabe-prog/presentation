@@ -22,7 +22,12 @@
       });
       grid.querySelectorAll('.pgh').forEach(function(h){
         var el=h.nextElementSibling, any=false;
-        while(el && !el.classList.contains('pgh')){ if(!el.hidden){any=true;break;} el=el.nextElementSibling; }
+        while(el && !el.classList.contains('pgh') && !el.classList.contains('pgf')){ if(!el.hidden){any=true;break;} el=el.nextElementSibling; }
+        h.hidden=!any;
+      });
+      grid.querySelectorAll('.pgf').forEach(function(h){
+        var el=h.nextElementSibling, any=false;
+        while(el && !el.classList.contains('pgf')){ if(el.classList.contains('pc') && !el.hidden){any=true;break;} el=el.nextElementSibling; }
         h.hidden=!any;
       });
       if(cnt)cnt.textContent=n;
@@ -75,28 +80,24 @@
     }
     form.addEventListener('change',run);
     form.q.addEventListener('input',debounce(run,160));
-    /* バイクから探す：新車標準サイズ（前後）で候補を出す */
-    var bf=document.getElementById('tbike'), bres=document.getElementById('bresult');
-    if(bf && bres){
-      var BIKES=[]; try{ BIKES=JSON.parse(bf.dataset.bikes); }catch(e){}
-      function brun(){
-        var b=BIKES[bf.bike.value]; var models=document.getElementById('bmodels');
-        if(!b){ bres.hidden=true; if(models) models.textContent=''; return; }
-        if(models) models.textContent='対象：'+b.m+'　／　標準サイズ F '+b.f+'・R '+b.r+(b.u?'　／　'+b.u+'向けを先に表示':'');
-        var use=bf.use.value, surf=bf.surf.value, inst=bf.in.checked;
-        load().then(function(items){
-          function pick(keys,pos){ return items.filter(function(i){ return (i.k==='race'||i.k==='adventure')&&keys.indexOf(i.sk)>=0&&(i.p===pos||i.p==='前後')
-            &&(!use||i.e===use)&&(!surf||(i.w||[]).indexOf(surf)>=0)&&(!inst||i.i===1); }); }
-          function rank(arr){ return arr.slice().sort(function(a,c){ var sa=(b.u&&a.e===b.u?0:1)*2+(a.i?0:1), sc=(b.u&&c.e===b.u?0:1)*2+(c.i?0:1); return sa-sc; }); }
-          var F=rank(pick(b.fk,'フロント')), R=rank(pick(b.rk,'リア'));
-          document.getElementById('bfsz').textContent=b.f; document.getElementById('brsz').textContent=b.r;
-          document.getElementById('bfc').textContent=F.length; document.getElementById('brc').textContent=R.length;
-          document.getElementById('bfront').innerHTML=F.length?F.slice(0,60).map(card).join(''):'<p class="scope">該当するフロントがありません。条件を減らしてください。</p>';
-          document.getElementById('brear').innerHTML=R.length?R.slice(0,60).map(card).join(''):'<p class="scope">該当するリアがありません。条件を減らしてください。</p>';
-          bres.hidden=false;
-        });
-      }
-      bf.addEventListener('change',brun);
+    /* バイクから探す：メーカー → 車種 → 車種ページへ */
+    var bf=document.getElementById('tbike'), go=document.getElementById('bgo');
+    if(bf && go){
+      var V=[]; try{ V=JSON.parse(bf.dataset.veh); }catch(e){}
+      function setGo(v){ if(v){ go.href=v[4]; go.removeAttribute('aria-disabled'); go.textContent=v[2]+' のタイヤを見る →'; } else { go.href='./bike/'; go.setAttribute('aria-disabled','true'); go.textContent='この車種のタイヤを見る →'; } }
+      bf.mk.addEventListener('change',function(){
+        var mk=bf.mk.value, sel=bf.veh; sel.innerHTML='';
+        if(!mk){ sel.disabled=true; sel.innerHTML='<option value="">メーカーを先に選んでください</option>'; setGo(null); return; }
+        sel.disabled=false; var html='<option value="">車種を選んでください</option>', cur=null;
+        V.forEach(function(v,k){ if(v[0]!==mk) return; if(v[1]!==cur){ if(cur!==null) html+='</optgroup>'; html+='<optgroup label="'+esc(v[1])+'">'; cur=v[1]; } html+='<option value="'+k+'">'+esc(v[2])+'（'+v[5]+'）</option>'; });
+        if(cur!==null) html+='</optgroup>'; sel.innerHTML=html; setGo(null);
+      });
+      bf.veh.addEventListener('change',function(){ setGo(V[bf.veh.value]||null); });
+      function findV(q){ q=norm(q); if(!q) return null; var ex=V.filter(function(v){return norm(v[2])===q||norm(v[3])===q}); if(ex.length) return ex[0];
+        var pa=V.filter(function(v){return norm(v[2]).indexOf(q)>=0||norm(v[3]).indexOf(q)>=0}); return pa.length===1?pa[0]:(pa[0]||null); }
+      bf.vq.addEventListener('input',function(){ setGo(findV(bf.vq.value)); });
+      bf.vq.addEventListener('keydown',function(ev){ if(ev.key==='Enter'){ var v=findV(bf.vq.value); if(v) location.href=v[4]; } });
+      go.addEventListener('click',function(ev){ if(go.getAttribute('aria-disabled')==='true'){ ev.preventDefault(); location.href='./bike/'; } });
     }
     var fs=form.querySelector('.seg-feat');
     if(fs) fs.addEventListener('click',function(ev){ var b=ev.target.closest('button'); if(!b)return; var v=b.dataset.v, k=hfeats.indexOf(v);
