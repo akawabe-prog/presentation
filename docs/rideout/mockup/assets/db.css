@@ -513,3 +513,14 @@ a.go:hover,.th .go{color:var(--amber)}
 :root[data-theme="light"] table.tbl tbody tr:nth-child(even){background:var(--raised)}
 :root[data-theme="light"] table.tbl thead th{background:var(--raised)}
 table.tbl td:first-child{white-space:nowrap}
+/* ===== スマホ：ヘッダーを2段に（1段目 ロゴ＋カート／2段目 横スクロールのメニュー） ===== */
+@media(max-width:820px){
+ .chrome-in{height:auto!important;flex-wrap:wrap;row-gap:0;column-gap:12px;padding-top:9px!important;padding-bottom:0!important}
+ .chrome-in .brand{order:1}
+ .chrome-in .cart{order:2;margin-left:auto}
+ .chrome-in .gnav{order:3;flex:0 0 100%;margin-left:0!important;display:flex;gap:18px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;padding:8px 0 7px;font-size:13px}
+ .chrome-in .gnav::-webkit-scrollbar{display:none}
+ .ctrl,.lctrl,.journey,.pctrl{top:96px!important}
+}
+/* GEAR 小見出し：狭い幅では説明を2行目に */
+@media(max-width:700px){.gear-sub{flex-wrap:wrap;row-gap:4px}.gear-sub span{flex:1 0 100%;order:3}.gear-sub a{margin-left:auto}}

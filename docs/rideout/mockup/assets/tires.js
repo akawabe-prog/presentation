@@ -52,7 +52,7 @@
     if(q&&q.value) apply();
   }
   /* --- ハブ：キーワード＋サイズ検索＋特徴（assets/tires.json を必要になったときに読む） --- */
-  var form=document.getElementById('tsearch'), res=document.getElementById('tresult'), note=document.getElementById('tnote'), tc=document.getElementById('tcount');
+  var form=document.getElementById('tsearch'), res=document.getElementById('tresult'), note=document.getElementById('tnote');
   if(form && res){
     var data=null, loading=null, hfeats=[];
     function load(){ if(data) return Promise.resolve(data); if(loading) return loading;
@@ -69,13 +69,13 @@
     function run(){
       var words=norm(form.q.value).split(' ').filter(Boolean);
       var qq={rim:form.rim.value,pos:form.pos.value,cat:form.cat.value,brand:form.brand.value,in:form.in.checked,use:form.use.value,surf:form.surf.value};
-      if(!words.length&&!qq.rim&&!qq.pos&&!qq.cat&&!qq.brand&&!qq.in&&!qq.use&&!qq.surf&&!hfeats.length){ res.hidden=true; note.textContent='キーワードか条件を選ぶと該当するタイヤを表示します。'; tc.textContent='–'; return; }
+      if(!words.length&&!qq.rim&&!qq.pos&&!qq.cat&&!qq.brand&&!qq.in&&!qq.use&&!qq.surf&&!hfeats.length){ res.hidden=true; note.textContent='キーワードか条件を選ぶと該当するタイヤを表示します。'; return; }
       load().then(function(items){
         var hit=items.filter(function(i){ return (!qq.rim||i.r===qq.rim)&&(!qq.pos||i.p===qq.pos)&&(!qq.cat||i.k===qq.cat)&&(!qq.brand||i.m===qq.brand)&&(!qq.in||i.i===1)
           &&(!qq.use||i.e===qq.use)&&(!qq.surf||(i.w||[]).indexOf(qq.surf)>=0)
           &&hfeats.every(function(x){return (i.f||[]).indexOf(x)>=0})&&words.every(function(w){return (i.q||'').indexOf(w)>=0}); });
-        tc.textContent=hit.length; res.innerHTML=hit.slice(0,120).map(card).join(''); res.hidden=!hit.length;
-        note.textContent=hit.length?(hit.length>120?'多いので先頭 120 点を表示。条件を足して絞ってください。':''):'該当するタイヤがありません。条件を減らしてください。';
+        res.innerHTML=hit.slice(0,120).map(card).join(''); res.hidden=!hit.length;
+        note.textContent=hit.length?(hit.length>120?'条件を足すと、さらに絞り込めます。':''):'該当するタイヤがありません。条件を減らしてください。';
       });
     }
     form.addEventListener('change',run);
@@ -89,7 +89,7 @@
         var mk=bf.mk.value, sel=bf.veh; sel.innerHTML='';
         if(!mk){ sel.disabled=true; sel.innerHTML='<option value="">メーカーを先に選んでください</option>'; setGo(null); return; }
         sel.disabled=false; var html='<option value="">車種を選んでください</option>', cur=null;
-        V.forEach(function(v,k){ if(v[0]!==mk) return; if(v[1]!==cur){ if(cur!==null) html+='</optgroup>'; html+='<optgroup label="'+esc(v[1])+'">'; cur=v[1]; } html+='<option value="'+k+'">'+esc(v[2])+'（'+v[5]+'）</option>'; });
+        V.forEach(function(v,k){ if(v[0]!==mk) return; if(v[1]!==cur){ if(cur!==null) html+='</optgroup>'; html+='<optgroup label="'+esc(v[1])+'">'; cur=v[1]; } html+='<option value="'+k+'">'+esc(v[2])+'</option>'; });
         if(cur!==null) html+='</optgroup>'; sel.innerHTML=html; setGo(null);
       });
       bf.veh.addEventListener('change',function(){ setGo(V[bf.veh.value]||null); });

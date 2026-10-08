@@ -48,6 +48,6 @@
       if(st&&cd){ var inst=cd==='SE'; st.textContent=inst?'在庫あり':(h.status.txt||'取寄'); st.classList.toggle('in',inst); c.dataset.in=inst?'1':'0'; }
       upd++;
     });
-    var n=document.getElementById('livenote'); if(n&&upd){ n.textContent='LIVE ／ customjapan.net 商品APIから '+upd+' 点を更新（'+new Date().toLocaleTimeString('ja-JP',{hour:'2-digit',minute:'2-digit'})+'）'; n.classList.add('ok'); }
+    var n=document.getElementById('livenote'); if(n&&upd){ n.textContent='LIVE ／ customjapan.net 商品APIから価格・在庫を更新（'+new Date().toLocaleTimeString('ja-JP',{hour:'2-digit',minute:'2-digit'})+'）'; n.classList.add('ok'); }
   }).catch(function(){});
 })();
